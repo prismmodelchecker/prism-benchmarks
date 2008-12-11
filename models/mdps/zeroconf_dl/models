@@ -1,0 +1,12 @@
+zeroconf_dl.nm -const N=1000,K=1,reset=true,deadline=10
+zeroconf_dl.nm -const N=1000,K=1,reset=true,deadline=20
+zeroconf_dl.nm -const N=1000,K=1,reset=true,deadline=30
+zeroconf_dl.nm -const N=1000,K=1,reset=true,deadline=40
+zeroconf_dl.nm -const N=1000,K=1,reset=true,deadline=50
+
+zeroconf_dl.nm -const N=1000,K=1,reset=false,deadline=10
+zeroconf_dl.nm -const N=1000,K=1,reset=false,deadline=20
+zeroconf_dl.nm -const N=1000,K=1,reset=false,deadline=30
+zeroconf_dl.nm -const N=1000,K=1,reset=false,deadline=40
+zeroconf_dl.nm -const N=1000,K=1,reset=false,deadline=50
+

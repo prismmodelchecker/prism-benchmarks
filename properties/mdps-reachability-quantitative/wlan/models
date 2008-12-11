@@ -1,0 +1,42 @@
+wlan0.nm -const COL=0
+wlan0.nm -const COL=2
+wlan0.nm -const COL=4
+wlan0.nm -const COL=6
+wlan0.nm -const COL=8
+
+wlan1.nm -const COL=0
+wlan1.nm -const COL=2
+wlan1.nm -const COL=4
+wlan1.nm -const COL=6
+wlan1.nm -const COL=8
+
+wlan2.nm -const COL=0
+wlan2.nm -const COL=2
+wlan2.nm -const COL=4
+wlan2.nm -const COL=6
+wlan2.nm -const COL=8
+
+wlan3.nm -const COL=0
+wlan3.nm -const COL=2
+wlan3.nm -const COL=4
+wlan3.nm -const COL=6
+wlan3.nm -const COL=8
+
+wlan4.nm -const COL=0
+wlan4.nm -const COL=2
+wlan4.nm -const COL=4
+wlan4.nm -const COL=6
+wlan4.nm -const COL=8
+
+wlan5.nm -const COL=0
+wlan5.nm -const COL=2
+wlan5.nm -const COL=4
+wlan5.nm -const COL=6
+wlan5.nm -const COL=8
+
+wlan6.nm -const COL=0
+wlan6.nm -const COL=2
+wlan6.nm -const COL=4
+wlan6.nm -const COL=6
+wlan6.nm -const COL=8
+

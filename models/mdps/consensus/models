@@ -1,0 +1,8 @@
+coin2.nm -const K=2
+coin2.nm -const K=4
+coin2.nm -const K=8
+coin2.nm -const K=16
+
+coin4.nm -const K=2
+coin4.nm -const K=4
+

@@ -1,0 +1,3 @@
+// Minimum probability of using fresh IP address within deadline
+Pmin=?[ !(l0=4 & ip0=2) U t>=deadline ]
+

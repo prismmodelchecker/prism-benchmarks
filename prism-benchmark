@@ -1,0 +1,158 @@
+#!/bin/bash
+
+# Process any switches
+while [[ "$1" =~ "-.+" ]]; do
+	arg="$1"
+	shift
+	# logs directory
+	if [ "$arg" = "-logs" ]; then
+		if [ "$1" = "" ]; then
+			echo "Error: No argument for -logs switch."
+			exit
+		fi
+		PRISM_LOG_DIR=$1
+		shift
+		if [ "$PRISM_LOG_DIR" != "" -a ! -d "$PRISM_LOG_DIR" ]; then
+		 echo Error: Log directory \"$PRISM_LOG_DIR\" does not exist.
+		 exit
+		fi
+	fi
+	# arguments file
+	if [ "$arg" = "-args" ]; then
+		if [ "$1" = "" ]; then
+			echo "Error: No argument for -args switch."
+			exit
+		fi
+		PRISM_ARGS_FILE=$1
+		shift
+		if [ -e "$PRISM_ARGS_FILE" ]; then
+			unset PRISM_ARGS_ARRAY
+			count=0
+			while read -r line ; do
+				if [ "$line" != "" ]; then
+					if [[ ! ( "$line" =~ "#.+" ) ]]; then
+						PRISM_ARGS_ARRAY[count]="$line"
+						echo $count: $line
+						let count=$count+1
+					fi
+				fi
+			done < "$PRISM_ARGS_FILE"
+		fi
+	fi
+done
+
+# Create dummy args array if none provided
+if [ ${#PRISM_ARGS_ARRAY[*]} = 0 ]; then
+	unset PRISM_ARGS_ARRAY
+	PRISM_ARGS_ARRAY[0]=""
+fi
+
+# Check args
+if [ "$1" = "" ]; then
+	echo "Usage: $0 [options] <property|dir> [prism-args]"
+	exit
+fi
+
+# Get property/properties
+# If arg is a directory, find all pctl/csl files
+# (NB: this curently breaks if there are spaces in file/dir names)
+if [ -d "$1" ]; then
+	PRISM_PROPERTIES=( $(find "$1" -name '*.pctl' -o -name '*.csl') )
+	#for PRISM_PROPERTY in "${PRISM_PROPERTIES[@]}"; do
+	#	echo $PRISM_PROPERTY
+	#done
+else
+	PRISM_PROPERTIES=("$1")
+	if [ ! -e "$1" ]; then
+	 echo Error: Property \"$1\" does not exist
+	 exit
+	fi
+fi
+shift
+
+# Loop through properties...
+for PRISM_PROPERTY in "${PRISM_PROPERTIES[@]}"; do
+
+# Get working directory
+PRISM_THIS_DIR=`dirname "$PRISM_PROPERTY"`
+
+# Read models dir in from file (or use cwd)
+if [ -e "$PRISM_THIS_DIR"/models_dir ]; then
+	PRISM_MODEL_DIR="$PRISM_THIS_DIR"/`cat "$PRISM_THIS_DIR"/models_dir`
+else
+	PRISM_MODEL_DIR="$PRISM_THIS_DIR"
+fi
+if [ ! -d "$PRISM_MODEL_DIR" ]; then
+ echo Error: Models directory \"$PRISM_MODEL_DIR\" does not exist
+ exit
+fi
+
+# Read models in from file
+# (if no local file, look in models dir)
+# (if neither, do ls)
+if [ -e "$PRISM_THIS_DIR"/models ]; then
+	PRISM_MODELS_LIST_FILE="$PRISM_THIS_DIR"/models
+else
+	PRISM_MODELS_LIST_FILE="$PRISM_MODEL_DIR"/models
+fi
+if [ -e "$PRISM_MODELS_LIST_FILE" ]; then
+	unset PRISM_MODELS
+	count=0
+	while read -r line ; do
+		if [ "$line" != "" ]; then
+			if [[ ! ( "$line" =~ "#.+" ) ]]; then
+				PRISM_MODELS[count]="$line"
+				#echo $count: $line
+				let count=$count+1
+			fi
+		fi
+	done < "$PRISM_MODELS_LIST_FILE"
+else
+	PRISM_MODELS=( $(cd "$PRISM_MODEL_DIR"; /bin/ls -1 *.?m) )
+	#echo ${PRISM_MODELS[@]}
+fi
+if [ ${#PRISM_MODELS[*]} = 0 ]; then
+	echo "Error: No models found."
+	exit
+fi
+
+# Read any extra args in from file
+if [ -e "$PRISM_THIS_DIR"/args ]; then
+	BASE_PRISM_ARGS=`cat "$PRISM_THIS_DIR"/args`
+else
+	BASE_PRISM_ARGS=""
+fi
+
+# Loop through models
+echo "$PRISM_THIS_DIR"/
+for PRISM_MODEL in "${PRISM_MODELS[@]}"; do
+
+	PRISM_MODEL_FILE="$PRISM_MODEL_DIR"/"$PRISM_MODEL"
+	PRISM_MODEL_DIR_NAME="`readlink -e $PRISM_MODEL_DIR | xargs basename`"
+	PRISM_PROPERTY_NAME=`basename $PRISM_PROPERTY`
+
+	# Loop through arguments array...
+	for PRISM_ARGS in "${PRISM_ARGS_ARRAY[@]}"; do
+
+		echo $PRISM_MODEL $PRISM_PROPERTY $BASE_PRISM_ARGS $PRISM_ARGS "$@"
+		if [ "$PRISM_LOG_DIR" != "" ]; then
+			# Build name for log file
+			PRISM_LOG_FILE_MODEL="`echo "$PRISM_MODEL" | sed 's/-const//g' | sed 's/ \+/\./g' | sed 's/\.\.\///g' | sed 's/\//_/g'`"
+			PRISM_LOG_FILE_ARGS="`echo $PRISM_ARGS $@ | sed 's/[^a-zA-Z0-9_ ]//g' | sed 's/ \+/\./g'`"
+			if [ "$PRISM_LOG_FILE_ARGS" != "" ]; then
+				PRISM_LOG_FILE_EXT=".$PRISM_LOG_FILE_ARGS"
+			else
+				PRISM_LOG_FILE_EXT=""
+			fi
+			PRISM_LOG_FILE="$PRISM_LOG_DIR"/"$PRISM_MODEL_DIR_NAME"."$PRISM_LOG_FILE_MODEL"."$PRISM_PROPERTY_NAME""$PRISM_LOG_FILE_EXT.log"
+			prism $PRISM_MODEL_FILE $PRISM_PROPERTY $BASE_PRISM_ARGS $PRISM_ARGS "$@" >& $PRISM_LOG_FILE
+		else
+			prism $PRISM_MODEL_FILE $PRISM_PROPERTY $BASE_PRISM_ARGS $PRISM_ARGS "$@"
+		fi
+		
+	done # args list loop
+
+done # model loop
+
+done # property loop
+

@@ -1,0 +1,20 @@
+zeroconf.nm -const N=20,K=2,reset=true
+zeroconf.nm -const N=20,K=4,reset=true
+zeroconf.nm -const N=20,K=6,reset=true
+zeroconf.nm -const N=20,K=8,reset=true
+
+zeroconf.nm -const N=1000,K=2,reset=true
+zeroconf.nm -const N=1000,K=4,reset=true
+zeroconf.nm -const N=1000,K=6,reset=true
+zeroconf.nm -const N=1000,K=8,reset=true
+
+zeroconf.nm -const N=20,K=2,reset=false
+zeroconf.nm -const N=20,K=4,reset=false
+zeroconf.nm -const N=20,K=6,reset=false
+zeroconf.nm -const N=20,K=8,reset=false
+
+zeroconf.nm -const N=1000,K=2,reset=false
+zeroconf.nm -const N=1000,K=4,reset=false
+zeroconf.nm -const N=1000,K=6,reset=false
+zeroconf.nm -const N=1000,K=8,reset=false
+

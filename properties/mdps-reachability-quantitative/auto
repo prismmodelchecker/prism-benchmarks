@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export PATH=~/prism-reach/bin:"$PATH"
+#./prism-benchmark consensus logs pow -s -pow
+#./prism-benchmark consensus logs jac -s -jac
+#./prism-benchmark consensus logs gs -s -gs
+#./prism-benchmark consensus logs bgs -s -bgs
+
+./prism-benchmark firewire_dl logs pow -s -pow
+./prism-benchmark firewire_dl logs jac -s -jac
+./prism-benchmark firewire_dl logs gs -s -gs
+./prism-benchmark firewire_dl logs bgs -s -bgs
+

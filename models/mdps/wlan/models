@@ -1,0 +1,8 @@
+wlan0.nm -const COL=0
+wlan1.nm -const COL=0
+wlan2.nm -const COL=0
+wlan3.nm -const COL=0
+wlan4.nm -const COL=0
+wlan5.nm -const COL=0
+wlan6.nm -const COL=0
+

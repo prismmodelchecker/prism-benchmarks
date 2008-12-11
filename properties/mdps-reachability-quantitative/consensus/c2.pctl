@@ -1,0 +1,3 @@
+// C2 (minimum probability that the protocol finishes with all coins equal to v=1
+Pmin=? [ F "finished"&"all_coins_equal_1" ]
+
