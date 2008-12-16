@@ -1,0 +1,15 @@
+nand.pm -const N=20,K=1
+nand.pm -const N=20,K=2
+nand.pm -const N=20,K=3
+nand.pm -const N=20,K=4
+
+nand.pm -const N=40,K=1
+nand.pm -const N=40,K=2
+nand.pm -const N=40,K=3
+nand.pm -const N=40,K=4
+
+nand.pm -const N=60,K=1
+nand.pm -const N=60,K=2
+nand.pm -const N=60,K=3
+nand.pm -const N=60,K=4
+

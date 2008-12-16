@@ -1,0 +1,45 @@
+PRISM
+=====
+
+Version: 3.2.dev
+Date: Tue Dec 16 14:11:37 GMT 2008
+Hostname: bokonon
+Command line: prism ./herman/herman13.pm ./herman/true.pctl
+
+Parsing model file "./herman/herman13.pm"...
+
+Parsing properties file "./herman/true.pctl"...
+
+1 property:
+(1) true
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.018 seconds.
+
+Type:        DTMC
+Modules:     process1 process2 process3 process4 process5 process6 process7 process8 process9 process10 process11 process12 process13 
+Variables:   x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12 x13 
+
+States:      8192 (8192 initial)
+Transitions: 1594324
+
+Transition matrix: 599 nodes (8 terminal), 1594324 minterms, vars: 13r/13c
+State rewards (1:"steps"): 1 nodes (1 terminal), 8192 minterms
+
+-------------------------------------------
+
+Model checking: true
+
+Time for model checking: 0.0 seconds.
+
+Number of satisfying states: 8192 (all)
+
+Result: true (property satisfied in all states)
+

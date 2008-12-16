@@ -1,0 +1,20 @@
+egl20.pm -const N=5,L=2
+egl20.pm -const N=5,L=4
+egl20.pm -const N=5,L=6
+egl20.pm -const N=5,L=8
+
+egl20.pm -const N=10,L=2
+egl20.pm -const N=10,L=4
+egl20.pm -const N=10,L=6
+egl20.pm -const N=10,L=8
+
+egl20.pm -const N=15,L=2
+egl20.pm -const N=15,L=4
+egl20.pm -const N=15,L=6
+egl20.pm -const N=15,L=8
+
+egl20.pm -const N=20,L=2
+egl20.pm -const N=20,L=4
+egl20.pm -const N=20,L=6
+egl20.pm -const N=20,L=8
+

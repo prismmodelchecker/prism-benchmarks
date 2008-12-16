@@ -1,0 +1,4 @@
+// Probability that the sender does not report a successful transmission
+// (property 1 from [DJJL01])
+P=? [ F s=5 ]
+

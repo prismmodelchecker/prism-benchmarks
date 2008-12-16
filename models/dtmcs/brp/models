@@ -1,0 +1,15 @@
+brp.pm -const N=16,MAX=2
+brp.pm -const N=16,MAX=3
+brp.pm -const N=16,MAX=4
+brp.pm -const N=16,MAX=5
+
+brp.pm -const N=32,MAX=2
+brp.pm -const N=32,MAX=3
+brp.pm -const N=32,MAX=4
+brp.pm -const N=32,MAX=5
+
+brp.pm -const N=64,MAX=2
+brp.pm -const N=64,MAX=3
+brp.pm -const N=64,MAX=4
+brp.pm -const N=64,MAX=5
+

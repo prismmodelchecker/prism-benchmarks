@@ -1,0 +1,2 @@
+// Expected time until party B knows a pair of secrets
+R{"time_B_knows"}=? [ F phase=4 ]

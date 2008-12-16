@@ -1,0 +1,4 @@
+// Probability that the sender reports an uncertainty on the success of the transmission
+// (property 2 from [DJJL01])
+P=? [ F s=5 & srep=2 ]
+

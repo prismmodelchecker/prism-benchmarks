@@ -1,0 +1,50 @@
+PRISM
+=====
+
+Version: 3.2.dev
+Date: Tue Dec 16 14:12:11 GMT 2008
+Hostname: bokonon
+Command line: prism ./brp/brp.pm -const N=16,MAX=4 ./brp/true.pctl
+
+Parsing model file "./brp/brp.pm"...
+
+Parsing properties file "./brp/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: N=16, MAX=4
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 109 iterations in 0.09 seconds (average 0.000826, setup 0.00)
+
+Time for model construction: 0.124 seconds.
+
+Type:        DTMC
+Modules:     sender receiver checker channelK channelL 
+Variables:   s srep nrtr i bs s_ab fs ls r rrep fr lr br r_ab recv T k l 
+
+States:      1095 (1 initial)
+Transitions: 1406
+
+Transition matrix: 2109 nodes (6 terminal), 1406 minterms, vars: 33r/33c
+
+Error: Model contains 37 deadlock states.
+The first 10 deadlock states are displayed below. To view them all use the -v switch.
+1:(0,1,4,1,false,false,true,false,0,0,false,false,false,false,false,true,0,0)
+2:(0,1,4,1,false,false,true,false,0,0,true,false,false,true,true,true,0,0)
+3:(0,1,4,2,true,false,false,false,0,0,false,false,true,false,true,true,0,0)
+4:(0,1,4,2,true,false,false,false,0,0,true,false,false,true,true,true,0,0)
+5:(0,1,4,3,false,false,false,false,0,0,false,false,false,true,true,true,0,0)
+6:(0,1,4,3,false,false,false,false,0,0,false,false,true,false,true,true,0,0)
+7:(0,1,4,4,true,false,false,false,0,0,false,false,false,true,true,true,0,0)
+8:(0,1,4,4,true,false,false,false,0,0,false,false,true,false,true,true,0,0)
+9:(0,1,4,5,false,false,false,false,0,0,false,false,false,true,true,true,0,0)
+10:(0,1,4,5,false,false,false,false,0,0,false,false,true,false,true,true,0,0)
+
+Tip: Use the -fixdl switch to automatically add self-loops in deadlock states.

@@ -1,0 +1,2 @@
+// Probability that less than percent of outputs are erroneous
+P=? [ F s=4 & z/N<0.1 ]

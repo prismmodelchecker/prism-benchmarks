@@ -1,0 +1,3 @@
+// Expected number of steps until termination
+R=? [ F "stable" ]
+

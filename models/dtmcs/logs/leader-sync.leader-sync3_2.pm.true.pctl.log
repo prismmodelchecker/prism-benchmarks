@@ -1,0 +1,45 @@
+PRISM
+=====
+
+Version: 3.2.dev
+Date: Tue Dec 16 14:11:53 GMT 2008
+Hostname: bokonon
+Command line: prism ./leader-sync/leader-sync3_2.pm ./leader-sync/true.pctl
+
+Parsing model file "./leader-sync/leader-sync3_2.pm"...
+
+Parsing properties file "./leader-sync/true.pctl"...
+
+1 property:
+(1) true
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 5 iterations in 0.00 seconds (average 0.000400, setup 0.00)
+
+Time for model construction: 0.02 seconds.
+
+Type:        DTMC
+Modules:     counter process1 process2 process3 
+Variables:   c s1 u1 v1 p1 s2 u2 v2 p2 s3 u3 v3 p3 
+
+States:      26 (1 initial)
+Transitions: 33
+
+Transition matrix: 408 nodes (3 terminal), 33 minterms, vars: 16r/16c
+Transition rewards (1:"num_rounds"): 40 nodes (2 terminal), 8 minterms
+
+-------------------------------------------
+
+Model checking: true
+
+Time for model checking: 0.0 seconds.
+
+Number of satisfying states: 26 (all)
+
+Result: true (property satisfied in all states)
+

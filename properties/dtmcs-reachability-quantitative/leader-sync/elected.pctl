@@ -1,0 +1,3 @@
+// Probability that a leader is eventually elected
+P=? [ F "elected" ]
+

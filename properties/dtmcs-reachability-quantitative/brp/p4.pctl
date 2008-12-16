@@ -1,0 +1,3 @@
+// Probability that the receiver does not receive any chunk when the sender did try to send a chunk
+// (property 4 from [DJJL01])
+P=? [ F !(srep=0) & !recv ]

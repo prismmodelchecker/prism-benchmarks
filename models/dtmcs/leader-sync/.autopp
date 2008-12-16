@@ -1,0 +1,9 @@
+#!/bin/csh
+
+foreach N ( 3 4 5 6 )
+  foreach K ( 2 3 4 5 6 8 )
+    echo "Generating for N=$N, K=$K"
+    prismpp .leader-syncN_K.pm.pp $N $K >! leader-sync"$N"_"$K".pm
+    unix2dos leader-sync"$N"_"$K".pm
+  end
+end
