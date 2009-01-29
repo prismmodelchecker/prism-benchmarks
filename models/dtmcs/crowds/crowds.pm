@@ -5,17 +5,14 @@
 // Change everything marked CWDSIZ when changing the size of the crowd
 // Change everything marked CWDMAX when increasing max size of the crowd
 
-probabilistic
+dtmc
 
 // Probability of forwarding
-const double    PF = 0.8;
-const double notPF = 0.2;  // must be 1-PF
+const double PF = 0.8;
 
 // Probability that a crowd member is bad
 const double  badC = 0.091;
 // const double  badC = 0.167;
-const double goodC = 0.909;  // must be 1-badC
-// const double goodC = 0.833;  // must be 1-badC
 
 const int TotalRuns; // Total number of protocol runs to analyze
 const int CrowdSize; // CWDSIZ: actual number of good crowd members
@@ -72,12 +69,12 @@ module crowds
 	// CROWD MEMBERS
 	// Good or bad crowd member?
 	[] !good & !bad & !deliver & run ->
-	              goodC : (good'=true) & (recordLast'=true) & (run'=false) +
+	             1-badC : (good'=true) & (recordLast'=true) & (run'=false) +
 	               badC : (bad'=true)  & (badObserve'=true) & (run'=false);
 
 	// GOOD MEMBERS
 	// Forward with probability PF, else deliver
-	[] good & !deliver & run -> PF : (good'=false) + notPF : (deliver'=true);
+	[] good & !deliver & run -> PF : (good'=false) + 1-PF : (deliver'=true);
 	// Record the last crowd member who touched the msg;
 	// all good members may appear with equal probability
 	//    Note: This is backward.  In the real protocol, each honest
