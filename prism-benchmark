@@ -39,12 +39,26 @@ while [[ "$1" =~ "-.+" ]]; do
 			done < "$PRISM_ARGS_FILE"
 		fi
 	fi
+	# executable
+	if [ "$arg" = "-exec" ]; then
+		if [ "$1" = "" ]; then
+			echo "Error: No argument for -exec switch."
+			exit
+		fi
+		PRISM=$1
+		shift
+	fi
 done
 
 # Create dummy args array if none provided
 if [ ${#PRISM_ARGS_ARRAY[*]} = 0 ]; then
 	unset PRISM_ARGS_ARRAY
 	PRISM_ARGS_ARRAY[0]=""
+fi
+
+# Default exectable is prism, if no other specified with -exec
+if [ "$PRISM" = "" ]; then
+	PRISM=prism
 fi
 
 # Check args
@@ -151,9 +165,9 @@ for PRISM_MODEL in "${PRISM_MODELS[@]}"; do
 				PRISM_LOG_FILE_EXT=""
 			fi
 			PRISM_LOG_FILE="$PRISM_LOG_DIR"/"$PRISM_MODEL_DIR_NAME"."$PRISM_LOG_FILE_MODEL"."$PRISM_PROPERTY_NAME""$PRISM_LOG_FILE_EXT.log"
-			prism $PRISM_MODEL_FILE $PRISM_PROPERTY $BASE_PRISM_ARGS $PRISM_ARGS "$@" >& $PRISM_LOG_FILE
+			$PRISM $PRISM_MODEL_FILE $PRISM_PROPERTY $BASE_PRISM_ARGS $PRISM_ARGS "$@" >& $PRISM_LOG_FILE
 		else
-			prism $PRISM_MODEL_FILE $PRISM_PROPERTY $BASE_PRISM_ARGS $PRISM_ARGS "$@"
+			$PRISM $PRISM_MODEL_FILE $PRISM_PROPERTY $BASE_PRISM_ARGS $PRISM_ARGS "$@"
 		fi
 		
 	done # args list loop
