@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Process any switches
-while [[ "$1" =~ "-.+" ]]; do
-	arg="$1"
+while [[ "$1" =~ "^-.+" ]]; do
+	echo $arg
 	shift
 	# logs directory
 	if [ "$arg" = "-logs" ]; then
@@ -68,12 +68,13 @@ if [ "$1" = "" ]; then
 	echo
 	echo "Options:"
 	echo " * -logs <dir> : specify location to put logs"
-	echo " * -args <file> : specify file containing list of "
+	echo " * -args <file> : specify file containing lists of arguments"
+	echo " * -exec <file> : specify executable to run"
 	echo
 	exit
 fi
 
-# Get property/properties
+# Get property/properties and working directory
 # If arg is a directory, find all pctl/csl files
 # (NB: this curently breaks if there are spaces in file/dir names)
 if [ -d "$1" ]; then
@@ -81,20 +82,25 @@ if [ -d "$1" ]; then
 	#for PRISM_PROPERTY in "${PRISM_PROPERTIES[@]}"; do
 	#	echo $PRISM_PROPERTY
 	#done
+	PRISM_THIS_DIR="$1"
 else
 	PRISM_PROPERTIES=("$1")
 	if [ ! -e "$1" ]; then
 	 echo Error: Property \"$1\" does not exist
 	 exit
 	fi
+	PRISM_THIS_DIR=`dirname "$1"`
 fi
 shift
 
+# Create dummy properties array if none provided
+if [ ${#PRISM_PROPERTIES[*]} = 0 ]; then
+	unset PRISM_PROPERTIES
+	PRISM_PROPERTIES[0]="dummy.pctl"
+fi
+
 # Loop through properties...
 for PRISM_PROPERTY in "${PRISM_PROPERTIES[@]}"; do
-
-# Get working directory
-PRISM_THIS_DIR=`dirname "$PRISM_PROPERTY"`
 
 # Read models dir in from file (or use cwd)
 if [ -e "$PRISM_THIS_DIR"/models_dir ]; then
@@ -103,8 +109,8 @@ else
 	PRISM_MODEL_DIR="$PRISM_THIS_DIR"
 fi
 if [ ! -d "$PRISM_MODEL_DIR" ]; then
- echo Error: Models directory \"$PRISM_MODEL_DIR\" does not exist
- exit
+	echo Error: Models directory \"$PRISM_MODEL_DIR\" does not exist
+	exit
 fi
 
 # Read models in from file
@@ -149,7 +155,11 @@ for PRISM_MODEL in "${PRISM_MODELS[@]}"; do
 
 	PRISM_MODEL_FILE="$PRISM_MODEL_DIR"/"$PRISM_MODEL"
 	PRISM_MODEL_DIR_NAME="`readlink -e $PRISM_MODEL_DIR | xargs basename`"
-	PRISM_PROPERTY_NAME=`basename $PRISM_PROPERTY`
+	if [ "$PRISM_PROPERTY" != "" ]; then
+		PRISM_PROPERTY_NAME=`basename $PRISM_PROPERTY`
+	else
+		PRISM_PROPERTY_NAME=""
+	fi
 
 	# Loop through arguments array...
 	for PRISM_ARGS in "${PRISM_ARGS_ARRAY[@]}"; do
