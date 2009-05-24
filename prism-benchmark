@@ -2,6 +2,7 @@
 
 # Process any switches
 while [[ "$1" =~ "^-.+" ]]; do
+	arg="$1"
 	echo $arg
 	shift
 	# logs directory
