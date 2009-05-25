@@ -3,7 +3,6 @@
 # Process any switches
 while [[ "$1" =~ "^-.+" ]]; do
 	arg="$1"
-	echo $arg
 	shift
 	# logs directory
 	if [ "$arg" = "-logs" ]; then
@@ -97,7 +96,7 @@ shift
 # Create dummy properties array if none provided
 if [ ${#PRISM_PROPERTIES[*]} = 0 ]; then
 	unset PRISM_PROPERTIES
-	PRISM_PROPERTIES[0]="dummy.pctl"
+	PRISM_PROPERTIES[0]=""
 fi
 
 # Loop through properties...
