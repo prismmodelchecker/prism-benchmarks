@@ -113,7 +113,7 @@ if [ -d "$1" ]; then
 	fi
 else
 	PRISM_THIS_DIR=`dirname "$1"`
-	PRISM_PROPERTIES=("$1")
+	PRISM_PROPERTIES=(`basename "$1"`)
 	if [ ! -e "$1" ]; then
 	 echo Error: Property \"$1\" does not exist
 	 exit
@@ -190,7 +190,8 @@ for PRISM_MODEL in "${PRISM_MODELS[@]}"; do
 echo Model: "$PRISM_MODEL"
 
 	PRISM_MODEL_FILE="$PRISM_MODEL_DIR"/"$PRISM_MODEL"
-	PRISM_MODEL_DIR_NAME="`readlink -e $PRISM_MODEL_DIR | xargs basename`"
+	#PRISM_MODEL_DIR_NAME="`readlink -e $PRISM_MODEL_DIR | xargs basename`"
+	PRISM_MODEL_DIR_NAME="`echo $PRISM_MODEL_DIR | xargs basename`"
 	#if [ "$PRISM_PROPERTY" != "" ]; then
 	#	PRISM_PROPERTY_NAME=`basename $PRISM_PROPERTY`
 	#else
