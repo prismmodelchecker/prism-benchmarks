@@ -5,7 +5,7 @@
 
 // reset or noreset model
 const bool reset;
-const int T;
+const int deadline;
 
 //-------------------------------------------------------------
 
@@ -55,7 +55,7 @@ mdp
 // VARIABLES
 const int N; // number of abstract hosts
 const int K; // number of probes to send
-const double loss =0.1; // probability of message loss
+const double loss = 0.1; // probability of message loss
 
 // PROBABILITIES
 const double old = N/65024; // probability pick an ip address being used
@@ -261,9 +261,9 @@ endmodule
 // timer
 module timer
 
-	t : [0..T+1];
+	t : [0..deadline+1];
 	
-	[time] t<=T -> (t'=min(t+1,T+1));
-	[done] l=4 -> (t'=T+1);
+	[time] t<=deadline -> (t'=min(t+1,deadline+1));
+	[done] l=4 -> (t'=deadline+1);
 	
 endmodule
