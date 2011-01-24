@@ -1,0 +1,4 @@
+const double T;
+
+// expected number of customers in the network at time T
+R=?[I=T]

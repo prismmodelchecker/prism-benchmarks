@@ -1,0 +1,11 @@
+tandem.sm -const c=5
+tandem.sm -const c=7
+tandem.sm -const c=15	
+tandem.sm -const c=31	
+tandem.sm -const c=63
+tandem.sm -const c=127
+tandem.sm -const c=255
+tandem.sm -const c=511
+tandem.sm -const c=1023
+tandem.sm -const c=2047	
+tandem.sm -const c=4095

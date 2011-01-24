@@ -1,0 +1,10 @@
+const double T;
+
+// The probability network becomes full in T time units
+P=? [ true U<=T sc=c & sm=c & ph=2 ]
+
+// The probability first queue becomes full in T time units
+P=? [ true U<=T sc=c ]
+
+// The probability of leaving a situation where the second queue is entirely populated within T time units
+P=? [ sm=c U<=T sm<c  ]
