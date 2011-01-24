@@ -1,0 +1,10 @@
+cluster.sm -const N=2
+cluster.sm -const N=4
+cluster.sm -const N=8
+cluster.sm -const N=16
+cluster.sm -const N=32
+cluster.sm -const N=64
+cluster.sm -const N=128
+cluster.sm -const N=256
+cluster.sm -const N=512
+
