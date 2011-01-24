@@ -1,0 +1,6 @@
+// Time bound
+const double T;
+
+// Probability that station 1 will be polled within T time units
+P=?[ true U<=T (s=1 & a=0) ]
+

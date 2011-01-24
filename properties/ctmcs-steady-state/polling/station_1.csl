@@ -1,0 +1,2 @@
+// Probability that in the long run station 1 is awaiting service 
+S=? [ s1=1 & !(s=1 & a=1) ]

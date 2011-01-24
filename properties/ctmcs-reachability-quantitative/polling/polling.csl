@@ -1,0 +1,2 @@
+// Probability that station 1 is served before station 2
+P=? [ !(s=2 & a=1) U (s=1 & a=1) ]
