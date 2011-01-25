@@ -1,0 +1,4 @@
+const double T;
+
+// The probability of facing insufficient QoS after T time units
+P=? [ true U[T,T] !"minimum" ]

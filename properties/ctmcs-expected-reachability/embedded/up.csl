@@ -1,0 +1,2 @@
+// Expected time spent in "up" before "down"
+R{"up"}=? [ F "down" ]

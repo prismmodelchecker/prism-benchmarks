@@ -1,0 +1,6 @@
+const double T;
+
+// The probability of going from minimum QoS to premium QoS
+// within T time units without violating the minimum QoS constraint along the way
+P=? [ "minimum" U<=T "premium"  ]
+

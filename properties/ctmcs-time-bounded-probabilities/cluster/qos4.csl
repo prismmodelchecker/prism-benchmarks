@@ -1,0 +1,4 @@
+const double T;
+
+// The probability that it takes more than T time units to recover from insufficient QoS
+P=? [ !"minimum" U>=T "minimum" ]

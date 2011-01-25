@@ -1,0 +1,4 @@
+const double T; // time bound
+
+// Probability of any failure occurring within T hours
+P=? [ true U<=(T*3600) "down" ]

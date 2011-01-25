@@ -1,0 +1,2 @@
+// Long-run probability of io failure
+P=? [ !"down" U "fail_io" ]

@@ -1,0 +1,4 @@
+const double T; // time bound
+
+// Expected time spent in "up" by time T (hours)
+R{"up"}=? [ C<=(T*3600) ]

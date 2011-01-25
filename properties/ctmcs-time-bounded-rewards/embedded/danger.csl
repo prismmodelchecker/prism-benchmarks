@@ -1,0 +1,4 @@
+const double T; // time bound
+
+// Expected time spent in "danger" by time T (hours)
+R{"danger"}=? [ C<=(T*3600) ]

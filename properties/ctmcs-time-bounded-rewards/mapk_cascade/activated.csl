@@ -1,0 +1,4 @@
+const double T; // time bound
+
+// the expected amount of activated MAPK at time T
+R{"activated"}=?[ I=T ]

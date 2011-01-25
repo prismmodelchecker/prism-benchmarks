@@ -1,6 +1,4 @@
 const double T; // time bound
 
-// the expected amount of activated MAPK at time T
-R{"activated"}=?[ I=T ]
 //the expected number of reactions between MAPK and MAKK by time T
 R{"reactions"}=?[ C<=T ]
