@@ -197,15 +197,18 @@ formula kA = ( (b0=L  & b20=L)
 			 | (b18=L & b38=L)
 			 | (b19=L & b39=L));
 
-// rewards
-
-rewards "time_B_knows"
-	[receiveA] true : (!kB?1:0);
-	[receiveB] true : (!kB?1:0);
-endrewards
-
 // labels
-
 label "knowB" = kB;
 label "knowA" = kA;
 
+// reward structures
+
+// messages from B that A needs to knows a pair once B knows a pair
+rewards "messages_A_needs"
+	[receiveA] kB & !kA : 1;
+endrewards
+
+// messages from A that B needs to knows a pair once A knows a pair
+rewards "messages_B_needs"
+	[receiveA] kA & !kB : 1;
+endrewards

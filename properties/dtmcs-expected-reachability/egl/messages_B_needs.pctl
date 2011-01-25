@@ -1,0 +1,2 @@
+// The expected number of messages from A that B needs to knows a pair once A knows a pair
+R{"messages_B_needs"}=?[ F phase=4  ]
