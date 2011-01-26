@@ -1,0 +1,2 @@
+// minimum expected time for all messages to be sent
+R{"time"}min=?[ F "all_delivered" ]

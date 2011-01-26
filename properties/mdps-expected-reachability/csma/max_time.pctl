@@ -1,0 +1,2 @@
+// maximum expected time for all messages to be sent
+R{"time"}max=?[ F "all_delivered" ]
