@@ -1,0 +1,2 @@
+// maximum expected collisions before both stations to send correctly
+R{"collisions"}max=? [ F s1=12 & s2=12 ];
