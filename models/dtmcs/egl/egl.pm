@@ -20,7 +20,9 @@ dtmc
 // note we have included the case when B stops if he/she thinks that the protocol has reached 
 // a state where he/she has an advantage
 
-const int N; // number of secrets the party sends
+// currently, this model only works for N up to 20
+
+const int N; // number of pairs of secrets the party sends
 const int L; // number of bits in each secret
 
 module counter
