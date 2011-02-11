@@ -1,7 +1,7 @@
-embedded.sm -const c=2
-embedded.sm -const c=3
-embedded.sm -const c=4
-embedded.sm -const c=5
-embedded.sm -const c=6
-embedded.sm -const c=7
-embedded.sm -const c=8
+embedded.sm -const MAX_COUNT=2
+embedded.sm -const MAX_COUNT=3
+embedded.sm -const MAX_COUNT=4
+embedded.sm -const MAX_COUNT=5
+embedded.sm -const MAX_COUNT=6
+embedded.sm -const MAX_COUNT=7
+embedded.sm -const MAX_COUNT=8

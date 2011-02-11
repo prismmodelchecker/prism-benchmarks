@@ -1,11 +1,11 @@
-fms.sm -const t=1
-fms.sm -const t=2
-fms.sm -const t=3
-fms.sm -const t=4
-fms.sm -const t=5
-fms.sm -const t=6
-fms.sm -const t=7
-fms.sm -const t=8
-fms.sm -const t=9
-fms.sm -const t=10
+fms.sm -const n=1
+fms.sm -const n=2
+fms.sm -const n=3
+fms.sm -const n=4
+fms.sm -const n=5
+fms.sm -const n=6
+fms.sm -const n=7
+fms.sm -const n=8
+fms.sm -const n=9
+fms.sm -const n=10
 
