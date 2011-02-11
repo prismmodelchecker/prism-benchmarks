@@ -56,6 +56,15 @@ while [[ "$1" =~ ^-.+ ]]; do
 		PRISM=$1
 		shift
 	fi
+	# specific single model
+	if [ "$arg" = "-model" ]; then
+		if [ "$1" = "" ]; then
+			echo "Error: No argument for -model switch."
+			exit
+		fi
+		PRISM_MODEL_SINGLE=$1
+		shift
+	fi
 done
 
 # Create dummy args array if none provided
@@ -147,33 +156,40 @@ if [ ! -d "$PRISM_MODEL_DIR" ]; then
 	exit
 fi
 
-# Read models in from file
-# (if no local file, look in models dir)
-# (if neither, do ls)
-if [ -e "$PRISM_THIS_DIR"/models ]; then
-	PRISM_MODELS_LIST_FILE="$PRISM_THIS_DIR"/models
+# Get list of models
+# OPTION 1: Use a single model, specified with the -model switch
+if [ "$PRISM_MODEL_SINGLE" != "" ]; then
+	PRISM_MODELS=( "$PRISM_MODEL_SINGLE" )
 else
-	PRISM_MODELS_LIST_FILE="$PRISM_MODEL_DIR"/models
-fi
-if [ -e "$PRISM_MODELS_LIST_FILE" ]; then
-	unset PRISM_MODELS
-	count=0
-	while read -r line ; do
-		if [ "$line" != "" ]; then
-			if [[ ! ( "$line" =~ "#.+" ) ]]; then
-				PRISM_MODELS[count]="$line"
-				#echo $count: $line
-				let count=$count+1
+	# OPTION 2: Read models in from file
+	# (if no local file, look in models dir)
+	# (if neither, do ls)
+	if [ -e "$PRISM_THIS_DIR"/models ]; then
+		PRISM_MODELS_LIST_FILE="$PRISM_THIS_DIR"/models
+	else
+		PRISM_MODELS_LIST_FILE="$PRISM_MODEL_DIR"/models
+	fi
+	if [ -e "$PRISM_MODELS_LIST_FILE" ]; then
+		unset PRISM_MODELS
+		count=0
+		while read -r line ; do
+			if [ "$line" != "" ]; then
+				if [[ ! ( "$line" =~ "#.+" ) ]]; then
+					PRISM_MODELS[count]="$line"
+					#echo $count: $line
+					let count=$count+1
+				fi
 			fi
-		fi
-	done < "$PRISM_MODELS_LIST_FILE"
-else
-	PRISM_MODELS=( $(cd "$PRISM_MODEL_DIR"; /bin/ls -1 *.?m) )
-	#echo ${PRISM_MODELS[@]}
-fi
-if [ ${#PRISM_MODELS[*]} = 0 ]; then
-	echo "Error: No models found."
-	exit
+		done < "$PRISM_MODELS_LIST_FILE"
+	else
+		# OPTION 3: Use all models in dir
+		PRISM_MODELS=( $(cd "$PRISM_MODEL_DIR"; /bin/ls -1 *.?m) )
+		#echo ${PRISM_MODELS[@]}
+	fi
+	if [ ${#PRISM_MODELS[*]} = 0 ]; then
+		echo "Error: No models found."
+		exit
+	fi
 fi
 
 # Read any extra args in from file
