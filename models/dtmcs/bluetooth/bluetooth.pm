@@ -1,5 +1,6 @@
 // bluetooth model for one node in inquiry scan and one in inquiry
 // constants taken from standard
+// mxd/gxn/dxp 22/06/04
 
 dtmc
 
@@ -289,7 +290,8 @@ endinit
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-rewards
+// rewards - to compute expected time
+rewards "time"
 	[time] receiver=0 & y1=1 :2048;
 	[time] receiver>0 : 1;
 endrewards
