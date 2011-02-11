@@ -9,7 +9,7 @@ control_c()
 }
 
 # Process any switches
-while [[ "$1" =~ "^-.+" ]]; do
+while [[ "$1" =~ ^-.+ ]]; do
 	arg="$1"
 	shift
 	# logs directory
