@@ -353,7 +353,7 @@ rewards "collisions"
 endrewards
 
 // reward structure for expected time
-// recall one time unit equals ASLOT(=50μs)
+// recall one time unit equals ASLOT(=50{\mu}s)
 rewards "time"
 	[time] true : 50;
 endrewards
