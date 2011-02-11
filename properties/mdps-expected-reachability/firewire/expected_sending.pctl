@@ -1,2 +1,2 @@
-// maximum expected time sending
-R{"time_sending"}max=?[F ((s1=8) & (s2=7)) | ((s1=7) & (s2=8)) ]
+// Maximum expected time spent sending before electing a leader
+R{"time_sending"}max=? [ F "done" ]

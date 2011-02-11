@@ -156,11 +156,16 @@ module node2=node1[s1=s2, s2=s1, x1=x2,
 	snd_req12=snd_req21, snd_idle12=snd_idle21, snd_ack12=snd_ack21]
 endmodule
 
+// labels
+label "done" = (s1=8 & s2=7) | (s1=7 & s2=8);
+
 // reward structures
+
 // time
 rewards "time"	
 	[time] true : 1;
 endrewards
+
 // time nodes sending
 rewards "time_sending"
 	[time] (w12>0 | w21>0) : 1;
