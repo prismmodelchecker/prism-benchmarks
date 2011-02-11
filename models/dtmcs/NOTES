@@ -1,2 +1,0 @@
-prism-benchmark -logs logs .
-grep States `ls -1rt logs/*.log`
