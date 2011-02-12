@@ -1,0 +1,48 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:29:27 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism mdps/consensus/coin2.nm -const K=2 mdps/consensus/true.pctl
+
+Parsing model file "mdps/consensus/coin2.nm"...
+
+Parsing properties file "mdps/consensus/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: K=2
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 37 iterations in 0.00 seconds (average 0.000054, setup 0.00)
+
+Time for model construction: 0.023 seconds.
+
+Type:        MDP
+Modules:     process1 process2 
+Variables:   counter pc1 coin1 pc2 coin2 
+
+States:      272 (1 initial)
+Transitions: 492
+Choices:     400
+
+Transition matrix: 365 nodes (3 terminal), 492 minterms, vars: 10r/10c/2nd
+
+-------------------------------------------
+
+Model checking: true
+Model constants: K=2
+
+Value in the initial state: true
+
+Time for model checking: 0.0 seconds.
+
+Result: true
+

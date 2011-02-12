@@ -1,0 +1,47 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:21:00 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism ctmcs/embedded/embedded.sm -const MAX_COUNT=6 ctmcs/embedded/true.pctl
+
+Parsing model file "ctmcs/embedded/embedded.sm"...
+
+Parsing properties file "ctmcs/embedded/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: MAX_COUNT=6
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 19 iterations in 0.01 seconds (average 0.000316, setup 0.00)
+
+Time for model construction: 0.027 seconds.
+
+Type:        CTMC
+Modules:     sensors proci actuators proco procm bus 
+Variables:   s i a o m count comp reqi reqo 
+
+States:      6858 (1 initial)
+Transitions: 28907
+
+Rate matrix: 1405 nodes (9 terminal), 28907 minterms, vars: 15r/15c
+
+-------------------------------------------
+
+Model checking: true
+Model constants: MAX_COUNT=6
+
+Value in the initial state: true
+
+Time for model checking: 0.0 seconds.
+
+Result: true
+

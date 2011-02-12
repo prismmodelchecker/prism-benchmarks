@@ -1,0 +1,45 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:30:03 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism mdps/csma/csma3_6.nm mdps/csma/true.pctl
+
+Parsing model file "mdps/csma/csma3_6.nm"...
+
+Parsing properties file "mdps/csma/true.pctl"...
+
+1 property:
+(1) true
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 151 iterations in 20.16 seconds (average 0.133517, setup 0.00)
+
+Time for model construction: 25.79 seconds.
+
+Type:        MDP
+Modules:     bus station1 station2 station3 
+Variables:   b y1 y2 s1 x1 bc1 cd1 s2 x2 bc2 cd2 s3 x3 bc3 cd3 
+
+States:      84856004 (1 initial)
+Transitions: 147200984
+Choices:     84988757
+
+Transition matrix: 289469 nodes (8 terminal), 147200984 minterms, vars: 57r/57c/13nd
+
+-------------------------------------------
+
+Model checking: true
+
+Value in the initial state: true
+
+Time for model checking: 0.039 seconds.
+
+Result: true
+

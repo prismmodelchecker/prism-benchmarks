@@ -1,0 +1,47 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:25:47 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism ctmcs/mapk_cascade/mapk_cascade.sm -const N=8 ctmcs/mapk_cascade/true.pctl
+
+Parsing model file "ctmcs/mapk_cascade/mapk_cascade.sm"...
+
+Parsing properties file "ctmcs/mapk_cascade/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: N=8
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 84 iterations in 157.36 seconds (average 1.873381, setup 0.00)
+
+Time for model construction: 162.077 seconds.
+
+Type:        CTMC
+Modules:     E1 E2 KPTASE KKPTASE MAPK MAPKK MAPKKK 
+Variables:   e1 e2 kptase kkptase k k_kkpp kp kp_kkpp kp_ptase kpp kpp_ptase kk kk_kkkp kkp kkp_kkkp kkp_ptase kkpp kkpp_ptase kkk kkk_e1 kkkp kkkp_e2 
+
+States:      10276461 (1 initial)
+Transitions: 125012862
+
+Rate matrix: 740276 nodes (39 terminal), 125012862 minterms, vars: 76r/76c
+
+-------------------------------------------
+
+Model checking: true
+Model constants: N=8
+
+Value in the initial state: true
+
+Time for model checking: 0.013 seconds.
+
+Result: true
+

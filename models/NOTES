@@ -1,0 +1,9 @@
+
+find dtmcs -name true.pctl -exec prism-benchmark -logs logs/dtmcs {} \;
+find ctmcs -name true.pctl -exec prism-benchmark -logs logs/ctmcs {} \;
+find mdps -name true.pctl -exec prism-benchmark -logs logs/mdps {} \;
+
+grep -i error logs/*/*
+
+grep States `ls -1rt logs/dtmcs/*.log` >| logs/dtmcs-states.txt
+

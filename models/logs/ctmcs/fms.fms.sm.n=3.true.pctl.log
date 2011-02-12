@@ -1,0 +1,47 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:21:15 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism ctmcs/fms/fms.sm -const n=3 ctmcs/fms/true.pctl
+
+Parsing model file "ctmcs/fms/fms.sm"...
+
+Parsing properties file "ctmcs/fms/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: n=3
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 25 iterations in 0.06 seconds (average 0.002480, setup 0.00)
+
+Time for model construction: 0.165 seconds.
+
+Type:        CTMC
+Modules:     machine1 machine2 machine3 machine12 
+Variables:   P1 P1wM1 P1M1 P1d P1s P1wP2 M1 P2 P2wM2 P2M2 P2s P2wP1 M2 P3 P3M2 P3s P12 P12wM3 P12M3 P12s M3 
+
+States:      6520 (1 initial)
+Transitions: 37394
+
+Rate matrix: 10896 nodes (22 terminal), 37394 minterms, vars: 40r/40c
+
+-------------------------------------------
+
+Model checking: true
+Model constants: n=3
+
+Value in the initial state: true
+
+Time for model checking: 0.0010 seconds.
+
+Result: true
+

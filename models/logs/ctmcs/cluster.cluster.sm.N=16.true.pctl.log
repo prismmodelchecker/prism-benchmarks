@@ -1,0 +1,47 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:20:26 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism ctmcs/cluster/cluster.sm -const N=16 ctmcs/cluster/true.pctl
+
+Parsing model file "ctmcs/cluster/cluster.sm"...
+
+Parsing properties file "ctmcs/cluster/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: N=16
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 37 iterations in 0.01 seconds (average 0.000189, setup 0.00)
+
+Time for model construction: 0.034 seconds.
+
+Type:        CTMC
+Modules:     Left Right Repairman Line ToLeft ToRight 
+Variables:   left_n left right_n right r line line_n toleft toleft_n toright toright_n 
+
+States:      10132 (1 initial)
+Transitions: 48160
+
+Rate matrix: 1899 nodes (23 terminal), 48160 minterms, vars: 19r/19c
+
+-------------------------------------------
+
+Model checking: true
+Model constants: N=16
+
+Value in the initial state: true
+
+Time for model checking: 0.0 seconds.
+
+Result: true
+

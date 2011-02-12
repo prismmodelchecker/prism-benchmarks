@@ -1,0 +1,47 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:12:52 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism dtmcs/bluetooth/bluetooth.pm -const mrec=1 dtmcs/bluetooth/true.pctl -fixdl
+
+Parsing model file "dtmcs/bluetooth/bluetooth.pm"...
+
+Parsing properties file "dtmcs/bluetooth/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: mrec=1
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 50 iterations in 0.28 seconds (average 0.005620, setup 0.00)
+
+Time for model construction: 30.452 seconds.
+
+Type:        DTMC
+Modules:     receiver1 frequency1 sender_frequency replies 
+Variables:   y1 receiver freq1 train1 z1 f1 t1 send freq train c rep rec 
+
+States:      3411945339 (536870912 initial)
+Transitions: 5035263739
+
+Transition matrix: 14727 nodes (4 terminal), 5035263739 minterms, vars: 52r/52c
+
+-------------------------------------------
+
+Model checking: true
+Model constants: mrec=1
+
+Value in first initial state: true
+
+Time for model checking: 0.0040 seconds.
+
+Result: true
+

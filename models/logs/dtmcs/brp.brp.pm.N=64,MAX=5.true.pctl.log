@@ -1,0 +1,49 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:13:58 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism dtmcs/brp/brp.pm -const 'N=64,MAX=5' dtmcs/brp/true.pctl -fixdl
+
+Parsing model file "dtmcs/brp/brp.pm"...
+
+Parsing properties file "dtmcs/brp/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: N=64,MAX=5
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 399 iterations in 0.20 seconds (average 0.000514, setup 0.00)
+
+Time for model construction: 0.256 seconds.
+
+Type:        DTMC
+Modules:     sender receiver checker channelK channelL 
+Variables:   s srep nrtr i bs s_ab fs ls r rrep fr lr br r_ab recv T k l 
+
+Warning: 134 deadlock states detected; adding self-loops in these states...
+
+States:      5192 (1 initial)
+Transitions: 6915
+
+Transition matrix: 2410 nodes (6 terminal), 6915 minterms, vars: 35r/35c
+
+-------------------------------------------
+
+Model checking: true
+Model constants: N=64,MAX=5
+
+Value in the initial state: true
+
+Time for model checking: 0.0010 seconds.
+
+Result: true
+

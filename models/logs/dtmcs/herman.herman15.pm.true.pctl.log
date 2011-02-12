@@ -1,0 +1,44 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:17:40 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism dtmcs/herman/herman15.pm dtmcs/herman/true.pctl
+
+Parsing model file "dtmcs/herman/herman15.pm"...
+
+Parsing properties file "dtmcs/herman/true.pctl"...
+
+1 property:
+(1) true
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.021 seconds.
+
+Type:        DTMC
+Modules:     process1 process2 process3 process4 process5 process6 process7 process8 process9 process10 process11 process12 process13 process14 process15 
+Variables:   x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12 x13 x14 x15 
+
+States:      32768 (32768 initial)
+Transitions: 14348908
+
+Transition matrix: 810 nodes (9 terminal), 14348908 minterms, vars: 15r/15c
+
+-------------------------------------------
+
+Model checking: true
+
+Value in first initial state: true
+
+Time for model checking: 0.0 seconds.
+
+Result: true
+

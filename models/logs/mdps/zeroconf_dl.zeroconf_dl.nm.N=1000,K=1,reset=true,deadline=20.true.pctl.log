@@ -1,0 +1,50 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 10:19:05 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism mdps/zeroconf_dl/zeroconf_dl.nm -const 'N=1000,K=1,reset=true,deadline=20' mdps/zeroconf_dl/true.pctl -fixdl
+
+Parsing model file "mdps/zeroconf_dl/zeroconf_dl.nm"...
+
+Parsing properties file "mdps/zeroconf_dl/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: reset=true,deadline=20,N=1000,K=1
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 92 iterations in 0.67 seconds (average 0.007261, setup 0.00)
+
+Time for model construction: 1.118 seconds.
+
+Type:        MDP
+Modules:     environment host0 timer 
+Variables:   b_ip7 b_ip6 b_ip5 b_ip4 b_ip3 b_ip2 b_ip1 b_ip0 n n0 n1 b z ip_mess x y coll probes mess defend ip l t 
+
+Warning: 117 deadlock states detected; adding self-loops in these states...
+
+States:      7670 (1 initial)
+Transitions: 12272
+Choices:     9845
+
+Transition matrix: 5535 nodes (6 terminal), 12272 minterms, vars: 60r/60c/8nd
+
+-------------------------------------------
+
+Model checking: true
+Model constants: reset=true,deadline=20,N=1000,K=1
+
+Value in the initial state: true
+
+Time for model checking: 0.0030 seconds.
+
+Result: true
+

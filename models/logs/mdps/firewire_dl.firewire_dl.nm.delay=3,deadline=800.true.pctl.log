@@ -1,0 +1,48 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 10:10:36 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism mdps/firewire_dl/firewire_dl.nm -const 'delay=3,deadline=800' mdps/firewire_dl/true.pctl
+
+Parsing model file "mdps/firewire_dl/firewire_dl.nm"...
+
+Parsing properties file "mdps/firewire_dl/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: deadline=800,delay=3
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 826 iterations in 1.36 seconds (average 0.001648, setup 0.00)
+
+Time for model construction: 12.645 seconds.
+
+Type:        MDP
+Modules:     abstract_firewire 
+Variables:   y x s 
+
+States:      290017 (1 initial)
+Transitions: 339865
+Choices:     327229
+
+Transition matrix: 11219 nodes (3 terminal), 339865 minterms, vars: 22r/22c/2nd
+
+-------------------------------------------
+
+Model checking: true
+Model constants: deadline=800,delay=3
+
+Value in the initial state: true
+
+Time for model checking: 0.0020 seconds.
+
+Result: true
+

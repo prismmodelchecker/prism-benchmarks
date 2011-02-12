@@ -1,0 +1,44 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:28:38 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism ctmcs/polling/poll5.sm ctmcs/polling/true.pctl
+
+Parsing model file "ctmcs/polling/poll5.sm"...
+
+Parsing properties file "ctmcs/polling/true.pctl"...
+
+1 property:
+(1) true
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 11 iterations in 0.00 seconds (average 0.000091, setup 0.00)
+
+Time for model construction: 0.021 seconds.
+
+Type:        CTMC
+Modules:     server station1 station2 station3 station4 station5 
+Variables:   s a s1 s2 s3 s4 s5 
+
+States:      240 (1 initial)
+Transitions: 800
+
+Rate matrix: 271 nodes (4 terminal), 800 minterms, vars: 9r/9c
+
+-------------------------------------------
+
+Model checking: true
+
+Value in the initial state: true
+
+Time for model checking: 0.0010 seconds.
+
+Result: true
+

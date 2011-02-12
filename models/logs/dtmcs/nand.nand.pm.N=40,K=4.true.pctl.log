@@ -1,0 +1,47 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:19:01 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism dtmcs/nand/nand.pm -const 'N=40,K=4' dtmcs/nand/true.pctl
+
+Parsing model file "dtmcs/nand/nand.pm"...
+
+Parsing properties file "dtmcs/nand/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: N=40,K=4
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 1442 iterations in 6.63 seconds (average 0.004596, setup 0.00)
+
+Time for model construction: 6.944 seconds.
+
+Type:        DTMC
+Modules:     multiplex 
+Variables:   u c s z zx zy x y 
+
+States:      3999522 (1 initial)
+Transitions: 6288542
+
+Transition matrix: 49483 nodes (898 terminal), 6288542 minterms, vars: 33r/33c
+
+-------------------------------------------
+
+Model checking: true
+Model constants: N=40,K=4
+
+Value in the initial state: true
+
+Time for model checking: 0.0040 seconds.
+
+Result: true
+

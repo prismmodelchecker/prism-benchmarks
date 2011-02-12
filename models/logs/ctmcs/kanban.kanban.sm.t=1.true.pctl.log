@@ -1,0 +1,47 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 09:22:53 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism ctmcs/kanban/kanban.sm -const t=1 ctmcs/kanban/true.pctl
+
+Parsing model file "ctmcs/kanban/kanban.sm"...
+
+Parsing properties file "ctmcs/kanban/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: t=1
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 15 iterations in 0.00 seconds (average 0.000133, setup 0.00)
+
+Time for model construction: 0.025 seconds.
+
+Type:        CTMC
+Modules:     k1 k2 k3 k4 
+Variables:   w1 x1 y1 z1 w2 x2 y2 z2 w3 x3 y3 z3 w4 x4 y4 z4 
+
+States:      160 (1 initial)
+Transitions: 616
+
+Rate matrix: 499 nodes (14 terminal), 616 minterms, vars: 16r/16c
+
+-------------------------------------------
+
+Model checking: true
+Model constants: t=1
+
+Value in the initial state: true
+
+Time for model checking: 0.0 seconds.
+
+Result: true
+

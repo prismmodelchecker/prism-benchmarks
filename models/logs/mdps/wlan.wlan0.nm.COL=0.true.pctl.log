@@ -1,0 +1,48 @@
+PRISM
+=====
+
+Version: 4.0.beta
+Date: Sat Feb 12 10:11:21 GMT 2011
+Hostname: bokonon-2.local
+Command line: prism mdps/wlan/wlan0.nm -const COL=0 mdps/wlan/true.pctl
+
+Parsing model file "mdps/wlan/wlan0.nm"...
+
+Parsing properties file "mdps/wlan/true.pctl"...
+
+1 property:
+(1) true
+
+Model constants: COL=0
+
+-------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability: 45 iterations in 0.04 seconds (average 0.000822, setup 0.00)
+
+Time for model construction: 0.123 seconds.
+
+Type:        MDP
+Modules:     medium station1 station2 
+Variables:   col c1 c2 x1 s1 slot1 backoff1 bc1 x2 s2 slot2 backoff2 bc2 
+
+States:      2954 (1 initial)
+Transitions: 5202
+Choices:     3972
+
+Transition matrix: 4173 nodes (3 terminal), 5202 minterms, vars: 33r/33c/7nd
+
+-------------------------------------------
+
+Model checking: true
+Model constants: COL=0
+
+Value in the initial state: true
+
+Time for model checking: 0.0010 seconds.
+
+Result: true
+
