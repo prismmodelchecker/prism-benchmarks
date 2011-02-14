@@ -6,4 +6,6 @@ find mdps -name true.pctl -exec prism-benchmark -logs logs/mdps {} \;
 grep -i error logs/*/*
 
 grep States `ls -1rt logs/dtmcs/*.log` >| logs/dtmcs-states.txt
+grep States `ls -1rt logs/ctmcs/*.log` >| logs/ctmcs-states.txt
+grep States `ls -1rt logs/mdps/*.log` >| logs/mdps-states.txt
 
