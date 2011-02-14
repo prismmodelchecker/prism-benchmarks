@@ -38,7 +38,7 @@ while [[ "$1" =~ ^-.+ ]]; do
 			count=0
 			while read -r line ; do
 				if [ "$line" != "" ]; then
-					if [[ ! ( "$line" =~ "#.+" ) ]]; then
+					if [[ ! ( "$line" =~ \#.+ ) ]]; then
 						PRISM_ARGS_ARRAY[count]="$line"
 						echo $count: $line
 						let count=$count+1
@@ -105,7 +105,7 @@ if [ -d "$1" ]; then
 		count=0
 		while read -r line ; do
 			if [ "$line" != "" ]; then
-				if [[ ! ( "$line" =~ "#.+" ) ]]; then
+				if [[ ! ( "$line" =~ \#.+ ) ]]; then
 					PRISM_PROPERTIES[count]="$line"
 					#echo $count: $line
 					let count=$count+1
@@ -174,7 +174,7 @@ else
 		count=0
 		while read -r line ; do
 			if [ "$line" != "" ]; then
-				if [[ ! ( "$line" =~ "#.+" ) ]]; then
+				if [[ ! ( "$line" =~ \#.+ ) ]]; then
 					PRISM_MODELS[count]="$line"
 					#echo $count: $line
 					let count=$count+1
@@ -220,9 +220,9 @@ echo Model: "$PRISM_MODEL"
 		echo $PRISM_MODEL $PRISM_PROPERTY $BASE_PRISM_ARGS $PRISM_ARGS "$@"
 		if [ "$PRISM_LOG_DIR" != "" ]; then
 			# Build name for log file
-			PRISM_LOG_FILE_MODEL="`echo "$PRISM_MODEL" | sed -E 's/-const //g' | sed -E 's/[^a-zA-Z0-9_ \.]//g' | sed -E "s/ +/./g" | sed -E 's/\.\.\///g' | sed -E 's/\//_/g'`"
-			PRISM_LOG_FILE_PROPERTY="`echo "$PRISM_PROPERTY" | sed -E 's/[^a-zA-Z0-9_ \.]//g' | sed -E 's/-const//g' | sed -E 's/ +/\./g' | sed -E 's/\.\.\///g' | sed -E 's/\//_/g'`"
-			PRISM_LOG_FILE_ARGS="`echo $PRISM_ARGS $@ | sed -E 's/[^a-zA-Z0-9_ ]//g' | sed -E 's/ +/\./g'`"
+			PRISM_LOG_FILE_MODEL="`echo "$PRISM_MODEL" | sed -E 's/-const //g' | sed -E 's/[^a-zA-Z0-9_=, \.]//g' | sed -E "s/ +/./g" | sed -E 's/\.\.\///g' | sed -E 's/\//_/g'`"
+			PRISM_LOG_FILE_PROPERTY="`echo "$PRISM_PROPERTY" | sed -E 's/[^a-zA-Z0-9_=, \.]//g' | sed -E 's/-const//g' | sed -E 's/ +/\./g' | sed -E 's/\.\.\///g' | sed -E 's/\//_/g'`"
+			PRISM_LOG_FILE_ARGS="`echo $PRISM_ARGS $@ | sed -E 's/[^a-zA-Z0-9_=, ]//g' | sed -E 's/ +/\./g'`"
 			if [ "$PRISM_LOG_FILE_ARGS" != "" ]; then
 				PRISM_LOG_FILE_EXT=".$PRISM_LOG_FILE_ARGS"
 			else
