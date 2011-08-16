@@ -114,8 +114,8 @@ if [ -d "$1" ]; then
 		done < "$PRISM_PROPERTIES_LIST_FILE"
 	else
 		echo Searching for properties in "$1"
-		PRISM_PROPERTIES=( $(cd "$PRISM_THIS_DIR"; /bin/ls -1 *.pctl *.csl 2> /dev/null) )
-		#PRISM_PROPERTIES=( $(find "$1" -name '*.pctl' -o -name '*.csl') )
+		PRISM_PROPERTIES=( $(cd "$PRISM_THIS_DIR"; /bin/ls -1 *.pctl *.csl *.props 2> /dev/null) )
+		#PRISM_PROPERTIES=( $(find "$1" -name '*.pctl' -o -name '*.csl'pctl' -o -name '*.props') )
 		#for PRISM_PROPERTY in "${PRISM_PROPERTIES[@]}"; do
 		#	echo $PRISM_PROPERTY
 		#done
