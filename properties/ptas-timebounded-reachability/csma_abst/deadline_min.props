@@ -1,0 +1,8 @@
+const int deadline;
+
+// Minimum probability that both stations have sent their packets by deadline
+// RESULT (bmax=1,deadline=1000): 0.0
+// RESULT (bmax=1,deadline=1750): 0.333328
+// RESULT (bmax=1,deadline=1800): 0.583332
+//
+Pmin=? [ F<=deadline "done" ]

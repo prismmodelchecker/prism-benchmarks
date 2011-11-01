@@ -1,0 +1,13 @@
+// RESULT: 0.78125
+Pmin=? [ F<=5000 "done" ]
+// RESULT: 0.974731
+Pmin=? [ F<=10000 "done" ]
+// RESULT: 0.997186
+Pmin=? [ F<=15000 "done" ]
+
+// RESULT: 0.0
+Pmax=? [ F<=50 "done" ]
+// RESULT: 0.25
+Pmax=? [ F<=500 "done" ]
+// RESULT: 1.0
+Pmax=? [ F<=5000 "done" ]

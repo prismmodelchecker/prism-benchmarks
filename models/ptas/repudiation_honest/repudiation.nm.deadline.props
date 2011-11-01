@@ -1,0 +1,6 @@
+// RESULT: 0.612580
+Pmin=? [ F<40 "terminated_successfully" ]
+// RESULT: 0.864915
+Pmin=? [ F<80 "terminated_successfully" ]
+// RESULT: 0.920234
+Pmin=? [ F<100 "terminated_successfully" ]

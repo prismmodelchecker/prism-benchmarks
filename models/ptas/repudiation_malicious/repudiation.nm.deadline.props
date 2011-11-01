@@ -1,0 +1,6 @@
+// RESULT: 0.1
+Pmax=? [ F<5 "gains_information" ]
+// RESULT: 0.105444
+Pmax=? [ F<10 "gains_information" ]
+// RESULT: 0.105657
+//Pmax=? [ F<20 "gains_information" ]
