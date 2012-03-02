@@ -1,2 +1,2 @@
 // Expected time (num. rounds) to elect a leader
-R{"num_rounds"}=? [ F "elected" ]
+"time": R{"num_rounds"}=? [ F "elected" ]
