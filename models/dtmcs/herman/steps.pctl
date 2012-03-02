@@ -1,3 +1,2 @@
 // Expected number of steps until termination
-"steps": R=? [ F "stable" ]
-
+"steps": R=? [ F "stable"{"init"}{max} ]
