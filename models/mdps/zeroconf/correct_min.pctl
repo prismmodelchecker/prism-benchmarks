@@ -1,2 +1,2 @@
 // Minimum probability of configuring correctly
-"correct": Pmin=? [ F (l=4 & ip=1) ];
+"correct_min": Pmin=? [ F (l=4 & ip=1) ];
