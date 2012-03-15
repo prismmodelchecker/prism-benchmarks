@@ -1,4 +1,4 @@
 const double T;
 
 // Expected time spent in "up" by time T (hours)
-"up_T": R{"up"}=? [ C<=(T*3600) ]
+"up_T": R{"up"}=? [ C<=(T*3600) ];

@@ -1,5 +1,4 @@
 const double T;
 
 // Expected number of times station1 is served
-"served": R{"served"}=?[C<=T]
-
+"served": R{"served"}=? [ C<=T ];

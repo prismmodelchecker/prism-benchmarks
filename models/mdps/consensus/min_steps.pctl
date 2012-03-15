@@ -1,3 +1,2 @@
 // Minimum expected steps to finish
-"min_steps": R{"steps"}min=? [ F "finished" ]
-
+"min_steps": R{"steps"}min=? [ F "finished" ];

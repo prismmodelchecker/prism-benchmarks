@@ -1,4 +1,4 @@
 const double T;
 
-// The probability network becomes full in T time units
-"network": P=? [ true U<=T sc=c & sm=c & ph=2 ]
+// Probability network becomes full in T time units
+"network": P=? [ F<=T sc=c & sm=c & ph=2 ];

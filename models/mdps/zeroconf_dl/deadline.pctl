@@ -1,3 +1,2 @@
 // Minimum probability of using fresh IP address within deadline
-"deadline": Pmin=?[ !(l=4 & ip=2) U t>=deadline ]
-
+"deadline": Pmin=? [ !(l=4 & ip=2) U t>=deadline ];

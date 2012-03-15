@@ -2,5 +2,4 @@ const double T;
 
 // Probability of going from minimum QoS to premium QoS
 // within T time units without violating the minimum QoS constraint along the way
-"qos3": P=? [ "minimum" U<=T "premium"  ]
-
+"qos3": P=? [ "minimum" U<=T "premium" ];

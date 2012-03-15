@@ -1,4 +1,4 @@
 const double T;
 
 // Probability of main system failure within T hours
-"main_T": P=? [ !"down" U<=(T*3600) "fail_main" ]
+"main_T": P=? [ !"down" U<=(T*3600) "fail_main" ];

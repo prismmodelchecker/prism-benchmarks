@@ -1,3 +1,2 @@
 // Minimum probability all stations send successfully before a collision with max backoff 
-"all_before": Pmin=?[ !"collision_max_backoff" U "all_delivered" ]
-
+"all_before": Pmin=? [ !"collision_max_backoff" U "all_delivered" ];

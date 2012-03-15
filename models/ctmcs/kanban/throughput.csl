@@ -1,2 +1,2 @@
 // Expected throughput of the system
-"throughput": R{"throughput"}=? [ S ]
+"throughput": R{"throughput"}=? [ S ];

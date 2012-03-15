@@ -1,2 +1,2 @@
 // Probability that less than 10 percent of outputs are erroneous
-"reliable": P=? [ F s=4 & z/N<0.1 ]
+"reliable": P=? [ F s=4 & z/N<0.1 ];

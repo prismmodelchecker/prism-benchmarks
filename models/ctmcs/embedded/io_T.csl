@@ -1,4 +1,4 @@
 const double T;
 
 // Probability of I/O failure within T hours
-"io_T": P=? [ !"down" U<=(T*3600) "fail_io" ]
+"io_T": P=? [ !"down" U<=(T*3600) "fail_io" ];

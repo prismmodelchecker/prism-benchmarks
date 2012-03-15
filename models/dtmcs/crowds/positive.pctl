@@ -1,3 +1,2 @@
 // Probability that the adversary observes the real sender more than once
-"positive": P=? [ F observe0>1  ]
-
+"positive": P=? [ F observe0>1  ];

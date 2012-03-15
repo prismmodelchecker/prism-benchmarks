@@ -1,4 +1,4 @@
 const double T;
 
-// The probability first queue becomes full in T time units
-"first_queue": P=? [ true U<=T sc=c ]
+// Probability first queue becomes full in T time units
+"first_queue": P=? [ F<=T sc=c ];

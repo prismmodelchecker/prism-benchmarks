@@ -1,2 +1,2 @@
 // Expected time to complete the inquiry phase
-"time": R=?[ F rec=mrec {"init"}{max} ]
+"time": R=? [ F rec=mrec {"init"}{max} ];

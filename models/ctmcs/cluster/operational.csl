@@ -1,4 +1,4 @@
 const double T;
 
 // Percentage of operational workstations at time T
-"operational": R{"percent_op"}=?[ I=T ]
+"operational": R{"percent_op"}=? [ I=T ];

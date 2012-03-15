@@ -1,4 +1,4 @@
 const double T;
 
 // Probability of any failure occurring within T hours
-"failure_T": P=? [ true U<=(T*3600) "down" ]
+"failure_T": P=? [ F<=(T*3600) "down" ];

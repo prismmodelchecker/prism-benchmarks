@@ -1,2 +1,2 @@
 // Expected time spent in "up" before "down"
-"up_time": R{"up"}=? [ F "down" ]
+"up_time": R{"up"}=? [ F "down" ];

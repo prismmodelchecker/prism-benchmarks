@@ -1,2 +1,2 @@
 // Long-run expected number of customers in the network
-"customers": R{"customers"}=? [ S ]
+"customers": R{"customers"}=? [ S ];

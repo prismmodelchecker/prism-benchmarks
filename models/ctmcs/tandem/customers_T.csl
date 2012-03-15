@@ -1,4 +1,4 @@
 const double T;
 
 // Expected number of customers in the network at time T
-"customers_T": R=? [ I=T ]
+"customers_T": R=? [ I=T ];

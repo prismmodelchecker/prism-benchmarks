@@ -1,2 +1,2 @@
 // Long-run probability of actuator failure
-"actuators": P=? [ !"down" U "fail_actuators" ]
+"actuators": P=? [ !"down" U "fail_actuators" ];

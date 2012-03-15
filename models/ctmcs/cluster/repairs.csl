@@ -1,4 +1,4 @@
 const double T;
 
 // Expected number of repairs by time T
-"repairs": R{"num_repairs"}=? [ C<=T ]
+"repairs": R{"num_repairs"}=? [ C<=T ];

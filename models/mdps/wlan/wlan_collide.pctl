@@ -1,4 +1,4 @@
 const int k;
 
 // Maximum probability that stations collide
-Pmax=? [ true U col=k ]
+"wlan_collide": Pmax=? [ F col=k ];

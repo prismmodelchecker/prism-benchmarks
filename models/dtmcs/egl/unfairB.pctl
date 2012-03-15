@@ -1,3 +1,2 @@
 // Probability that party B is unfairly disadvantaged
-"unfairB": P=?[ F !"knowB" & "knowA" ]
-
+"unfairB": P=? [ F !"knowB" & "knowA" ];
