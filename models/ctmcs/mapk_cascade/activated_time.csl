@@ -1,0 +1,2 @@
+// Expected time until all MAPK are activated at the same time instant
+"activated_time": R{"time"}=? [ F kpp=N ];
