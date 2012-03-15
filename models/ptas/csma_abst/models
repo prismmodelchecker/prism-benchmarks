@@ -1,1 +1,1 @@
-csma.nm -const bmax=1
+csma.nm -const K=1

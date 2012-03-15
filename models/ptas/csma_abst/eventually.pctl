@@ -1,5 +1,5 @@
 // Minimum probability that both stations eventually send their packets
-// RESULT (bmax=1): 1.0
+// RESULT (K=1): 1.0
 //
 Pmin=? [ F "done" ]
 
