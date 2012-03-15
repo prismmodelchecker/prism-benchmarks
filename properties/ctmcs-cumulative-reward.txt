@@ -8,4 +8,4 @@
 ../models/ctmcs/mapk_cascade, reactions.csl
 ../models/ctmcs/polling, served.csl
 ../models/ctmcs/polling, waiting.csl
-../models/ctmcs/tandem, customers.csl
+../models/ctmcs/tandem, customers_T.csl

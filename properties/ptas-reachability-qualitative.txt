@@ -1,3 +1,4 @@
 ../models/ptas/csma_abst, eventually.pctl
 ../models/ptas/firewire, eventually.pctl
+../models/ptas/firewire_abst, eventually.pctl
 ../models/ptas/repudiation_honest, eventually.pctl
