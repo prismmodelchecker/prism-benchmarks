@@ -1,7 +1,0 @@
-// RESULT: 6.51605e-4
-Pmax=? [ F<=100 "incorrect" ]
-// RESULT: 0.00107253
-Pmax=? [ F<=150 "incorrect" ]
-// RESULT: 0.00122154
-Pmax=? [ F<=200 "incorrect" ]
-

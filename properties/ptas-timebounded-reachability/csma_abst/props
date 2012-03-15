@@ -1,7 +1,0 @@
-deadline_min.props -const deadline=1000
-deadline_min.props -const deadline=1750
-deadline_min.props -const deadline=1800
-
-deadline_max.props -const deadline=1000
-deadline_max.props -const deadline=1750
-deadline_max.props -const deadline=1800

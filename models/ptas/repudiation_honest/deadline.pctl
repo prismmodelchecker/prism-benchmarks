@@ -1,0 +1,6 @@
+const int T;
+
+// RESULT (T=40): 0.612580
+// RESULT (T=80): 0.864915
+// RESULT (T=100): 0.920234
+Pmin=? [ F<T "terminated_successfully" ]

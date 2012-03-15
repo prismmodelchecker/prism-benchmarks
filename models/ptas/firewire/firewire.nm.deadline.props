@@ -1,8 +1,0 @@
-// RESULT: 0.5
-Pmin=? [ F<=2500 "done" ]
-// RESULT: 0.78125
-Pmin=? [ F<=5000 "done" ]
-// RESULT: 0.8515625
-//Pmin=? [ F<=6000 "done" ]
-// RESULT: 0.931641
-//Pmin=? [ F<=7500 "done" ]
