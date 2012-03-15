@@ -1,2 +1,2 @@
-// RESULT (K=4,bmax=2): 0.143555
+// RESULT (K=2,COL=4): 0.143555
 Pmax=? [ F "cmax" ]
