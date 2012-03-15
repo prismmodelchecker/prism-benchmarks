@@ -1,0 +1,13 @@
+../models/ctmcs/cluster, qos1.csl
+../models/ctmcs/cluster, qos2.csl
+../models/ctmcs/cluster, qos3.csl
+../models/ctmcs/cluster, qos4.csl
+../models/ctmcs/embedded, actuators_T.csl
+../models/ctmcs/embedded, failure_T.csl
+../models/ctmcs/embedded, io_T.csl
+../models/ctmcs/embedded, main_T.csl
+../models/ctmcs/embedded, sensors_T.csl
+../models/ctmcs/polling, station1_polled.csl
+../models/ctmcs/tandem, first_queue.csl
+../models/ctmcs/tandem, network.csl
+../models/ctmcs/tandem, second_queue.csl

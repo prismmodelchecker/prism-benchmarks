@@ -1,0 +1,11 @@
+../models/mdps/consensus, max_steps.pctl
+../models/mdps/consensus, min_steps.pctl
+../models/mdps/csma, max_time.pctl
+../models/mdps/csma, min_time.pctl
+../models/mdps/firewire, expected_sending.pctl
+../models/mdps/firewire, expected_time.pctl
+../models/mdps/firewire_abst, expected_rounds.pctl
+../models/mdps/firewire_abst, expected_time.pctl
+../models/mdps/wlan, expected_collisions.pctl
+../models/mdps/wlan, expected_cost.pctl
+../models/mdps/wlan, expected_time.pctl

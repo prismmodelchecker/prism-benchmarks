@@ -1,0 +1,8 @@
+../models/dtmcs/brp, p1.pctl
+../models/dtmcs/brp, p2.pctl
+../models/dtmcs/brp, p4.pctl
+../models/dtmcs/crowds, positive.pctl
+../models/dtmcs/egl, unfairA.pctl
+../models/dtmcs/egl, unfairB.pctl
+../models/dtmcs/leader_sync, elected.pctl
+../models/dtmcs/nand, reliable.pctl
