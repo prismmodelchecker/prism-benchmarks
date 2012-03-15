@@ -4,4 +4,4 @@ const int T;
 // RESULT (K=1,deadline=1000): 0.0
 // RESULT (K=1,deadline=1750): 0.333328
 // RESULT (K=1,deadline=1800): 0.583332
-Pmin=? [ F<=T "done" ]
+"deadline_min": Pmin=? [ F<=T "done" ]

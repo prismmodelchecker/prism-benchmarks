@@ -1,2 +1,2 @@
-// maximum expected rounds to elect a leader
-R{"rounds"}max=?[F (s=9) ]
+// Maximum expected rounds to elect a leader
+"expected_rounds": R{"rounds"}max=?[F (s=9) ]

@@ -1,4 +1,4 @@
 // Maximum probability of configuring IP address incorrectly
 // RESULT: 0.001301514
-Pmax=? [ F "incorrect" ]
+"incorrect": Pmax=? [ F "incorrect" ]
 

@@ -1,3 +1,3 @@
 // Minimum probability that some station eventually delivers with less than K backoffs
-Pmin=?[ F min_backoff_after_success<K ]
+"some_before": Pmin=?[ F min_backoff_after_success<K ]
 

@@ -5,4 +5,4 @@ const int T;
 // RESULT (T=5000): 0.78125
 // RESULT (T=6000): 0.8515625
 // RESULT (T=7500): 0.931641
-Pmin=? [ F<=T "done" ]
+"deadline": Pmin=? [ F<=T "done" ]

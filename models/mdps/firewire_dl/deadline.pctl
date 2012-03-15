@@ -1,2 +1,2 @@
 // Minimum probability of completing within deadline
-Pmin=? [ F s=9 ]
+"deadline": Pmin=? [ F s=9 ]

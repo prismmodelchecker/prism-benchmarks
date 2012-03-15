@@ -1,2 +1,2 @@
 // Long-run probability of sensor failure
-P=? [ !"down" U "fail_sensors" ]
+"sensors": P=? [ !"down" U "fail_sensors" ]

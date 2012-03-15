@@ -1,4 +1,4 @@
 const double T;
 
 // The probability of leaving a situation where the second queue is entirely populated within T time units
-P=? [ sm=c U<=T sm<c  ]
+"second_queue": P=? [ sm=c U<=T sm<c  ]

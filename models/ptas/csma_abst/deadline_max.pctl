@@ -4,4 +4,4 @@ const int T;
 // RESULT (K=1,T=1000): 0.0
 // RESULT (K=1,T=1750): 0.583332
 // RESULT (K=1,T=1800): 0.729165
-Pmax=? [ F<=T "done" ]
+"deadline_max": Pmax=? [ F<=T "done" ]

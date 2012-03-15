@@ -1,4 +1,4 @@
-const double T; // time bound
+const double T;
 
 // Expected time spent in "down" by time T (hours)
-R{"down"}=? [ C<=(T*3600) ]
+"down_T": R{"down"}=? [ C<=(T*3600) ]

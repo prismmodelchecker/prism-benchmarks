@@ -1,2 +1,2 @@
 // Long-run probability of main failure
-P=? [ !"down" U "fail_main" ]
+"main": P=? [ !"down" U "fail_main" ]

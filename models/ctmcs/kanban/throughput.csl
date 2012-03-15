@@ -1,2 +1,2 @@
-// expected throughput of the system
-R{"throughput"}=? [ S ]
+// Expected throughput of the system
+"throughput": R{"throughput"}=? [ S ]

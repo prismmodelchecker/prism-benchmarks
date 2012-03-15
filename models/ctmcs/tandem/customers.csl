@@ -1,2 +1,2 @@
-// long run expected customers in the network
-R=?[S]
+// Long-run expected number of customers in the network
+"customers": R{"customers"}=? [ S ]

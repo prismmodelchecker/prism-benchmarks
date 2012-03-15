@@ -1,4 +1,4 @@
 const double T;
 
-// The expected time the system spends below minimum QoS until time T
-R{"time_not_min"}=?[ C<=T ]
+// Expected time the system spends below minimum QoS until time T
+"below_min": R{"time_not_min"}=? [ C<=T ]

@@ -1,2 +1,2 @@
-// maximum expected steps to finish
-R{"steps"}max=? [ F "finished" ]
+// Maximum expected steps to finish
+"max_steps": R{"steps"}max=? [ F "finished" ]

@@ -1,4 +1,4 @@
-const double T; // time bound
+const double T;
 
-// the expected amount of activated MAPK at time T
-R{"activated"}=?[ I=T ]
+// Expected amount of activated MAPK at time T
+"activated_T": R{"activated"}=? [ I=T ]

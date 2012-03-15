@@ -1,5 +1,4 @@
 const double T;
 
-// The percentage of operational workstations at time T
-R{"percent_op"}=?[ I=T ]
-
+// Percentage of operational workstations at time T
+"operational": R{"percent_op"}=?[ I=T ]

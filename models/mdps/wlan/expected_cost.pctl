@@ -1,3 +1,3 @@
-// maximum expected cost for both stations to send correctly
-R{"cost"}max=? [ F s1=12 & s2=12 ]; // both send correctly
+// Maximum expected cost for both stations to send correctly
+"expected_cost": R{"cost"}max=? [ F s1=12 & s2=12 ];
 

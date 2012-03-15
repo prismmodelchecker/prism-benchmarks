@@ -1,6 +1,4 @@
 const int k;
 
-// max probability stations collide
-// (min is always zero)
-Pmax=?[ true U col=k ]
-
+// Maximum probability that stations collide
+Pmax=? [ true U col=k ]

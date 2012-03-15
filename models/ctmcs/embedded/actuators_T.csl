@@ -1,5 +1,5 @@
-const double T; // time bound
+const double T;
 
 // Probability of actuator failure within T hours
-P=? [ !"down" U<=(T*3600) "fail_sensors" ]
+"actuators_T": P=? [ !"down" U<=(T*3600) "fail_sensors" ]
 

@@ -1,2 +1,2 @@
 // Expected time spent in "danger" before "down"
-R{"danger"}=? [ F "down" ]
+"danger_time": R{"danger"}=? [ F "down" ]

@@ -1,2 +1,2 @@
-// In the long run, the probability that premium QoS will be delivered
-S=? [ "premium" ]
+// Long-run probability that premium QoS will be delivered
+"premium": S=? [ "premium" ]

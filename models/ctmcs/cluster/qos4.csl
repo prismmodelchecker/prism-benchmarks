@@ -1,4 +1,4 @@
 const double T;
 
-// The probability that it takes more than T time units to recover from insufficient QoS
-P=? [ !"minimum" U>=T "minimum" ]
+// Probability that it takes more than T time units to recover from insufficient QoS
+"qos4": P=? [ !"minimum" U>=T "minimum" ]

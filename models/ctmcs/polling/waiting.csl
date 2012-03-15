@@ -1,5 +1,4 @@
-// Time bound
 const double T;
 
 // Expected time station 1 is waiting to be served
-R{"waiting"}=?[C<=T] 
+"waiting": R{"waiting"}=?[C<=T] 
