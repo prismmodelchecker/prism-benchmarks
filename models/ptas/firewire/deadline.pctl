@@ -1,5 +1,6 @@
 const int T;
 
+// Minimum probability that a leader has been elected by time T
 // RESULT (T=2500): 0.5
 // RESULT (T=5000): 0.78125
 // RESULT (T=6000): 0.8515625

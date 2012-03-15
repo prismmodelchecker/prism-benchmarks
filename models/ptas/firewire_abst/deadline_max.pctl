@@ -1,6 +1,7 @@
 const int T;
 
+// Maximum probability that a leader has been elected by time T
 // RESULT (T=50): 0.0
 // RESULT (T=500): 0.25
-// RESULT (T=500): 1.0
+// RESULT (T=5000): 1.0
 Pmax=? [ F<=T "done" ]
