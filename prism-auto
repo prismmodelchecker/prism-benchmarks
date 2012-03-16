@@ -10,7 +10,7 @@ from optparse import OptionParser
 def isPrismModelFile(file):
 	return re.match('.+(\.prism|\.nm|\.pm|\.sm)$', file)
 
-def isPrismPropsFile(file):
+def isPrismPropertiesFile(file):
 	return re.match('.+(\.props|\.pctl|\.csl)$', file)
 
 def isPrismModelListFile(file):
@@ -25,7 +25,9 @@ def lineIsCommentedOut(line):
 # Get a list of models in a directory, either from a "models" file if present or a list of all model files
 # A "models" file is a list of (relative) path names, in which lines starting with # are ignored
 # Each item of returned list is itself a list because the model specification may be in several parts,
-# e.g. "model.sm", "-const N=2"
+# e.g. "model.sm", "-const", "N=2"
+# Furthermore, the "model.args" for any file "model" is also read, if present,
+# and any contained args are appended to the list
 
 def getModelsInDir(dir):
 	modelFiles = []
@@ -37,17 +39,29 @@ def getModelsInDir(dir):
 			for item in line.split(' '):
 				if isPrismModelFile(item):
 					modelFile.append(os.path.join(dir, item))
+					modelFile += getArgsFromFile(item + ".args")
 				else:
 					modelFile.append(item)
 			modelFiles.append(modelFile)
 	else:
 		for file in os.listdir(dir):
 			if os.path.isfile(os.path.join(dir, file)) and isPrismModelFile(file):
-				modelFiles.append([file])
+				modelFiles.append([file] + getArgsFromFile(file + ".args"))
 	return modelFiles
+
+# Get a list of properties in a directory: just search for all files with an appropriate extension
+# Return type is an array of strings (filenames)
+
+def getPropertiesInDir(dir):
+	propertiesFiles = []
+	for file in os.listdir(dir):
+		if os.path.isfile(os.path.join(dir, file)) and isPrismPropertiesFile(file):
+			propertiesFiles.append(file)
+	return propertiesFiles
 
 # Extract command-line switches from an "args" file into a list
 # Just combine switches on all (non-commented) lines together, delimited by spaces
+# Returns an empty list if the file does not exist
 
 def getArgsFromFile(file):
 	args = []
@@ -90,7 +104,7 @@ def createLogFileName(args):
 def walk(dir, meth):
 	dir = os.path.abspath(dir)
 	for file in [file for file in os.listdir(dir) if not file in [".","..",".svn"]]:
-		nfile = os.path.join(dir,file)
+		nfile = os.path.join(dir, file)
 		meth(nfile)
 		if os.path.isdir(nfile):
 			walk(nfile,meth)
@@ -128,26 +142,56 @@ def benchmark(args):
 	else:
 		runPrism(args)
 
+# Execute benchmarking based on (possibly recursive) processing of a directory
+
 def benchmarkDir(dir):
-	if options.models:
-		modelFiles = getModelsInDir(dir)
-		if len(modelFiles) > 0:
-			print "Directory: " + dir
-			for modelFile in modelFiles:
+	# Recurse first, unless asked not to
+	if not options.nonRec:
+		for file in [file for file in os.listdir(dir) if not file in [".","..",".svn"]]:
+			if os.path.isdir(os.path.join(dir, file)):
+				benchmarkDir(os.path.join(dir, file))
+	# Process files in dir
+	modelFiles = getModelsInDir(dir)
+	if len(modelFiles) > 0:
+		print "Directory: " + dir
+		for modelFile in modelFiles:
+			# Models mode: just build
+			if options.models:
 				benchmark(modelFile)
-	# Recurse
-	if options.nonRec: return
-	for file in [file for file in os.listdir(dir) if not file in [".","..",".svn"]]:
-		if os.path.isdir(os.path.join(dir, file)):
-			benchmarkDir(os.path.join(dir, file))
+			# Normal mode: run against all properties in dir
+			else:
+				propertiesFiles = getPropertiesInDir(dir)
+				for propertiesFile in propertiesFiles:
+					benchmark(modelFile + [propertiesFile])
+
+# Execute benchmarking based on a single file (model, property, list)
 
 def benchmarkFile(file):
-	if isPrismModelListFile(file):
-		benchmarkModelListFile(file)
-	if isPrismPropListFile(file):
-		benchmarkPropListFile(file)
-	elif isPrismModelFile(file):
+	if isPrismModelFile(file):
 		benchmarkModelFile(file)
+	elif isPrismPropertiesFile(file):
+		benchmarkPropertiesFile(file)
+	elif isPrismPropListFile(file):
+		benchmarkPropListFile(file)
+	elif isPrismModelListFile(file):
+		benchmarkModelListFile(file)
+
+# Execute benchmarking based on a single model file
+# i.e. just build the model
+
+def benchmarkModelFile(modelFile):
+	benchmark([modelFile] + getArgsFromFile(modelFile + ".args"))
+
+# Execute benchmarking based on a single properties file
+# i.e. just model check against all models in the same directory
+
+def benchmarkPropertiesFile(propertiesFile):
+	dir = os.path.dirname(propertiesFile)
+	modelFiles = getModelsInDir(dir)
+	for modelFile in modelFiles:
+		benchmark(modelFile + [propertiesFile])
+
+# Execute benchmarking based on ...
 
 def benchmarkModelListFile(modelListFile):
 	print "model list!"
@@ -166,22 +210,11 @@ def benchmarkPropListFile(propListFile):
 		if len(line) == 0 or lineIsCommentedOut(line): continue
 		items = line.split(',')
 		dir = os.path.join(listDir, items[0].strip())
+		dir = os.path.realpath(dir)
 		print "Directory: " + dir
 		propFile = items[1].strip()
 		print "Property file: " + propFile
-		modelFiles = getModelsInDir(dir)
-		for modelFile in modelFiles:
-			args = modelFile + [os.path.join(dir, propFile)]
-			if os.path.isfile(os.path.join(dir, propFile + ".args")):
-				args += getArgsFromFile(os.path.join(dir, propFile + ".args"))
-			benchmark(args)
-
-def benchmarkModelFile(modelFile):
-	print modelFile
-	dirName = os.path.dirname(modelFile)
-	benchmark(dirName, [modelFile])
-	if os.path.isfile(os.path.join(modelFile, ".args")):
-		print "found args"
+		benchmarkPropertiesFile(os.path.join(dir, propFile))
 
 #==================================================================================================
 # Main program
