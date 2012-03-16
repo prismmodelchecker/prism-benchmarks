@@ -1,2 +1,2 @@
 // Maximum expected time for all messages to be sent
-"max_time": R{"time"}max=? [ F "all_delivered" ];
+"time_max": R{"time"}max=? [ F "all_delivered" ];

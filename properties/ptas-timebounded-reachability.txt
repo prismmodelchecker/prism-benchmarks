@@ -1,8 +1,8 @@
-../models/ptas/csma_abst, deadline_min.pctl
 ../models/ptas/csma_abst, deadline_max.pctl
+../models/ptas/csma_abst, deadline_min.pctl
 ../models/ptas/firewire, deadline.pctl
-../models/ptas/firewire_abst, deadline_min.pctl
 ../models/ptas/firewire_abst, deadline_max.pctl
+../models/ptas/firewire_abst, deadline_min.pctl
 ../models/ptas/repudiation_honest, deadline.pctl
 ../models/ptas/repudiation_malicious, deadline.pctl
 ../models/ptas/zeroconf, deadline.pctl

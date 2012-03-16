@@ -1,0 +1,2 @@
+// Maximum expected time to elect a leader
+"time_max": R{"time"}max=? [ F "done" ];

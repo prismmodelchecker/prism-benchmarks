@@ -1,0 +1,2 @@
+// Maximum expected rounds to elect a leader
+"rounds": R{"rounds"}min=? [ F (s=9) ];

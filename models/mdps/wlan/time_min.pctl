@@ -1,0 +1,2 @@
+// Minimum expected time for both stations to send correctly
+"time_min": R{"time"}min=? [ F s1=12 & s2=12 ];

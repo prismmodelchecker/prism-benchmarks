@@ -1,0 +1,2 @@
+// Minimum expected cost for both stations to send correctly
+"cost_min": R{"cost"}min=? [ F s1=12 & s2=12 ];
