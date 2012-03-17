@@ -39,14 +39,14 @@ def getModelsInDir(dir):
 			for item in line.split(' '):
 				if isPrismModelFile(item):
 					modelFile.append(os.path.join(dir, item))
-					modelFile += getArgsFromFile(item + ".args")
+					modelFile += getArgsFromFile(os.path.join(dir, item) + ".args")
 				else:
 					modelFile.append(item)
 			modelFiles.append(modelFile)
 	else:
 		for file in os.listdir(dir):
 			if os.path.isfile(os.path.join(dir, file)) and isPrismModelFile(file):
-				modelFiles.append([file] + getArgsFromFile(file + ".args"))
+				modelFiles.append([os.path.join(dir, file)] + getArgsFromFile(os.path.join(dir, file) + ".args"))
 	return modelFiles
 
 # Get a list of properties in a directory: just search for all files with an appropriate extension
@@ -56,7 +56,7 @@ def getPropertiesInDir(dir):
 	propertiesFiles = []
 	for file in os.listdir(dir):
 		if os.path.isfile(os.path.join(dir, file)) and isPrismPropertiesFile(file):
-			propertiesFiles.append(file)
+			propertiesFiles.append(os.path.join(dir, file))
 	return propertiesFiles
 
 # Get a list of properties in a directory with prefix matching a model
@@ -173,7 +173,7 @@ def benchmarkDir(dir):
 			elif options.test:
 				propertiesFiles = getPropertiesInDir(dir)
 				for propertiesFile in propertiesFiles:
-					if propertiesFile.startswith(os.path.basename(modelFile[0])):
+					if os.path.basename(propertiesFile).startswith(os.path.basename(modelFile[0])):
 						benchmark(modelFile + [propertiesFile] + getArgsFromFile(propertiesFile + ".args"))
 			# Normal benchmark mode: run against all properties in dir
 			else:
