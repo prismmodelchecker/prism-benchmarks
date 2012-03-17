@@ -25,7 +25,7 @@ def lineIsCommentedOut(line):
 # Get a list of models in a directory, either from a "models" file if present or a list of all model files
 # A "models" file is a list of (relative) path names, in which lines starting with # are ignored
 # Each item of returned list is itself a list because the model specification may be in several parts,
-# e.g. "model.sm", "-const", "N=2"
+# e.g. "model.sm", "-const", "N=2", but the first item is always the model file
 # Furthermore, the "model.args" for any file "model" is also read, if present,
 # and any contained args are appended to the list
 
@@ -53,6 +53,16 @@ def getModelsInDir(dir):
 # Return type is an array of strings (filenames)
 
 def getPropertiesInDir(dir):
+	propertiesFiles = []
+	for file in os.listdir(dir):
+		if os.path.isfile(os.path.join(dir, file)) and isPrismPropertiesFile(file):
+			propertiesFiles.append(file)
+	return propertiesFiles
+
+# Get a list of properties in a directory with prefix matching a model
+# Return type is an array of strings (filenames)
+
+def getMatchingPropertiesInDir(dir, modelFile):
 	propertiesFiles = []
 	for file in os.listdir(dir):
 		if os.path.isfile(os.path.join(dir, file)) and isPrismPropertiesFile(file):
@@ -116,6 +126,7 @@ def walk(dir, meth):
 # Run PRISM with a given list of command-line args
 
 def runPrism(args):
+	if options.test: args.append("-test")
 	if options.echo:
 		print ' '.join(args)
 		return
@@ -158,11 +169,17 @@ def benchmarkDir(dir):
 			# Models mode: just build
 			if options.models:
 				benchmark(modelFile)
-			# Normal mode: run against all properties in dir
+			# Test mode: run against matching properties in dir
+			elif options.test:
+				propertiesFiles = getPropertiesInDir(dir)
+				for propertiesFile in propertiesFiles:
+					if propertiesFile.startswith(os.path.basename(modelFile[0])):
+						benchmark(modelFile + [propertiesFile] + getArgsFromFile(propertiesFile + ".args"))
+			# Normal benchmark mode: run against all properties in dir
 			else:
 				propertiesFiles = getPropertiesInDir(dir)
 				for propertiesFile in propertiesFiles:
-					benchmark(modelFile + [propertiesFile])
+					benchmark(modelFile + [propertiesFile] + getArgsFromFile(propertiesFile + ".args"))
 
 # Execute benchmarking based on a single file (model, property, list)
 
@@ -189,7 +206,7 @@ def benchmarkPropertiesFile(propertiesFile):
 	dir = os.path.dirname(propertiesFile)
 	modelFiles = getModelsInDir(dir)
 	for modelFile in modelFiles:
-		benchmark(modelFile + [propertiesFile])
+		benchmark(modelFile + [propertiesFile] + getArgsFromFile(propertiesFile + ".args"))
 
 # Execute benchmarking based on ...
 
@@ -230,12 +247,13 @@ def signal_handler(signal, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 parser = OptionParser(usage="usage: %prog [options] arg")
-parser.add_option("-b", "--benchmark", dest="bmFile", default="", help="File to read benchmarking argument lists from")
-parser.add_option("-l", "--log", dest="logDir", default="", help="Store PRISM output in logs in this directory")
+parser.add_option("-b", "--benchmark", dest="bmFile", metavar="FILE", default="", help="Read benchmarking argument lists from FILE")
+parser.add_option("-l", "--log", dest="logDir", metavar="DIR", default="", help="Store PRISM output in logs in DIR")
 parser.add_option("-m", "--models", action="store_true", dest="models", default=False, help="Look for models, not properties, in a directory")
 parser.add_option("-e", "--echo", action="store_true", dest="echo", default=False, help="Just print out tasks, don't execute")
-parser.add_option("-x", "--exec", dest="prismExec", default="prism", help="Script to execute [default=prism]")
+parser.add_option("-x", "--exec", dest="prismExec", metavar="FILE", default="prism", help="Script to execute [default=prism]")
 parser.add_option("-n", "--non-recursive", action="store_true", dest="nonRec", default=False, help="Don't recurse into directories")
+parser.add_option("-t", "--test", action="store_true", dest="test", default=False, help="Run in test mode")
 (options, args) = parser.parse_args()
 if len(args) != 1:
 	parser.print_help()
