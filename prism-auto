@@ -129,6 +129,8 @@ def runPrism(args):
 		print ' '.join(args)
 		return
 	prismArgs = [options.prismExec] + args
+	if options.extraArgs:
+		prismArgs += options.extraArgs.split(' ');
 	print ' '.join(prismArgs)
 	if options.logDir:
 		logFile = os.path.join(options.logDir, createLogFileName(args))
@@ -266,6 +268,7 @@ parser.add_option("-e", "--echo", action="store_true", dest="echo", default=Fals
 parser.add_option("-x", "--exec", dest="prismExec", metavar="FILE", default="prism", help="Script to execute [default=prism]")
 parser.add_option("-n", "--non-recursive", action="store_true", dest="nonRec", default=False, help="Don't recurse into directories")
 parser.add_option("-t", "--test", action="store_true", dest="test", default=False, help="Run in test mode")
+parser.add_option("-a", "--args", dest="extraArgs", metavar="ARGS", default="", help="Additional arguments to pass to PRISM")
 (options, args) = parser.parse_args()
 if len(args) != 1:
 	parser.print_help()
