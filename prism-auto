@@ -26,8 +26,6 @@ def lineIsCommentedOut(line):
 # A "models" file is a list of (relative) path names, in which lines starting with # are ignored
 # Each item of returned list is itself a list because the model specification may be in several parts,
 # e.g. "model.sm", "-const", "N=2", but the first item is always the model file
-# Furthermore, the "model.args" for any file "model" is also read, if present,
-# and any contained args are appended to the list
 
 def getModelsInDir(dir):
 	modelFiles = []
@@ -39,14 +37,13 @@ def getModelsInDir(dir):
 			for item in line.split(' '):
 				if isPrismModelFile(item):
 					modelFile.append(os.path.join(dir, item))
-					modelFile += getArgsFromFile(os.path.join(dir, item) + ".args")
 				else:
 					modelFile.append(item)
 			modelFiles.append(modelFile)
 	else:
 		for file in os.listdir(dir):
 			if os.path.isfile(os.path.join(dir, file)) and isPrismModelFile(file):
-				modelFiles.append([os.path.join(dir, file)] + getArgsFromFile(os.path.join(dir, file) + ".args"))
+				modelFiles.append([os.path.join(dir, file)])
 	return modelFiles
 
 # Get a list of properties in a directory: just search for all files with an appropriate extension
@@ -69,11 +66,11 @@ def getMatchingPropertiesInDir(dir, modelFile):
 			propertiesFiles.append(file)
 	return propertiesFiles
 
-# Extract command-line switches from an "args" file into a list
+# Extract all command-line switches from an "args" file into a list
 # Just combine switches on all (non-commented) lines together, delimited by spaces
 # Returns an empty list if the file does not exist
 
-def getArgsFromFile(file):
+def getAllArgsFromFile(file):
 	args = []
 	if not os.path.isfile(file): return args
 	for line in open(file, 'r').readlines():
@@ -84,10 +81,11 @@ def getArgsFromFile(file):
 			if len(item) > 0: args.append(item)
 	return args
 
-# Extract command-line switches from a "bm" file into a list of lists
+# Extract command-line switches from an "args" file into a list of lists
 # Switches from each (non-commented) line, delimited by spaces, are in a separate list
+# Returns an empty list if the file does not exist
 
-def getArgsSetFromBMFile(file):
+def getArgsListsFromFile(file):
 	argsSet = []
 	if not os.path.isfile(file): return argsSet
 	for line in open(file, 'r').readlines():
@@ -146,8 +144,8 @@ def runPrism(args):
 def benchmark(args):
 	# Loop through benchmark options, if required
 	if options.bmFile and os.path.isfile(os.path.join(options.bmFile)):
-		argsSet = getArgsSetFromBMFile(options.bmFile)
-		for bmArgs in argsSet:
+		argsLists = getArgsListsFromFile(options.bmFile)
+		for bmArgs in argsLists:
 			runPrism(args + bmArgs)
 	# If none, just use existing args
 	else:
@@ -161,31 +159,18 @@ def benchmarkDir(dir):
 		for file in [file for file in os.listdir(dir) if not file in [".","..",".svn"]]:
 			if os.path.isdir(os.path.join(dir, file)):
 				benchmarkDir(os.path.join(dir, file))
-	# Process files in dir
+	# Process model files in dir
 	modelFiles = getModelsInDir(dir)
 	if len(modelFiles) > 0:
 		print "Directory: " + dir
 		for modelFile in modelFiles:
-			# Models mode: just build
-			if options.models:
-				benchmark(modelFile)
-			# Test mode: run against matching properties in dir
-			elif options.test:
-				propertiesFiles = getPropertiesInDir(dir)
-				for propertiesFile in propertiesFiles:
-					if os.path.basename(propertiesFile).startswith(os.path.basename(modelFile[0])):
-						benchmark(modelFile + [propertiesFile] + getArgsFromFile(propertiesFile + ".args"))
-			# Normal benchmark mode: run against all properties in dir
-			else:
-				propertiesFiles = getPropertiesInDir(dir)
-				for propertiesFile in propertiesFiles:
-					benchmark(modelFile + [propertiesFile] + getArgsFromFile(propertiesFile + ".args"))
+			benchmarkModelFile(modelFile)
 
 # Execute benchmarking based on a single file (model, property, list)
 
 def benchmarkFile(file):
 	if isPrismModelFile(file):
-		benchmarkModelFile(file)
+		benchmarkModelFile([file])
 	elif isPrismPropertiesFile(file):
 		benchmarkPropertiesFile(file)
 	elif isPrismPropListFile(file):
@@ -194,10 +179,37 @@ def benchmarkFile(file):
 		benchmarkModelListFile(file)
 
 # Execute benchmarking based on a single model file
-# i.e. just build the model
+# i.e. ...
+# The argument 'modelFile' is a list because the model specification may be in several parts,
+# e.g. "model.sm", "-const", "N=2", but the first item is always the model file
 
 def benchmarkModelFile(modelFile):
-	benchmark([modelFile] + getArgsFromFile(modelFile + ".args"))
+	dir = os.path.dirname(modelFile[0])
+	# Get contents of model's .args file if present
+	# and iterate over each line, if necessary
+	argsLists = getArgsListsFromFile(modelFile[0] + ".args")
+	if (len(argsLists) == 0): argsLists = [[]]
+	for args in argsLists:
+		# Models mode: just build
+		if options.models:
+			benchmark(modelFile + args)
+		# Test mode: run against matching properties in dir
+		elif options.test:
+			propertiesFiles = getPropertiesInDir(dir)
+			for propertiesFile in propertiesFiles:
+				if os.path.basename(propertiesFile).startswith(os.path.basename(modelFile[0])):
+					propArgsLists = getArgsListsFromFile(propertiesFile + ".args")
+					if (len(propArgsLists) == 0): propArgsLists = [[]]
+					for propArgs in propArgsLists:
+						benchmark(modelFile + args + [propertiesFile] + propArgs)
+		# Normal benchmark mode: run against all properties in dir
+		else:
+			propertiesFiles = getPropertiesInDir(dir)
+			for propertiesFile in propertiesFiles:
+				propArgsLists = getArgsListsFromFile(propertiesFile + ".args")
+				if (len(propArgsLists) == 0): propArgsLists = [[]]
+				for propArgs in propArgsLists:
+					benchmark(modelFile + args + [propertiesFile] + propArgs)
 
 # Execute benchmarking based on a single properties file
 # i.e. just model check against all models in the same directory
@@ -206,7 +218,7 @@ def benchmarkPropertiesFile(propertiesFile):
 	dir = os.path.dirname(propertiesFile)
 	modelFiles = getModelsInDir(dir)
 	for modelFile in modelFiles:
-		benchmark(modelFile + [propertiesFile] + getArgsFromFile(propertiesFile + ".args"))
+		benchmark(modelFile + [propertiesFile] + getAllArgsFromFile(propertiesFile + ".args"))
 
 # Execute benchmarking based on ...
 
