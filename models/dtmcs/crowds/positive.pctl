@@ -1,2 +1,18 @@
 // Probability that the adversary observes the real sender more than once
+// RESULT (CrowdSize=10,TotalRuns=3): 0.03679081134811475
+// RESULT (CrowdSize=10,TotalRuns=4): 0.06798654465767394
+// RESULT (CrowdSize=10,TotalRuns=5): 0.10478678803082875
+// RESULT (CrowdSize=10,TotalRuns=6): 0.14548519960457681
+// RESULT (CrowdSize=15,TotalRuns=3): 0.031995504730306296
+// RESULT (CrowdSize=15,TotalRuns=4): 0.059462960679310714
+// RESULT (CrowdSize=15,TotalRuns=5): 0.09216125136256823
+// RESULT (CrowdSize=15,TotalRuns=6): 0.1286536942309651
+// RESULT (CrowdSize=20,TotalRuns=3): 0.02971303270617014
+// RESULT (CrowdSize=20,TotalRuns=4): 0.05537807436380757
+// RESULT (CrowdSize=20,TotalRuns=5): 0.08606905378017263
+// RESULT (CrowdSize=20,TotalRuns=6): 0.12047636970536846
+// RESULT (CrowdSize=5,TotalRuns=3): 0.052962534914338694
+// RESULT (CrowdSize=5,TotalRuns=4): 0.09619923051577697
+// RESULT (CrowdSize=5,TotalRuns=5): 0.14580523653983898
+// RESULT (CrowdSize=5,TotalRuns=6): 0.19916173329294307
 "positive": P=? [ F observe0>1  ];
