@@ -1,5 +1,4 @@
-csma.nm -const bmax=2,K=4
-csma.nm -const bmax=2,K=8
-csma.nm -const bmax=4,K=4
-csma.nm -const bmax=4,K=8
-
+csma.nm -const K=2,COL=4
+csma.nm -const K=2,COL=8
+csma.nm -const K=4,COL=4
+csma.nm -const K=4,COL=8
