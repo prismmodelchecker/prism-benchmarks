@@ -1,4 +1,1 @@
-csma_abst.nm -const bmax=2,K=4
-csma_abst.nm -const bmax=2,K=8
-csma_abst.nm -const bmax=4,K=4
-csma_abst.nm -const bmax=4,K=8
+csma_abst.nm -const K=1
