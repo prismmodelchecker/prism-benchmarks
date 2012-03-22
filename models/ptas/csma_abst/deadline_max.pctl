@@ -4,4 +4,6 @@ const int T;
 // RESULT (K=1,T=1000): 0.0
 // RESULT (K=1,T=1750): 0.583332
 // RESULT (K=1,T=1800): 0.729165
+// RESULT (K=1,T=2000): 0.929362
+// RESULT (K=1,T=3000): 0.999985
 "deadline_max": Pmax=? [ F<=T "done" ];
