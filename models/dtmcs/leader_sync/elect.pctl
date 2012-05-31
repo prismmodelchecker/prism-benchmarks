@@ -1,2 +1,2 @@
 // Probability that a leader is eventually elected
-"elected": P=? [ F "elected" ];
+"elect": P=? [ F "elected" ];
