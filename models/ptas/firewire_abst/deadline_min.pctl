@@ -1,7 +1,10 @@
 const int T;
 
 // Minimum probability that a leader has been elected by time T
-// RESULT (T=5000): 0.78125
-// RESULT (T=10000): 0.974731
-// RESULT (T=15000): 0.997186
+// RESULT (delay=30,T=5000): 0.851563
+// RESULT (delay=30,T=10000): 0.989969
+// RESULT (delay=30,T=15000): 0.999309
+// RESULT (delay=360,T=5000): 0.78125
+// RESULT (delay=360,T=10000): 0.974731
+// RESULT (delay=360,T=15000): 0.997186
 "deadline_min": Pmin=? [ F<=T "done" ];

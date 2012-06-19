@@ -1,3 +1,4 @@
 // Minimum probability that a leader is eventually elected
-// RESULT: 1.0
+// RESULT (delay=30): 1.0
+// RESULT (delay=360): 1.0
 "eventually": Pmin=? [ F "done" ];
