@@ -1,0 +1,4 @@
+../models/ptas/csma_abst, deadline_min.pctl
+../models/ptas/firewire, deadline.pctl
+../models/ptas/firewire_abst, deadline_min.pctl
+../models/ptas/repudiation_honest, deadline.pctl

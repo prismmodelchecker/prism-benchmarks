@@ -1,0 +1,4 @@
+../models/ptas/csma_abst, deadline_max.pctl
+../models/ptas/firewire_abst, deadline_max.pctl
+../models/ptas/repudiation_malicious, deadline.pctl
+../models/ptas/zeroconf, deadline.pctl
