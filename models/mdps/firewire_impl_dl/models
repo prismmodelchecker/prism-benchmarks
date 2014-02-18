@@ -1,0 +1,10 @@
+firewire_impl_dl.nm -const delay=3,deadline=200
+firewire_impl_dl.nm -const delay=3,deadline=400
+firewire_impl_dl.nm -const delay=3,deadline=600
+firewire_impl_dl.nm -const delay=3,deadline=800
+
+firewire_impl_dl.nm -const delay=36,deadline=200
+firewire_impl_dl.nm -const delay=36,deadline=400
+firewire_impl_dl.nm -const delay=36,deadline=600
+firewire_impl_dl.nm -const delay=36,deadline=800
+
