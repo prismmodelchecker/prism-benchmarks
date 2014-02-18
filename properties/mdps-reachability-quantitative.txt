@@ -4,6 +4,7 @@
 ../models/mdps/csma, all_before_min.pctl
 ../models/mdps/csma, some_before.pctl
 ../models/mdps/firewire_dl, deadline.pctl
+../models/mdps/firewire_impl_dl, deadline.pctl
 ../models/mdps/wlan, collisions.pctl
 ../models/mdps/zeroconf, correct_max.pctl
 ../models/mdps/zeroconf, correct_min.pctl
