@@ -66,6 +66,9 @@ module abstract_firewire
 	
 endmodule
 
+// labels
+label "done" = s=9;
+
 //reward structures
 // time
 rewards "time"
