@@ -1,2 +1,2 @@
 // Long-run probability that premium QoS will be delivered
-"premiumSteady": S=? [ "premium" ];
+"premium_steady": S=? [ "premium" ];
