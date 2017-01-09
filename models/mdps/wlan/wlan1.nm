@@ -2,6 +2,8 @@
 // discrete time model
 // gxn/jzs 20/02/02
 
+mdp
+
 // COLLISIONS
 const int COL; // maximum number of collisions
 

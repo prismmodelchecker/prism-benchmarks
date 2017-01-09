@@ -2,6 +2,8 @@
 // discrete time model
 // gxn/jzs 20/02/02
 
+mdp
+
 // TIMING CONSTRAINTS
 // we have used the FHSS parameters
 // then scaled by the value of ASLOTTIME

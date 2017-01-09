@@ -1,6 +1,8 @@
 // firewire protocol with integer semantics
 // dxp/gxn 14/06/01
 
+mdp
+
 // CLOCKS
 // x1 (x2) clock for node1 (node2)
 // y1 and y2 (z1 and z2) clocks for wire12 (wire21)
