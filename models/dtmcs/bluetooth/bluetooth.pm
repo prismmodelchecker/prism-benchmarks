@@ -27,6 +27,11 @@ const int mrep = 128; //number of times a train is repeated before switching
 // we combine together scan and sleep when the receiver scans and hears nothing
 // the following formula is true in a state if and only if the receiver will hear something if it immediately starts scanning 
 // (receiver scans for 32 slots so one loop of a train plus 4 more steps)
+formula swap  = (((c=2)|(c=4)|(c=6)|(c=8)|(c=10)|(c=12)|(c=14)|(c=16))); // receiver swaps trains at end of sequence only when c is even
+formula swap2  = ((((c=2)|(c=4)|(c=6)|(c=8)|(c=10)|(c=12)|(c=14))) & freq=c+1) | (c=16 & freq=1) | ((((c=1)|(c=3)|(c=5)|(c=7)|(c=9)|(c=11)|(c=13)|(c=15))) & freq!=c+1); // receiver swaps trains when changing frequency set (when receiver sleeps)
+formula sleep = (receiver=0 & y1=1); // state where reciever's next time step corresponds to the whole of scan and sleep (scan interval)
+formula hear  = (freq1=freq & train1=train & send=1); // when the receiver hears something
+
 formula success = 
 	// will see on current set of frequencies and there is time to complete a whole cycle
 	((rep<mrep & ((t1=((freq<=c)?train:1-train) & f1<=c) | (t1=((freq<=c)?1-train:train) & f1>c)))
@@ -40,11 +45,6 @@ formula success =
 	| (rep=mrep & c<16 & swap  & ((t1=((freq<=c)?train:1-train) & f1<=c+1) | (t1=((freq<=c)?1-train:train) & f1>c+1)) & f1<=freq+2)
 	| (rep=mrep & c<16 & !swap & ((t1=((freq<=c)?1-train:train) & f1<=c+1) | (t1=((freq<=c)?train:1-train) & f1>c+1)) & f1<=freq+2)
 	| (rep=mrep & c=16 & (t1=((f1=1)?1-train:train)) & f1<=freq+2 & c=16));
-
-formula swap  = (((c=2)|(c=4)|(c=6)|(c=8)|(c=10)|(c=12)|(c=14)|(c=16))); // receiver swaps trains at end of sequence only when c is even
-formula swap2  = ((((c=2)|(c=4)|(c=6)|(c=8)|(c=10)|(c=12)|(c=14))) & freq=c+1) | (c=16 & freq=1) | ((((c=1)|(c=3)|(c=5)|(c=7)|(c=9)|(c=11)|(c=13)|(c=15))) & freq!=c+1); // receiver swaps trains when changing frequency set (when receiver sleeps)
-formula sleep = (receiver=0 & y1=1); // state where reciever's next time step corresponds to the whole of scan and sleep (scan interval)  
-formula hear  = (freq1=freq & train1=train & send=1); // when the receiver hears something
 
 //----------------------------------------------------------------------------------------------------------------------------
 // module for first receiver
