@@ -3,9 +3,6 @@
 // when a number of (abstract) hosts have already got ip addresses
 // gxn/dxp/jzs 02/05/03
 
-// reset or noreset model
-const bool reset;
-
 //-------------------------------------------------------------
 
 // we suppose that
@@ -52,6 +49,9 @@ mdp
 
 //-------------------------------------------------------------
 // VARIABLES
+// reset or noreset model
+const bool reset;
+
 const int N; // number of abstract hosts
 const int K; // number of probes to send
 const double loss = 0.1; // probability of message loss
