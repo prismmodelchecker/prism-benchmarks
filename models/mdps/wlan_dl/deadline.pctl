@@ -1,2 +1,2 @@
 // Minimum probability of both stations sending correctly within deadline
-"deadline": Pmin=? [ F 1=12 & s2=12 ];
+"deadline": Pmin=? [ F s1=12 & s2=12 ];
