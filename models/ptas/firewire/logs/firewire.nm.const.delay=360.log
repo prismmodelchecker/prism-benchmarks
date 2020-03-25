@@ -1,0 +1,15 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:23:27 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./ptas/firewire/firewire.nm -const delay=360 -mainlog ./ptas/firewire/logs/firewire.nm.const.delay=360.log
+
+Parsing model file "./ptas/firewire/firewire.nm"...
+
+Type:        PTA
+Modules:     wire12 node1 wire21 node2 
+Variables:   w12 y1 y2 x1 s1 w21 z1 z2 x2 s2 
+

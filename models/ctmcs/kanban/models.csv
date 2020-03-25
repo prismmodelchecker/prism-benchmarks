@@ -1,0 +1,8 @@
+model_file,model_consts,model_type,states,time_constr
+"kanban.sm","t=1",CTMC,160,0.057
+"kanban.sm","t=2",CTMC,4600,0.052
+"kanban.sm","t=3",CTMC,58400,0.08
+"kanban.sm","t=4",CTMC,454475,0.191
+"kanban.sm","t=5",CTMC,2546432,0.343
+"kanban.sm","t=6",CTMC,11261376,0.531
+"kanban.sm","t=7",CTMC,41644800,0.884

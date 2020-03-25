@@ -1,0 +1,33 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Thu Mar 26 21:45:39 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism mdps/wlan_dl/wlan_dl0.nm -const deadline=80 -mainlog mdps/wlan_dl/logs/wlan_dl0.nm.const.deadline=80.log
+
+Parsing model file "mdps/wlan_dl/wlan_dl0.nm"...
+
+Type:        MDP
+Modules:     medium station1 station2 timer 
+Variables:   c1 c2 x1 s1 slot1 backoff1 bc1 x2 s2 slot2 backoff2 bc2 t 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: deadline=80
+
+Computing reachable states...
+
+Reachability (BFS): 135 iterations in 1.49 seconds (average 0.011052, setup 0.00)
+
+Time for model construction: 1.556 seconds.
+
+Type:        MDP
+States:      189703 (1 initial)
+Transitions: 333804
+Choices:     254964
+
+Transition matrix: 15657 nodes (3 terminal), 333804 minterms, vars: 39r/39c/8nd
+

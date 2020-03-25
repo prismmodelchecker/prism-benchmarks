@@ -1,0 +1,38 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:23:16 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./dtmcs/brp/brp.pm -const 'N=64,MAX=3' -fixdl -mainlog './dtmcs/brp/logs/brp.pm.const.N=64,MAX=3.fixdl.log'
+
+Parsing model file "./dtmcs/brp/brp.pm"...
+
+Type:        DTMC
+Modules:     sender receiver checker channelK channelL 
+Variables:   s srep nrtr i bs s_ab fs ls r rrep fr lr br r_ab recv T k l 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: N=64,MAX=3
+
+Computing reachable states...
+
+Reachability (BFS): 395 iterations in 0.17 seconds (average 0.000423, setup 0.00)
+
+Time for model construction: 0.229 seconds.
+
+Warning: Deadlocks detected and fixed in 132 states
+
+Type:        DTMC
+States:      3526 (1 initial)
+Transitions: 4611
+
+Transition matrix: 2359 nodes (6 terminal), 4611 minterms, vars: 34r/34c
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+

@@ -1,0 +1,10 @@
+model_file,model_consts,model_type,states,time_constr
+"csma2_2.nm","",MDP,1038,0.097
+"csma2_4.nm","",MDP,7958,0.185
+"csma2_6.nm","",MDP,66718,0.427
+"csma3_2.nm","",MDP,36850,0.436
+"csma3_4.nm","",MDP,1460287,2.429
+"csma3_6.nm","",MDP,84856004,18.095
+"csma4_2.nm","",MDP,761962,2.407
+"csma4_4.nm","",MDP,133301572,29.609
+"csma4_6.nm","",MDP,39051159469,2049.131

@@ -1,0 +1,8 @@
+model_file,model_consts,model_type,states,time_constr
+"embedded.sm","MAX_COUNT=2",CTMC,3478,0.033
+"embedded.sm","MAX_COUNT=3",CTMC,4323,0.037
+"embedded.sm","MAX_COUNT=4",CTMC,5168,0.051
+"embedded.sm","MAX_COUNT=5",CTMC,6013,0.048
+"embedded.sm","MAX_COUNT=6",CTMC,6858,0.036
+"embedded.sm","MAX_COUNT=7",CTMC,7703,0.067
+"embedded.sm","MAX_COUNT=8",CTMC,8548,0.043

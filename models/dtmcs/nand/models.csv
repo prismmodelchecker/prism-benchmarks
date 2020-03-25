@@ -1,0 +1,11 @@
+model_file,model_consts,model_type,states,time_constr
+"nand.pm","N=20,K=1",DTMC,78332,0.235
+"nand.pm","N=20,K=2",DTMC,154942,0.405
+"nand.pm","N=20,K=3",DTMC,231552,0.581
+"nand.pm","N=20,K=4",DTMC,308162,0.744
+"nand.pm","N=40,K=1",DTMC,1004862,1.182
+"nand.pm","N=40,K=2",DTMC,2003082,2.559
+"nand.pm","N=40,K=3",DTMC,3001302,3.546
+"nand.pm","N=40,K=4",DTMC,3999522,4.894
+"nand.pm","N=60,K=1",DTMC,4717592,3.92
+"nand.pm","N=60,K=2",DTMC,9420422,9.312

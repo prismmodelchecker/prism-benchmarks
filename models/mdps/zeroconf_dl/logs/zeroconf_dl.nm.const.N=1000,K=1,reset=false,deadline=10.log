@@ -1,0 +1,39 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:07:37 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./mdps/zeroconf_dl/zeroconf_dl.nm -const 'N=1000,K=1,reset=false,deadline=10' -mainlog './mdps/zeroconf_dl/logs/zeroconf_dl.nm.const.N=1000,K=1,reset=false,deadline=10.log'
+
+Parsing model file "./mdps/zeroconf_dl/zeroconf_dl.nm"...
+
+Type:        MDP
+Modules:     environment host0 timer 
+Variables:   b_ip7 b_ip6 b_ip5 b_ip4 b_ip3 b_ip2 b_ip1 b_ip0 n n0 n1 b z ip_mess x y coll probes mess defend ip l t 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: reset=false,deadline=10,N=1000,K=1
+
+Computing reachable states...
+
+Reachability (BFS): 117 iterations in 0.88 seconds (average 0.007547, setup 0.00)
+
+Time for model construction: 1.208 seconds.
+
+Warning: Deadlocks detected and fixed in 110 states
+
+Type:        MDP
+States:      12240 (1 initial)
+Transitions: 24069
+Choices:     18220
+
+Transition matrix: 16900 nodes (6 terminal), 24069 minterms, vars: 59r/59c/8nd
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+

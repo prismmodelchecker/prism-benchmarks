@@ -1,0 +1,13 @@
+model_file,model_consts,model_type,states,time_constr
+"brp.pm","N=16,MAX=2",DTMC,677,0.117
+"brp.pm","N=16,MAX=3",DTMC,886,0.094
+"brp.pm","N=16,MAX=4",DTMC,1095,0.116
+"brp.pm","N=16,MAX=5",DTMC,1304,0.106
+"brp.pm","N=32,MAX=2",DTMC,1349,0.137
+"brp.pm","N=32,MAX=3",DTMC,1766,0.134
+"brp.pm","N=32,MAX=4",DTMC,2183,0.141
+"brp.pm","N=32,MAX=5",DTMC,2600,0.156
+"brp.pm","N=64,MAX=2",DTMC,2693,0.195
+"brp.pm","N=64,MAX=3",DTMC,3526,0.229
+"brp.pm","N=64,MAX=4",DTMC,4359,0.241
+"brp.pm","N=64,MAX=5",DTMC,5192,0.251

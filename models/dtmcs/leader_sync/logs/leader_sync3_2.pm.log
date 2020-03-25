@@ -1,0 +1,31 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:20:51 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./dtmcs/leader_sync/leader_sync3_2.pm -mainlog ./dtmcs/leader_sync/logs/leader_sync3_2.pm.log
+
+Parsing model file "./dtmcs/leader_sync/leader_sync3_2.pm"...
+
+Type:        DTMC
+Modules:     counter process1 process2 process3 
+Variables:   c s1 u1 v1 p1 s2 u2 v2 p2 s3 u3 v3 p3 
+
+---------------------------------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 5 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.061 seconds.
+
+Type:        DTMC
+States:      26 (1 initial)
+Transitions: 33
+
+Transition matrix: 408 nodes (3 terminal), 33 minterms, vars: 16r/16c
+

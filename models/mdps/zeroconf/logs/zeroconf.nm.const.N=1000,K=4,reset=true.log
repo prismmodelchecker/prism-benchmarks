@@ -1,0 +1,33 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:08:21 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./mdps/zeroconf/zeroconf.nm -const 'N=1000,K=4,reset=true' -mainlog './mdps/zeroconf/logs/zeroconf.nm.const.N=1000,K=4,reset=true.log'
+
+Parsing model file "./mdps/zeroconf/zeroconf.nm"...
+
+Type:        MDP
+Modules:     environment host0 
+Variables:   b_ip7 b_ip6 b_ip5 b_ip4 b_ip3 b_ip2 b_ip1 b_ip0 n n0 n1 b z ip_mess x y coll probes mess defend ip l 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: reset=true,N=1000,K=4
+
+Computing reachable states...
+
+Reachability (BFS): 150 iterations in 0.28 seconds (average 0.001840, setup 0.00)
+
+Time for model construction: 0.615 seconds.
+
+Type:        MDP
+States:      1088 (1 initial)
+Transitions: 1613
+Choices:     1355
+
+Transition matrix: 3334 nodes (6 terminal), 1613 minterms, vars: 57r/57c/7nd
+

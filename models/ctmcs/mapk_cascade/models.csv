@@ -1,0 +1,9 @@
+model_file,model_consts,model_type,states,time_constr
+"mapk_cascade.sm","N=1",CTMC,118,0.064
+"mapk_cascade.sm","N=2",CTMC,2172,0.211
+"mapk_cascade.sm","N=3",CTMC,18292,0.713
+"mapk_cascade.sm","N=4",CTMC,99535,4.19
+"mapk_cascade.sm","N=5",CTMC,408366,10.824
+"mapk_cascade.sm","N=6",CTMC,1373026,22.601
+"mapk_cascade.sm","N=7",CTMC,3979348,47.093
+"mapk_cascade.sm","N=8",CTMC,10276461,99.73

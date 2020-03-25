@@ -1,0 +1,3 @@
+model_file,model_consts,model_type,states,time_constr
+"firewire_abst.nm","delay=3",MDP,611,0.121
+"firewire_abst.nm","delay=36",MDP,776,0.135

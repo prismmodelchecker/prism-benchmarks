@@ -1,0 +1,32 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:17:37 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./ctmcs/tandem/tandem.sm -const c=2047 -mainlog ./ctmcs/tandem/logs/tandem.sm.const.c=2047.log
+
+Parsing model file "./ctmcs/tandem/tandem.sm"...
+
+Type:        CTMC
+Modules:     serverC serverM 
+Variables:   sc ph sm 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: c=2047
+
+Computing reachable states...
+
+Reachability (BFS): 6143 iterations in 28.16 seconds (average 0.004583, setup 0.00)
+
+Time for model construction: 31.042 seconds.
+
+Type:        CTMC
+States:      8386560 (1 initial)
+Transitions: 29337603
+
+Rate matrix: 333 nodes (6 terminal), 29337603 minterms, vars: 23r/23c
+

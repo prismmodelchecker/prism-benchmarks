@@ -1,0 +1,32 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:17:22 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./ctmcs/kanban/kanban.sm -const t=7 -mainlog ./ctmcs/kanban/logs/kanban.sm.const.t=7.log
+
+Parsing model file "./ctmcs/kanban/kanban.sm"...
+
+Type:        CTMC
+Modules:     k1 k2 k3 k4 
+Variables:   w1 x1 y1 z1 w2 x2 y2 z2 w3 x3 y3 z3 w4 x4 y4 z4 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: t=7
+
+Computing reachable states...
+
+Reachability (BFS): 99 iterations in 0.93 seconds (average 0.009374, setup 0.00)
+
+Time for model construction: 0.884 seconds.
+
+Type:        CTMC
+States:      41644800 (1 initial)
+Transitions: 450455040
+
+Rate matrix: 9521 nodes (14 terminal), 450455040 minterms, vars: 48r/48c
+

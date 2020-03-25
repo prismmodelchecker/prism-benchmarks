@@ -1,0 +1,11 @@
+model_file,model_consts,model_type,states,time_constr
+"zeroconf_dl.nm","reset=false,deadline=10,N=1000,K=1",MDP,12240,1.208
+"zeroconf_dl.nm","reset=false,deadline=20,N=1000,K=1",MDP,53620,2.984
+"zeroconf_dl.nm","reset=false,deadline=30,N=1000,K=1",MDP,132806,5.578
+"zeroconf_dl.nm","reset=false,deadline=40,N=1000,K=1",MDP,251740,9.017
+"zeroconf_dl.nm","reset=false,deadline=50,N=1000,K=1",MDP,411031,14.235
+"zeroconf_dl.nm","reset=true,deadline=10,N=1000,K=1",MDP,3835,0.616
+"zeroconf_dl.nm","reset=true,deadline=20,N=1000,K=1",MDP,7670,0.692
+"zeroconf_dl.nm","reset=true,deadline=30,N=1000,K=1",MDP,11605,0.907
+"zeroconf_dl.nm","reset=true,deadline=40,N=1000,K=1",MDP,15640,0.921
+"zeroconf_dl.nm","reset=true,deadline=50,N=1000,K=1",MDP,19775,1.167

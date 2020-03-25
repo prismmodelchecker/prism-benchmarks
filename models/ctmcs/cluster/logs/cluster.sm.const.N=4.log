@@ -1,0 +1,32 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:15:46 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./ctmcs/cluster/cluster.sm -const N=4 -mainlog ./ctmcs/cluster/logs/cluster.sm.const.N=4.log
+
+Parsing model file "./ctmcs/cluster/cluster.sm"...
+
+Type:        CTMC
+Modules:     Left Right Repairman Line ToLeft ToRight 
+Variables:   left_n left right_n right r line line_n toleft toleft_n toright toright_n 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: N=4
+
+Computing reachable states...
+
+Reachability (BFS): 13 iterations in 0.01 seconds (average 0.000462, setup 0.00)
+
+Time for model construction: 0.036 seconds.
+
+Type:        CTMC
+States:      820 (1 initial)
+Transitions: 3616
+
+Rate matrix: 535 nodes (11 terminal), 3616 minterms, vars: 15r/15c
+

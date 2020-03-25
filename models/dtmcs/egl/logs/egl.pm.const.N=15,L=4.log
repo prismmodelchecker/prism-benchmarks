@@ -1,0 +1,96 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:21:19 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./dtmcs/egl/egl.pm -const 'N=15,L=4' -mainlog './dtmcs/egl/logs/egl.pm.const.N=15,L=4.log'
+
+Parsing model file "./dtmcs/egl/egl.pm"...
+
+Type:        DTMC
+Modules:     counter partyA partyB 
+Variables:   b n phase party b0 b20 b1 b21 b2 b22 b3 b23 b4 b24 b5 b25 b6 b26 b7 b27 b8 b28 b9 b29 b10 b30 b11 b31 b12 b32 b13 b33 b14 b34 b15 b35 b16 b36 b17 b37 b18 b38 b19 b39 a0 a20 a1 a21 a2 a22 a3 a23 a4 a24 a5 a25 a6 a26 a7 a27 a8 a28 a9 a29 a10 a30 a11 a31 a12 a32 a13 a33 a14 a34 a15 a35 a16 a36 a17 a37 a18 a38 a19 a39 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: N=15,L=4
+
+Warning: Guard for command 16 of module "partyA" is never satisfied.
+
+Warning: Guard for command 17 of module "partyA" is never satisfied.
+
+Warning: Guard for command 18 of module "partyA" is never satisfied.
+
+Warning: Guard for command 19 of module "partyA" is never satisfied.
+
+Warning: Guard for command 20 of module "partyA" is never satisfied.
+
+Warning: Guard for command 36 of module "partyA" is never satisfied.
+
+Warning: Guard for command 37 of module "partyA" is never satisfied.
+
+Warning: Guard for command 38 of module "partyA" is never satisfied.
+
+Warning: Guard for command 39 of module "partyA" is never satisfied.
+
+Warning: Guard for command 40 of module "partyA" is never satisfied.
+
+Warning: Guard for command 56 of module "partyA" is never satisfied.
+
+Warning: Guard for command 57 of module "partyA" is never satisfied.
+
+Warning: Guard for command 58 of module "partyA" is never satisfied.
+
+Warning: Guard for command 59 of module "partyA" is never satisfied.
+
+Warning: Guard for command 60 of module "partyA" is never satisfied.
+
+Warning: Guard for command 16 of module "partyB" is never satisfied.
+
+Warning: Guard for command 17 of module "partyB" is never satisfied.
+
+Warning: Guard for command 18 of module "partyB" is never satisfied.
+
+Warning: Guard for command 19 of module "partyB" is never satisfied.
+
+Warning: Guard for command 20 of module "partyB" is never satisfied.
+
+Warning: Guard for command 36 of module "partyB" is never satisfied.
+
+Warning: Guard for command 37 of module "partyB" is never satisfied.
+
+Warning: Guard for command 38 of module "partyB" is never satisfied.
+
+Warning: Guard for command 39 of module "partyB" is never satisfied.
+
+Warning: Guard for command 40 of module "partyB" is never satisfied.
+
+Warning: Guard for command 56 of module "partyB" is never satisfied.
+
+Warning: Guard for command 57 of module "partyB" is never satisfied.
+
+Warning: Guard for command 58 of module "partyB" is never satisfied.
+
+Warning: Guard for command 59 of module "partyB" is never satisfied.
+
+Warning: Guard for command 60 of module "partyB" is never satisfied.
+
+Computing reachable states...
+
+Reachability (BFS): 271 iterations in 2.28 seconds (average 0.008410, setup 0.00)
+
+Time for model construction: 3.244 seconds.
+
+Type:        DTMC
+States:      228707008510 (1 initial)
+Transitions: 229780750333
+
+Transition matrix: 86029 nodes (3 terminal), 229780750333 minterms, vars: 250r/250c
+
+---------------------------------------------------------------------
+
+Note: There were 30 warnings during computation.
+

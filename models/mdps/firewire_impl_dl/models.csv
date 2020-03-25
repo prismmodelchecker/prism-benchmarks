@@ -1,0 +1,9 @@
+model_file,model_consts,model_type,states,time_constr
+"firewire_impl_dl.nm","deadline=200,delay=3",MDP,80980,2.283
+"firewire_impl_dl.nm","deadline=400,delay=3",MDP,434364,9.417
+"firewire_impl_dl.nm","deadline=600,delay=3",MDP,1093658,21.843
+"firewire_impl_dl.nm","deadline=800,delay=3",MDP,1915291,36.231
+"firewire_impl_dl.nm","deadline=200,delay=36",MDP,6719773,61.014
+"firewire_impl_dl.nm","deadline=400,delay=36",MDP,44366235,388.817
+"firewire_impl_dl.nm","deadline=600,delay=36",MDP,86813479,741.726
+"firewire_impl_dl.nm","deadline=800,delay=36",MDP,129267079,1106.025

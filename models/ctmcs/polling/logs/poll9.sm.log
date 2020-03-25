@@ -1,0 +1,31 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:16:06 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./ctmcs/polling/poll9.sm -mainlog ./ctmcs/polling/logs/poll9.sm.log
+
+Parsing model file "./ctmcs/polling/poll9.sm"...
+
+Type:        CTMC
+Modules:     server station1 station2 station3 station4 station5 station6 station7 station8 station9 
+Variables:   s a s1 s2 s3 s4 s5 s6 s7 s8 s9 
+
+---------------------------------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 19 iterations in 0.01 seconds (average 0.000526, setup 0.00)
+
+Time for model construction: 0.057 seconds.
+
+Type:        CTMC
+States:      6912 (1 initial)
+Transitions: 36864
+
+Rate matrix: 765 nodes (4 terminal), 36864 minterms, vars: 14r/14c
+

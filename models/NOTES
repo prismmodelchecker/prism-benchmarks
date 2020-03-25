@@ -1,11 +1,21 @@
+# Find all directories with (buildable) models, build them and store logs in each subdir
+# (substitute 'prism-auto' and 'prism' with full paths if needed)
 
-find dtmcs -name true.pctl -exec prism-benchmark -logs logs/dtmcs {} \;
-find ctmcs -name true.pctl -exec prism-benchmark -logs logs/ctmcs {} \;
-find mdps -name true.pctl -exec prism-benchmark -logs logs/mdps {} \;
+find dtmcs ctmcs mdps -type d -exec prism-auto -p prism -n -b {} -l {}/logs \;
 
-grep -i error logs/*/*
+# find dtmcs ctmcs mdps -type d -exec sh -c 'prism-auto -p prism -n -b $0 -l $0/logs' {} \;
 
-grep States `ls -1rt logs/dtmcs/*.log` >| logs/dtmcs-states.txt
-grep States `ls -1rt logs/ctmcs/*.log` >| logs/ctmcs-states.txt
-grep States `ls -1rt logs/mdps/*.log` >| logs/mdps-states.txt
+# ---------------------------------------------------------------------------
 
+# Extract model stats from the logs created above and put in models.csv files
+
+# In individual files for each subdirectory
+
+find . -type d -name logs -exec sh -c 'prism-log-extract $0 --non-recursive --extension=log --fields=model,model_type,states,time_constr >| $0/../models.csv' {} \;
+
+# And collated in files at the top-level
+
+prism-log-extract . --extension=log --fields=model,model_type,states,time_constr >| models.csv
+prism-log-extract dtmcs --extension=log --fields=model,model_type,states,time_constr >| dtmcs/models.csv
+prism-log-extract ctmcs --extension=log --fields=model,model_type,states,time_constr >| ctmcs/models.csv
+prism-log-extract mdps --extension=log --fields=model,model_type,states,time_constr >| mdps/models.csv

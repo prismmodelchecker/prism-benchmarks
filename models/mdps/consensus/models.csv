@@ -1,0 +1,7 @@
+model_file,model_consts,model_type,states,time_constr
+"coin2.nm","K=16",MDP,2064,0.083
+"coin2.nm","K=2",MDP,272,0.054
+"coin2.nm","K=4",MDP,528,0.052
+"coin2.nm","K=8",MDP,1040,0.069
+"coin4.nm","K=2",MDP,22656,0.078
+"coin4.nm","K=4",MDP,43136,0.11

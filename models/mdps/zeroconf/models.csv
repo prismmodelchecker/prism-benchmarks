@@ -1,0 +1,17 @@
+model_file,model_consts,model_type,states,time_constr
+"zeroconf.nm","reset=false,N=1000,K=2",MDP,89586,4.155
+"zeroconf.nm","reset=true,N=1000,K=2",MDP,670,0.522
+"zeroconf.nm","reset=false,N=1000,K=4",MDP,307768,11.981
+"zeroconf.nm","reset=true,N=1000,K=4",MDP,1088,0.615
+"zeroconf.nm","reset=false,N=1000,K=6",MDP,798471,32.409
+"zeroconf.nm","reset=true,N=1000,K=6",MDP,1506,0.61
+"zeroconf.nm","reset=false,N=1000,K=8",MDP,1870338,73.111
+"zeroconf.nm","reset=true,N=1000,K=8",MDP,1924,0.649
+"zeroconf.nm","reset=false,N=20,K=2",MDP,89586,4.198
+"zeroconf.nm","reset=true,N=20,K=2",MDP,670,0.597
+"zeroconf.nm","reset=false,N=20,K=4",MDP,307768,11.725
+"zeroconf.nm","reset=true,N=20,K=4",MDP,1088,0.571
+"zeroconf.nm","reset=false,N=20,K=6",MDP,798471,31.352
+"zeroconf.nm","reset=true,N=20,K=6",MDP,1506,0.645
+"zeroconf.nm","reset=false,N=20,K=8",MDP,1870338,73.434
+"zeroconf.nm","reset=true,N=20,K=8",MDP,1924,0.638

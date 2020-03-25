@@ -1,0 +1,32 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:12:53 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./ctmcs/mapk_cascade/mapk_cascade.sm -const N=6 -mainlog ./ctmcs/mapk_cascade/logs/mapk_cascade.sm.const.N=6.log
+
+Parsing model file "./ctmcs/mapk_cascade/mapk_cascade.sm"...
+
+Type:        CTMC
+Modules:     E1 E2 KPTASE KKPTASE MAPK MAPKK MAPKKK 
+Variables:   e1 e2 kptase kkptase k k_kkpp kp kp_kkpp kp_ptase kpp kpp_ptase kk kk_kkkp kkp kkp_kkkp kkp_ptase kkpp kkpp_ptase kkk kkk_e1 kkkp kkkp_e2 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: N=6
+
+Computing reachable states...
+
+Reachability (BFS): 64 iterations in 22.03 seconds (average 0.344266, setup 0.00)
+
+Time for model construction: 22.601 seconds.
+
+Type:        CTMC
+States:      1373026 (1 initial)
+Transitions: 15015264
+
+Rate matrix: 285106 nodes (25 terminal), 15015264 minterms, vars: 58r/58c
+

@@ -1,0 +1,8 @@
+model_file,model_consts,model_type,states,time_constr
+"herman11.pm","",DTMC,2048,0.041
+"herman13.pm","",DTMC,8192,0.031
+"herman15.pm","",DTMC,32768,0.031
+"herman3.pm","",DTMC,8,0.034
+"herman5.pm","",DTMC,32,0.048
+"herman7.pm","",DTMC,128,0.045
+"herman9.pm","",DTMC,512,0.03

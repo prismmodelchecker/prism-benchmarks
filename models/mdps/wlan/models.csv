@@ -1,0 +1,8 @@
+model_file,model_consts,model_type,states,time_constr
+"wlan0.nm","COL=0",MDP,2954,0.117
+"wlan1.nm","COL=0",MDP,8625,0.17
+"wlan2.nm","COL=0",MDP,28480,0.271
+"wlan3.nm","COL=0",MDP,96302,0.311
+"wlan4.nm","COL=0",MDP,345000,0.42
+"wlan5.nm","COL=0",MDP,1295218,0.632
+"wlan6.nm","COL=0",MDP,5007548,0.884

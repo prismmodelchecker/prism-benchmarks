@@ -1,0 +1,8 @@
+model_file,model_consts,model_type,states,time_constr
+"wlan_dl0.nm","deadline=80",MDP,189703,1.556
+"wlan_dl1.nm","deadline=80",MDP,450627,1.619
+"wlan_dl2.nm","deadline=80",MDP,1148419,2.527
+"wlan_dl3.nm","deadline=80",MDP,3041883,4.205
+"wlan_dl4.nm","deadline=80",MDP,6959410,5.134
+"wlan_dl5.nm","deadline=80",MDP,9633089,5.774
+"wlan_dl6.nm","deadline=80",MDP,10131465,5.788

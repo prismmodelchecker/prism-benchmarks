@@ -1,0 +1,32 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:22:36 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./dtmcs/nand/nand.pm -const 'N=20,K=3' -mainlog './dtmcs/nand/logs/nand.pm.const.N=20,K=3.log'
+
+Parsing model file "./dtmcs/nand/nand.pm"...
+
+Type:        DTMC
+Modules:     multiplex 
+Variables:   u c s z zx zy x y 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: N=20,K=3
+
+Computing reachable states...
+
+Reachability (BFS): 562 iterations in 0.66 seconds (average 0.001180, setup 0.00)
+
+Time for model construction: 0.581 seconds.
+
+Type:        DTMC
+States:      231552 (1 initial)
+Transitions: 358152
+
+Transition matrix: 13592 nodes (131 terminal), 358152 minterms, vars: 28r/28c
+

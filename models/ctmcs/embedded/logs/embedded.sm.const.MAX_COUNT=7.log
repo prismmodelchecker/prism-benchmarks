@@ -1,0 +1,32 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 16:16:00 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./ctmcs/embedded/embedded.sm -const MAX_COUNT=7 -mainlog ./ctmcs/embedded/logs/embedded.sm.const.MAX_COUNT=7.log
+
+Parsing model file "./ctmcs/embedded/embedded.sm"...
+
+Type:        CTMC
+Modules:     sensors proci actuators proco procm bus 
+Variables:   s i a o m count comp reqi reqo 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: MAX_COUNT=7
+
+Computing reachable states...
+
+Reachability (BFS): 20 iterations in 0.03 seconds (average 0.001250, setup 0.00)
+
+Time for model construction: 0.067 seconds.
+
+Type:        CTMC
+States:      7703 (1 initial)
+Transitions: 32474
+
+Rate matrix: 1950 nodes (9 terminal), 32474 minterms, vars: 16r/16c
+

@@ -1,0 +1,33 @@
+PRISM
+=====
+
+Version: 4.5.dev
+Date: Wed Mar 25 15:31:55 UTC 2020
+Hostname: ip-172-31-3-244
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ./mdps/firewire_dl/firewire_dl.nm -const 'delay=36,deadline=600' -mainlog './mdps/firewire_dl/logs/firewire_dl.nm.const.delay=36,deadline=600.log'
+
+Parsing model file "./mdps/firewire_dl/firewire_dl.nm"...
+
+Type:        MDP
+Modules:     abstract_firewire 
+Variables:   y x s 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: deadline=600,delay=36
+
+Computing reachable states...
+
+Reachability (BFS): 614 iterations in 0.44 seconds (average 0.000718, setup 0.00)
+
+Time for model construction: 2.62 seconds.
+
+Type:        MDP
+States:      375765 (1 initial)
+Transitions: 672470
+Choices:     566354
+
+Transition matrix: 10421 nodes (3 terminal), 672470 minterms, vars: 22r/22c/2nd
+

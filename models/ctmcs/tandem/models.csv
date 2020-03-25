@@ -1,0 +1,12 @@
+model_file,model_consts,model_type,states,time_constr
+"tandem.sm","c=1023",CTMC,2096128,5.969
+"tandem.sm","c=127",CTMC,32640,0.177
+"tandem.sm","c=15",CTMC,496,0.05
+"tandem.sm","c=2047",CTMC,8386560,31.042
+"tandem.sm","c=255",CTMC,130816,0.4
+"tandem.sm","c=31",CTMC,2016,0.046
+"tandem.sm","c=4095",CTMC,33550336,137.727
+"tandem.sm","c=5",CTMC,66,0.032
+"tandem.sm","c=511",CTMC,523776,1.349
+"tandem.sm","c=63",CTMC,8128,0.069
+"tandem.sm","c=7",CTMC,120,0.034

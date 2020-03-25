@@ -1,0 +1,10 @@
+model_file,model_consts,model_type,states,time_constr
+"cluster.sm","N=128",CTMC,597012,0.291
+"cluster.sm","N=16",CTMC,10132,0.058
+"cluster.sm","N=2",CTMC,276,0.061
+"cluster.sm","N=256",CTMC,2373652,0.744
+"cluster.sm","N=32",CTMC,38676,0.069
+"cluster.sm","N=4",CTMC,820,0.036
+"cluster.sm","N=512",CTMC,9465876,3.242
+"cluster.sm","N=64",CTMC,151060,0.138
+"cluster.sm","N=8",CTMC,2772,0.056

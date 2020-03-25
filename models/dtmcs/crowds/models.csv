@@ -1,0 +1,17 @@
+model_file,model_consts,model_type,states,time_constr
+"crowds.pm","TotalRuns=3,CrowdSize=10",DTMC,6563,0.167
+"crowds.pm","TotalRuns=3,CrowdSize=15",DTMC,19228,0.172
+"crowds.pm","TotalRuns=3,CrowdSize=20",DTMC,42318,0.233
+"crowds.pm","TotalRuns=3,CrowdSize=5",DTMC,1198,0.136
+"crowds.pm","TotalRuns=4,CrowdSize=10",DTMC,30070,0.242
+"crowds.pm","TotalRuns=4,CrowdSize=15",DTMC,119800,0.343
+"crowds.pm","TotalRuns=4,CrowdSize=20",DTMC,333455,0.406
+"crowds.pm","TotalRuns=4,CrowdSize=5",DTMC,3515,0.2
+"crowds.pm","TotalRuns=5,CrowdSize=10",DTMC,111294,0.26
+"crowds.pm","TotalRuns=5,CrowdSize=15",DTMC,592060,0.409
+"crowds.pm","TotalRuns=5,CrowdSize=20",DTMC,2061951,0.464
+"crowds.pm","TotalRuns=5,CrowdSize=5",DTMC,8653,0.192
+"crowds.pm","TotalRuns=6,CrowdSize=10",DTMC,352535,0.325
+"crowds.pm","TotalRuns=6,CrowdSize=15",DTMC,2464168,0.474
+"crowds.pm","TotalRuns=6,CrowdSize=20",DTMC,10633591,0.584
+"crowds.pm","TotalRuns=6,CrowdSize=5",DTMC,18817,0.194

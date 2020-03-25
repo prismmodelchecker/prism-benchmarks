@@ -1,0 +1,10 @@
+model_file,model_consts,model_type,states,time_constr
+"leader_sync3_2.pm","",DTMC,26,0.061
+"leader_sync3_3.pm","",DTMC,69,0.058
+"leader_sync3_4.pm","",DTMC,147,0.062
+"leader_sync4_2.pm","",DTMC,61,0.044
+"leader_sync4_3.pm","",DTMC,274,0.074
+"leader_sync4_4.pm","",DTMC,812,0.103
+"leader_sync5_2.pm","",DTMC,141,0.047
+"leader_sync5_3.pm","",DTMC,1050,0.126
+"leader_sync5_4.pm","",DTMC,4244,0.278

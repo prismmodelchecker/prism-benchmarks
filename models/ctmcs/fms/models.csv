@@ -1,0 +1,11 @@
+model_file,model_consts,model_type,states,time_constr
+"fms.sm","n=1",CTMC,54,0.05
+"fms.sm","n=10",CTMC,25397658,26.943
+"fms.sm","n=2",CTMC,810,0.084
+"fms.sm","n=3",CTMC,6520,0.116
+"fms.sm","n=4",CTMC,35910,0.316
+"fms.sm","n=5",CTMC,152712,0.58
+"fms.sm","n=6",CTMC,537768,1.131
+"fms.sm","n=7",CTMC,1639440,2.168
+"fms.sm","n=8",CTMC,4459455,7.406
+"fms.sm","n=9",CTMC,11058190,13.379
