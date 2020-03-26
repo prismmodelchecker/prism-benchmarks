@@ -1,0 +1,7 @@
+wlan_dl0.nm -const deadline=80
+wlan_dl1.nm -const deadline=80
+wlan_dl2.nm -const deadline=80
+wlan_dl3.nm -const deadline=80
+wlan_dl4.nm -const deadline=80
+wlan_dl5.nm -const deadline=80
+wlan_dl6.nm -const deadline=80
