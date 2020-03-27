@@ -6,6 +6,7 @@
 ../models/mdps/firewire_dl, deadline.pctl
 ../models/mdps/firewire_impl_dl, deadline.pctl
 ../models/mdps/wlan, collisions.pctl
+../models/mdps/wlan_dl, deadline.pctl
 ../models/mdps/zeroconf, correct_max.pctl
 ../models/mdps/zeroconf, correct_min.pctl
 ../models/mdps/zeroconf_dl, deadline_max.pctl
