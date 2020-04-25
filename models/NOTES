@@ -2,6 +2,7 @@
 # (substitute 'prism-auto' and 'prism' with full paths if needed)
 
 find dtmcs ctmcs mdps -type d -exec prism-auto -p prism -n -b {} -l {}/logs \;
+find ptas -type d -exec prism-auto -p prism -n -b -x '-pf true' {} -l {}/logs \;
 
 # find dtmcs ctmcs mdps -type d -exec sh -c 'prism-auto -p prism -n -b $0 -l $0/logs' {} \;
 
@@ -19,3 +20,11 @@ prism-log-extract . --extension=log --fields=model,model_type,states,time_constr
 prism-log-extract dtmcs --extension=log --fields=model,model_type,states,time_constr >| dtmcs/models.csv
 prism-log-extract ctmcs --extension=log --fields=model,model_type,states,time_constr >| ctmcs/models.csv
 prism-log-extract mdps --extension=log --fields=model,model_type,states,time_constr >| mdps/models.csv
+prism-log-extract ptas --extension=log --fields=model,model_type,states,time_constr >| ptas/models.csv
+
+# ---------------------------------------------------------------------------
+
+To check model metadata is all ok, make sure these give the same output:
+
+prism-auto -e . | wc
+prism-auto -e . --filter-models='True' | wc

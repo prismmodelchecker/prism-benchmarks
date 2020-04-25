@@ -1,0 +1,29 @@
+PRISM
+=====
+
+Version: 4.6.dev
+Date: Sat Apr 25 23:19:35 BST 2020
+Hostname: kazak
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ptas/firewire/firewire.nm -const delay=360 -pf true -mainlog ptas/firewire/logs/firewire.nm.const.delay=360.pf.true.log
+
+Parsing model file "ptas/firewire/firewire.nm"...
+
+Type:        PTA
+Modules:     wire12 node1 wire21 node2 
+Variables:   w12 y1 y2 x1 s1 w21 z1 z2 x2 s2 
+
+1 property:
+(1) true
+
+---------------------------------------------------------------------
+
+Model checking: true
+Model constants: delay=360
+
+Building PTA...
+
+PTA: 6 clocks, 65 locations, 127 transitions
+
+Error: PTA model checking not yet supported for this operator (try the digital clocks engine).
+

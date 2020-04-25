@@ -1,0 +1,3 @@
+model_file,model_consts,model_type,states,time_constr
+"firewire_abst.nm","delay=30",PTA,,
+"firewire_abst.nm","delay=360",PTA,,

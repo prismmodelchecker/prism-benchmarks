@@ -1,0 +1,29 @@
+PRISM
+=====
+
+Version: 4.6.dev
+Date: Sat Apr 25 23:19:40 BST 2020
+Hostname: kazak
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ptas/csma/csma.nm -const 'K=4,COL=8' -pf true -mainlog 'ptas/csma/logs/csma.nm.const.K=4,COL=8.pf.true.log'
+
+Parsing model file "ptas/csma/csma.nm"...
+
+Type:        PTA
+Modules:     collisions bus station1 station2 
+Variables:   c b y1 y2 s1 x1 cd1 s2 x2 cd2 
+
+1 property:
+(1) true
+
+---------------------------------------------------------------------
+
+Model checking: true
+Model constants: K=4,COL=8
+
+Building PTA...
+
+PTA: 4 clocks, 700 locations, 1139 transitions
+
+Error: PTA model checking not yet supported for this operator (try the digital clocks engine).
+

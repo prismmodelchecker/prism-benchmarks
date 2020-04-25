@@ -1,0 +1,28 @@
+PRISM
+=====
+
+Version: 4.6.dev
+Date: Sat Apr 25 23:19:41 BST 2020
+Hostname: kazak
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ptas/repudiation_malicious/repudiation_malicious.nm -pf true -mainlog ptas/repudiation_malicious/logs/repudiation_malicious.nm.pf.true.log
+
+Parsing model file "ptas/repudiation_malicious/repudiation_malicious.nm"...
+
+Type:        PTA
+Modules:     originator recipient 
+Variables:   o x r y 
+
+1 property:
+(1) true
+
+---------------------------------------------------------------------
+
+Model checking: true
+
+Building PTA...
+
+PTA: 2 clocks, 35 locations, 73 transitions
+
+Error: PTA model checking not yet supported for this operator (try the digital clocks engine).
+

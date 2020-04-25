@@ -1,0 +1,5 @@
+model_file,model_consts,model_type,states,time_constr
+"csma.nm","K=2,COL=4",PTA,,
+"csma.nm","K=2,COL=8",PTA,,
+"csma.nm","K=4,COL=4",PTA,,
+"csma.nm","K=4,COL=8",PTA,,
