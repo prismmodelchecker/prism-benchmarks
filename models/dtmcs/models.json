@@ -1,0 +1,153 @@
+{
+	"models": [
+	
+		{
+			"name": "bluetooth",
+			"full-name": "Bluetooth device discovery",
+			"reference": "DKNP06",
+			"model-type": "DTMC",
+			"params": [
+				{
+					"name": "mrec",
+					"type": "int",
+					"description": "number of replies received",
+					"suggested-values": [1,2]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/bluetooth.php"
+		},
+		
+		{
+			"name": "brp",
+			"full-name": "Bounded retransmission protocol",
+			"reference": "DJJL01",
+			"model-type": "DTMC",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of chunks in a file",
+					"suggested-values": [16,32,64]
+				},
+				{
+					"name": "MAX",
+					"type": "int",
+					"description": "maximum number of retransmissions",
+					"suggested-values": [2,3,4,5]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/brp.php",
+			"notes": "[DJJL01] presents the MDP model. An earlier, non-probabilistic model can be found in [HSV+94]."
+		},
+		
+		{
+			"name": "crowds",
+			"full-name": "Crowds protocol",
+			"reference": "Shm04",
+			"model-type": "DTMC",
+			"params": [
+				{
+					"name": "CrowdSize",
+					"type": "int",
+					"description": "number of good crowd members",
+					"suggested-values": [5,10,15,20]
+				},
+				{
+					"name": "TotalRuns",
+					"type": "int",
+					"description": "number of protocol runs",
+					"suggested-values": [3,4,5,6]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/crowds.php",
+			"notes": "The protocol is from [RR98]."
+		},
+		
+		{
+			"name": "egl",
+			"full-name": "Contract signing protocol of Even, Goldreich & Lempel",
+			"reference": "NS06",
+			"model-type": "DTMC",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of pairs of secrets",
+					"suggested-values": [2,4,6]
+				},
+				{
+					"name": "L",
+					"type": "int",
+					"description": "number of bits per secret",
+					"suggested-values": [2,4,6]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/contract_egl.php",
+			"notes": "The protocol is from [EGL85]."
+		},
+		
+		{
+			"name": "hermans",
+			"full-name": "Self-stabilisation protocol of Herman",
+			"reference": "KNP12a",
+			"model-type": "DTMC",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of processes (must be odd)",
+					"suggested-values": [3,5,7,9]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/self-stabilisation.php",
+			"notes": "The protocol is from [Her90]."
+		},
+		
+		{
+			"name": "nand",
+			"full-name": "NAND multiplexing",
+			"reference": "NPKS05",
+			"model-type": "DTMC",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of inputs in each bundle",
+					"suggested-values": [20,40,60]
+				},
+				{
+					"name": "K",
+					"type": "int",
+					"description": "number of restorative stages",
+					"suggested-values": [1,2,3]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/self-nand.php",
+			"notes": "NAND multiplexing is from [vN56]."
+		},
+		
+		{
+			"name": "leader_sync",
+			"full-name": "Synchronous leader election protocol of Itai & Rodeh",
+			"reference": "",
+			"model-type": "DTMC",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of processes",
+					"suggested-values": [3,4,5,6]
+				},
+				{
+					"name": "K",
+					"type": "int",
+					"description": "range of probabilistic choice",
+					"suggested-values": [2,3,4,5]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/synchronous_leader.php",
+			"notes": "The protocol is from [IR90]."
+		}
+		
+	]
+}
