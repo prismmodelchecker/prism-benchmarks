@@ -1,0 +1,235 @@
+{
+	"models": [
+	
+		{
+			"name": "consensus",
+			"full-name": "Shared coin protocol from the randomised consensus algorithm of Aspnes and Herlihy",
+			"reference": "KNS01a",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of processes",
+					"suggested-values": [2,4,6,8,10]
+				},
+				{
+					"name": "K",
+					"type": "int",
+					"description": "bounds on random walk",
+					"suggested-values": "any value > 1"
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/consensus_prism.php",
+			"notes": "The protocol is from [AH90]."
+		},
+		
+		{
+			"name": "csma",
+			"full-name": "IEEE 802.3 CSMA/CD (Carrier Sense, Multiple Access with Collision Detection) protocol",
+			"reference": "KNSW07",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of stations",
+					"suggested-values": [2,3,4]
+				},
+				{
+					"name": "K",
+					"type": "int",
+					"description": "maximum backoff count",
+					"suggested-values": [2,4,6]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/csma.php",
+			"notes": "PTA model"
+		},
+		
+		{
+			"name": "firewire",
+			"full-name": "IEEE 1394 FireWire root contention protocol",
+			"reference": "KNS03b",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "delay",
+					"type": "int",
+					"description": "maximum wire transmission delay, in units of 10ns",
+					"suggested-values": "3 or 36"
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"notes": "PTA model from [KNS03b] based on TA model from [SS01]."
+		},
+		
+		{
+			"name": "firewire_abst",
+			"full-name": "IEEE 1394 FireWire root contention protocol (abstract model)",
+			"reference": "KNS03b",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "delay",
+					"type": "int",
+					"description": "maximum wire transmission delay, in units of 10ns",
+					"suggested-values": "3 or 36"
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"notes": "PTA model from [KNS03b] based on manual abstraction from [SV99]."
+		},
+		
+		{
+			"name": "firewire_dl",
+			"full-name": "IEEE 1394 FireWire root contention protocol (abstract model, with timer for deadline properties",
+			"reference": "KNS03b",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "delay",
+					"type": "int",
+					"description": "maximum wire transmission delay, in units of 10ns",
+					"suggested-values": "3 or 36"
+				},
+				{
+					"name": "deadline",
+					"type": "int",
+					"description": "timer deadline, in units of 10ns",
+					"suggested-values": [200,400,600]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"notes": "Extension of firewire_abst model above."
+		},
+		
+		{
+			"name": "firewire_impl_dl",
+			"full-name": "IEEE 1394 FireWire root contention protocol (with timer for deadline properties)",
+			"reference": "KNS03b",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "delay",
+					"type": "int",
+					"description": "maximum wire transmission delay, in units of 10ns",
+					"suggested-values": "3 or 36"
+				},
+				{
+					"name": "deadline",
+					"type": "int",
+					"description": "timer deadline, in units of 10ns",
+					"suggested-values": [200,400,600]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"notes": "Extension of firewire model above."
+		},
+		
+		{
+			"name": "wlan",
+			"full-name": "IEEE 802.11 wireless LAN",
+			"reference": "KNS02a",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "BOFF",
+					"type": "int",
+					"description": "maximum backoff counter",
+					"suggested-values": [0,1,2,3]
+				},
+				{
+					"name": "COL",
+					"type": "int",
+					"description": "maximum collision counter",
+					"suggested-values": "only >0 if needed for property"
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/wlan.php",
+			"notes": "PTA model"
+		},
+		
+		{
+			"name": "wlan_dl",
+			"full-name": "IEEE 802.11 wireless LAN",
+			"reference": "KNS02a",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "deadline",
+					"type": "int",
+					"description": "timer deadline",
+					"suggested-values": [40,60,80]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/wlan.php",
+			"notes": "Extension of wlan model above."
+		},
+		
+		{
+			"name": "zeroconf",
+			"full-name": "IPv4 Zeroconf network configuration protocol",
+			"reference": "KNPS06",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of existing nodes",
+					"suggested-values": [20,1000]
+				},
+				{
+					"name": "K",
+					"type": "int",
+					"description": "number of probes sent (4 in standard)",
+					"suggested-values": [2,4,6,8]
+				},
+				{
+					"name": "reset",
+					"type": "bool",
+					"description": "whether or not to clear messages on restart",
+					"suggested-values": [true,false]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/zeroconf.php",
+			"notes": "PTA model. The protocol is from [CAG02]."
+		},
+		
+		{
+			"name": "zeroconf_dl",
+			"full-name": "IPv4 Zeroconf network configuration protocol (with timer for deadline properties)",
+			"reference": "KNPS06",
+			"model-type": "MDP",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of existing nodes",
+					"suggested-values": [20,1000]
+				},
+				{
+					"name": "K",
+					"type": "int",
+					"description": "number of probes sent (4 in standard)",
+					"suggested-values": [2,4,6,8]
+				},
+				{
+					"name": "reset",
+					"type": "bool",
+					"description": "whether or not to clear messages on restart",
+					"suggested-values": [true,false]
+				},
+				{
+					"name": "deadline",
+					"type": "int",
+					"description": "timer deadline",
+					"suggested-values": [20,40,60]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/xxx.php",
+			"notes": "Extension of zeroconf model above. The protocol is from [CAG02]."
+		}
+		
+	]
+}
