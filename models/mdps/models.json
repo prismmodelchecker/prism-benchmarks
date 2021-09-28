@@ -157,6 +157,12 @@
 			"model-type": "MDP",
 			"params": [
 				{
+					"name": "BOFF",
+					"type": "int",
+					"description": "maximum backoff counter",
+					"suggested-values": [0,1,2,3]
+				},
+				{
 					"name": "deadline",
 					"type": "int",
 					"description": "timer deadline",
