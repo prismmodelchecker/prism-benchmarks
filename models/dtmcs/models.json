@@ -20,6 +20,7 @@
 					"name": "time",
 					"prism": "R=? [ F rec=mrec {\"init\"}{max} ]",
 					"description": "Expected time to complete the inquiry phase",
+					"category": "quant-exp-reach"
 					"notes": "Note the use of a filter since there are muliple initial states."
 				}
 			]
@@ -45,7 +46,27 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/brp.php",
-			"notes": "[DJJL01] presents the MDP model. An earlier, non-probabilistic model can be found in [HSV+94]."
+			"notes": "[DJJL01] presents the MDP model. An earlier, non-probabilistic model can be found in [HSV+94].",
+			"properties": [
+				{
+					"name": "p1",
+					"prism": "P=? [ F s=5 ]",
+					"description": "Probability that the sender does not report a successful transmission (property 1 from [DJJL01])",
+					"category": "quant-prob-reach"
+				},
+				{
+					"name": "p2",
+					"prism": "P=? [ F s=5 & srep=2 ]",
+					"description": "Probability that the sender reports an uncertainty on the success of the transmission (property 2 from [DJJL01])",
+					"category": "quant-prob-reach"
+				},
+				{
+					"name": "p4",
+					"prism": "P=? [ F !(srep=0) & !recv ]",
+					"description": "Probability that the receiver does not receive any chunk when the sender did try to send a chunk (property 4 from [DJJL01])",
+					"category": "quant-prob-reach"
+				}
+			]
 		},
 		
 		{
