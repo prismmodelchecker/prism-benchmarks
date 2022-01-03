@@ -1,0 +1,119 @@
+{
+	"models": [
+	
+		{
+			"name": "cluster",
+			"full-name": "Workstation cluster",
+			"reference": "HHK00",
+			"model-type": "CTMC",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of workstations in each sub-cluster",
+					"suggested-values": [2,4,8]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/cluster.php"
+		},
+		
+		{
+			"name": "embedded",
+			"full-name": "Embedded control system",
+			"reference": "MCT94",
+			"model-type": "CTMC",
+			"params": [
+				{
+					"name": "MAX_COUNT",
+					"type": "int",
+					"description": "limit on allowed number of consecutive cycles skipped",
+					"suggested-values": [2,3,4]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/embedded.php",
+			"notes": "[MCT94] is a stochastic Petri net model. The PRISM model appears in [KNP04c], [KNP07b]."
+		},
+		
+		{
+			"name": "fms",
+			"full-name": "Flexible manufacturing system",
+			"reference": "CT93",
+			"model-type": "CTMC",
+			"params": [
+				{
+					"name": "n",
+					"type": "int",
+					"description": "max number of parts per machine",
+					"suggested-values": [1,2,3]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/fms.php"
+		},
+		
+		{
+			"name": "kanban",
+			"full-name": "Kanban manufacturing system",
+			"reference": "CT96",
+			"model-type": "CTMC",
+			"params": [
+				{
+					"name": "t",
+					"type": "int",
+					"description": "max jobs per machine",
+					"suggested-values": [1,2,3]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/kanban.php"
+		},
+		
+		{
+			"name": "mapk_cascade",
+			"full-name": "MAPK cascade",
+			"reference": "HF96",
+			"model-type": "CTMC",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "initial amount of MAPK/MAPKK and MAPKKK",
+					"suggested-values": [1,2,3]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/mapk_cascade.php",
+			"notes": "A PRISM model appears in [KNP08a]."
+		},
+		
+		{
+			"name": "polling",
+			"full-name": "Cyclic server polling system",
+			"reference": "IT90",
+			"model-type": "CTMC",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of stations handled by the server",
+					"suggested-values": [4,5,6]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/polling.php"
+		},
+		
+		{
+			"name": "tandem",
+			"full-name": "Tandem queueing network",
+			"reference": "HKMKS99",
+			"model-type": "CTMC",
+			"params": [
+				{
+					"name": "c",
+					"type": "int",
+					"description": "queue capacity",
+					"suggested-values": [5,7,15,31]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/tandem.php"
+		}
+		
+	]
+}
