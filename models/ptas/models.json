@@ -1,0 +1,112 @@
+{
+	"models": [
+	
+		{
+			"name": "csma",
+			"full-name": "IEEE 802.3 CSMA/CD (Carrier Sense, Multiple Access with Collision Detection) protocol",
+			"reference": "KNSW07",
+			"model-type": "PTA",
+			"params": [
+				{
+					"name": "K",
+					"type": "int",
+					"description": "maximum backoff count",
+					"suggested-values": [2,4,6]
+				},
+				{
+					"name": "COL",
+					"type": "int",
+					"description": "maximum number of collisions",
+					"suggested-values": "4,8"
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/csma.php",
+			"notes": "Number of stations is fixed at N=2."
+		},
+		
+		{
+			"name": "csma_abst",
+			"full-name": "IEEE 802.3 CSMA/CD (Carrier Sense, Multiple Access with Collision Detection) protocol (abstract model)",
+			"reference": "",
+			"model-type": "PTA",
+			"params": [
+				{
+					"name": "K",
+					"type": "int",
+					"description": "maximum backoff count",
+					"suggested-values": [2,4,6]
+				}
+			],
+			"www": "",
+			"notes": "Number of stations is fixed at N=2."
+		},
+		
+		{
+			"name": "firewire",
+			"full-name": "IEEE 1394 FireWire root contention protocol",
+			"reference": "KNS03b",
+			"model-type": "PTA",
+			"params": [
+				{
+					"name": "delay",
+					"type": "int",
+					"description": "maximum wire transmission delay, in units of 10ns",
+					"suggested-values": "3 or 36"
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"notes": "PTA model from [KNS03b] based on TA model from [SS01]."
+		},
+		
+		{
+			"name": "firewire_abst",
+			"full-name": "IEEE 1394 FireWire root contention protocol (abstract model)",
+			"reference": "KNS03b",
+			"model-type": "PTA",
+			"params": [
+				{
+					"name": "delay",
+					"type": "int",
+					"description": "maximum wire transmission delay, in units of 10ns",
+					"suggested-values": "3 or 36"
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"notes": "PTA model from [KNS03b] based on manual abstraction from [SV99]."
+		},
+		
+		{
+			"name": "repudiation_honest",
+			"full-name": "Non-repudiation protocol (with honest recipient)",
+			"reference": "",
+			"model-type": "PTA",
+			"params": [
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/nonrepudiation.php",
+			"notes": "The protocol is due to Markowitch &amp; Roggeman [MR99]."
+		},
+		
+		{
+			"name": "repudiation_malicious",
+			"full-name": "Non-repudiation protocol (with malicious recipient)",
+			"reference": "",
+			"model-type": "PTA",
+			"params": [
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/nonrepudiation.php",
+			"notes": "The protocol is due to Markowitch &amp; Roggeman [MR99]."
+		},
+		
+		{
+			"name": "zeroconf",
+			"full-name": "IPv4 Zeroconf network configuration protocol",
+			"reference": "KNPS06",
+			"model-type": "PTA",
+			"params": [
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/zeroconf.php",
+			"notes": "The protocol is from [CAG02]."
+		}
+		
+	]
+}
