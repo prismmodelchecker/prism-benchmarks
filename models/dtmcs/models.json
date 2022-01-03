@@ -90,7 +90,15 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/crowds.php",
-			"notes": "The protocol is from [RR98]."
+			"notes": "The protocol is from [RR98].",
+			"properties": [
+				{
+					"name": "positive",
+					"prism": "P=? [ F observe0>1 ]",
+					"description": "Probability that the adversary observes the real sender more than once",
+					"category": "quant-prob-reach"
+				}
+			]
 		},
 		
 		{
@@ -113,7 +121,33 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/contract_egl.php",
-			"notes": "The protocol is from [EGL85]."
+			"notes": "The protocol is from [EGL85].",
+			"properties": [
+				{
+					"name": "unfairA",
+					"prism": "P=? [ F !\"knowA\" & \"knowB\" ]",
+					"description": "Probability that party A is unfairly disadvantaged",
+					"category": "quant-prob-reach"
+				},
+				{
+					"name": "unfairB",
+					"prism": "P=? [ F !\"knowB\" & \"knowA\" ]",
+					"description": "Probability that party B is unfairly disadvantaged",
+					"category": "quant-prob-reach"
+				},
+				{
+					"name": "messagesA",
+					"prism": "R{\"messages_A_needs\"}=? [ F phase=4 ]",
+					"description": "Expected number of messages A needs to knows a pair once B knows a pair",
+					"category": "quant-exp-reach"
+				},
+				{
+					"name": "messagesB",
+					"prism": "R{\"messages_B_needs\"}=? [ F phase=4 ]",
+					"description": "Expected number of messages B needs to knows a pair once A knows a pair",
+					"category": "quant-exp-reach"
+				}
+			]
 		},
 		
 		{
@@ -130,7 +164,16 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/self-stabilisation.php",
-			"notes": "The protocol is from [Her90]."
+			"notes": "The protocol is from [Her90].",
+			"properties": [
+				{
+					"name": "steps",
+					"prism": "R=? [ F \"stable\" {\"init\"}{max} ]",
+					"description": "Expected number of steps until termination",
+					"category": "quant-exp-reach",
+					"notes": "Note the use of a filter since there are muliple initial states."
+				}
+			]
 		},
 		
 		{
@@ -153,7 +196,15 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/self-nand.php",
-			"notes": "NAND multiplexing is from [vN56]."
+			"notes": "NAND multiplexing is from [vN56].",
+			"properties": [
+				{
+					"name": "reliable",
+					"prism": "P=? [ F s=4 & z/N<0.1 ]",
+					"description": "Probability that less than 10 percent of outputs are erroneous",
+					"category": "quant-prob-reach"
+				}
+			]
 		},
 		
 		{
@@ -176,7 +227,21 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/synchronous_leader.php",
-			"notes": "The protocol is from [IR90]."
+			"notes": "The protocol is from [IR90].",
+			"properties": [
+				{
+					"name": "eventually_elected",
+					"prism": "P>=1 [ F \"elected\" ]",
+					"description": "Probability that a leader is eventually elected",
+					"category": "qual-prob-reach"
+				},
+				{
+					"name": "time",
+					"prism": "R{\"num_rounds\"}=? [ F \"elected\" ]",
+					"description": "Expected time (number of rounds) to elect a leader",
+					"category": "quant-exp-reach"
+				}
+			]
 		}
 		
 	]
