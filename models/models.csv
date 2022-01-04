@@ -225,3 +225,8 @@ model_file,model_consts,model_type,states,time_constr
 "repudiation_honest.nm","",PTA,,
 "repudiation_malicious.nm","",PTA,,
 "zeroconf.nm","",PTA,,
+"avoid.prism","X_MAX=10,Y_MAX=10",SMG,106524,1.815
+"avoid.prism","X_MAX=15,Y_MAX=15",SMG,480464,5.945
+"hallway.prism","X_MAX=10,Y_MAX=10",SMG,400000,5.693
+"hallway.prism","X_MAX=5,Y_MAX=5",SMG,25000,0.854
+"hallway.prism","X_MAX=8,Y_MAX=8",SMG,163840,2.675

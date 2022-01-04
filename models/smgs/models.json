@@ -16,7 +16,7 @@
 				{
 					"name": "Y_MAX",
 					"type": "int",
-					"description": "grish height",
+					"description": "grid height",
 					"suggested-values": [10,15,20]
 				}
 			],
@@ -25,7 +25,7 @@
 		},
 		
 		{
-			"name": "hallway",
+			"name": "hallway_human",
 			"full-name": "Hallway-Human game",
 			"reference": "CKWW20",
 			"model-type": "SMG",
@@ -39,7 +39,7 @@
 				{
 					"name": "Y_MAX",
 					"type": "int",
-					"description": "grish height",
+					"description": "grid height",
 					"suggested-values": [5,8,10]
 				}
 			],
