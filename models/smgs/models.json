@@ -25,6 +25,23 @@
 		},
 		
 		{
+			"name": "dice",
+			"full-name": "Simple dice game",
+			"reference": "",
+			"model-type": "SMG",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "Max number of throws per player",
+					"suggested-values": [10,25,50]
+				}
+			],
+			"www": "",
+			"notes": "Example distributed with PRISM-games."
+		},
+		
+		{
 			"name": "hallway_human",
 			"full-name": "Hallway-Human game",
 			"reference": "CKWW20",

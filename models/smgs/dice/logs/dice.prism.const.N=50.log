@@ -1,0 +1,34 @@
+PRISM-games
+===========
+
+Version: 3.1.dev (based on PRISM 4.7.dev)
+Date: Tue Jan 04 11:35:09 GMT 2022
+Hostname: eliot
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism-games smgs/dice/dice.prism -const N=50 -mainlog smgs/dice/logs/dice.prism.const.N=50.log
+
+Parsing model file "smgs/dice/dice.prism"...
+
+Type:        SMG
+Modules:     player1 player2 
+Variables:   s1 i x s2 y j 
+
+Switching to explicit engine, which supports SMGs...
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: N=50
+
+Computing reachable states... 136795 states
+Reachable states exploration and model construction done in 1.254 secs.
+Sorting reachable states list...
+
+Time for model construction: 1.575 seconds.
+
+Type:        SMG
+States:      136795 (1 initial)
+Transitions: 404664
+Choices:     181189
+Max/avg:     2/1.32
+

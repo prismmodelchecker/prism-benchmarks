@@ -1,0 +1,4 @@
+model_file,model_consts,model_type,states,time_constr
+"dice.prism","N=10",SMG,5755,0.295
+"dice.prism","N=25",SMG,34645,0.71
+"dice.prism","N=50",SMG,136795,1.575
