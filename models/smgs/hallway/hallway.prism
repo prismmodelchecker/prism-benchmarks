@@ -1,0 +1,126 @@
+// Hallway-Human
+// Stochastic game version inspired by classic hallway benchmark
+// Robot with faulty moves aims to save a panicking human
+
+// From: Stochastic games with lexicographic reachability-safety objectives
+// Krishnendu Chatterjee, Joost-Pieter Katoen, Maximilian Weininger, Tobias Winkler
+// Proc. 32nd Int. Conf. Computer Aided Verification (CAV 2020), pp. 398–420
+
+// model type is stochastic multiplayer game
+smg 
+
+// set up players
+
+player p1
+	[check_r], [move_r], [north_r], [east_r], [south_r], [west_r], [damage_r]
+endplayer
+
+player p2
+	[random_h], [north_h], [east_h], [south_h], [west_h], [nothing_h]
+endplayer
+
+// set up globals
+
+// which player's turn is it?
+global turn : [1..2] init 1;
+
+// set up constants
+
+// dimension of grid
+const int X_MAX;
+const int Y_MAX;
+
+module robot
+
+	// position on grid
+	x : [0..X_MAX-1] init 0;
+	y : [0..Y_MAX-1] init 0;
+	// direction looking (0: N, 1: E, 2: S, 3: W)
+	look : [0..3] init 0;
+	// is robot damaged?
+	dmg : bool init false;
+
+	// local state (0: check dmg, 1: move)
+	s1: [0..2] init 0;
+
+	// check dmg
+
+	[check_r] turn=1 & s1=0 & dmg -> 0.5 : (turn'=2) + 0.5 : (s1'=1); // lose turn if dmg
+	[check_r] turn=1 & s1=0 & !dmg -> (s1'=1); // nothing happens if not dmg
+
+	// movements - up to four directions possible
+
+	// move forward
+	// orientation N 
+	[move_r] turn=1 & s1=1 & look=0 -> 
+		0.8 : (y'=min(y+1, Y_MAX-1)) & (turn'=2) & (s1'=0) +
+		0.05 : (turn'=2) & (s1'=0) + 
+		0.05 : (x'=max(x-1,0)) & (look'=3) & (turn'=2) & (s1'=0) + 
+		0.05 : (x'=min(x+1,X_MAX-1)) & (look'=1) & (turn'=2) & (s1'=0) + 
+		0.025 : (y'=max(y-1,0)) & (turn'=2) & (s1'=0) + 
+		0.025 : (y'=max(y-1,0)) & (look'=2) & (turn'=2) & (s1'=0);
+	// orientation E
+	[move_r] turn=1 & s1=1 & look=1 -> 
+		0.8 : (x'=min(x+1, X_MAX-1)) & (turn'=2) & (s1'=0) +
+		0.05 : (turn'=2) & (s1'=0) + 
+		0.05 : (y'=min(y+1,Y_MAX-1)) & (look'=0) & (turn'=2) & (s1'=0) + 
+		0.05 : (y'=max(y-1,0)) & (look'=2) & (turn'=2) & (s1'=0) + 
+		0.025 : (x'=max(x-1,0)) & (turn'=2) & (s1'=0) + 
+		0.025 : (x'=max(x-1,0)) & (look'=3) & (turn'=2) & (s1'=0);
+	// orientation S
+	[move_r] turn=1 & s1=1 & look=2 -> 
+		0.8 : (y'=max(y-1, 0)) & (turn'=2) & (s1'=0) +
+		0.05 : (turn'=2) & (s1'=0) + 
+		0.05 : (x'=min(y+1,Y_MAX-1)) & (look'=1) & (turn'=2) & (s1'=0) + 
+		0.05 : (x'=max(x-1,0)) & (look'=3) & (turn'=2) & (s1'=0) + 
+		0.025 : (y'=min(y+1,Y_MAX-1)) & (turn'=2) & (s1'=0) + 
+		0.025 : (y'=min(y+1,Y_MAX-1)) & (look'=0) & (turn'=2) & (s1'=0);
+	// orientation W
+	[move_r] turn=1 & s1=1 & look=3 -> 
+		0.8 : (x'=max(x-1, 0)) & (turn'=2) & (s1'=0) +
+		0.05 : (turn'=2) & (s1'=0) + 
+		0.05 : (y'=max(y-1,0)) & (look'=2) & (turn'=2) & (s1'=0) + 
+		0.05 : (y'=min(y+1,Y_MAX-1)) & (look'=0) & (turn'=2) & (s1'=0) + 
+		0.025 : (x'=min(x+1,X_MAX-1)) & (turn'=2) & (s1'=0) + 
+		0.025 : (x'=min(x+1,X_MAX-1)) & (look'=1) & (turn'=2) & (s1'=0);
+
+	// or change orientation freely
+	[north_r] turn=1 & s1=1 -> (look'=0) &  (s1'=2);
+	[east_r] turn=1 & s1=1 -> (look'=1) &  (s1'=2);
+	[south_r] turn=1 & s1=1 -> (look'=2) &  (s1'=2);
+	[west_r] turn=1 & s1=1 -> (look'=3) &  (s1'=2);
+	// which may incur damage
+	[damage_r] turn=1 & s1=2 ->
+		0.01 : (turn'=2) & (s1'=0) & (dmg'=true) +
+		0.99 : (turn'=2) & (s1'=0);
+
+endmodule
+
+module human
+	
+	// position on grid
+	a : [0..X_MAX-1] init X_MAX-1;
+	b : [0..Y_MAX-1] init Y_MAX-1;
+
+	// local state (0: random move, 1: panicky move)
+	s2 : [0..1] init 0;
+
+	// make a random move with probability 0.5
+	[random_h] turn=2 & s2=0 ->
+		0.125: (a'=min(a+1,X_MAX-1)) & (turn'=1) & (s2'=0) // east
+		+ 0.125: (a'=max(a-1,0)) & (turn'=1) & (s2'=0) // west
+		+ 0.125: (b'=min(b+1,X_MAX-1)) & (turn'=1) & (s2'=0) // north
+		+ 0.125: (b'=max(b-1,0)) & (turn'=1) & (s2'=0) // south
+		+ 0.5: (s2'=1);
+
+	// otherwise move non-deterministically (panic)
+	[east_h] turn=2 & s2=1 -> (a'=min(a+1,X_MAX-1)) & (turn'=1) & (s2'=0);
+	[west_h] turn=2 & s2=1 -> (a'=max(a-1,0)) & (turn'=1) & (s2'=0);
+	[north_h] turn=2 & s2=1 -> (b'=min(b+1,X_MAX-1)) & (turn'=1) & (s2'=0);
+	[south_h] turn=2 & s2=1 -> (b'=max(b-1,0)) & (turn'=1) & (s2'=0);
+	[nothing_h] turn=2 & s2=1 -> (turn'=1) & (s2'=0);
+
+endmodule
+
+label "saved" = x=a & y=b;
+label "damaged" = dmg;

@@ -1,0 +1,51 @@
+{
+	"models": [
+	
+		{
+			"name": "avoid",
+			"full-name": "Avoid-The-Observer game",
+			"reference": "CKWW20",
+			"model-type": "SMG",
+			"params": [
+				{
+					"name": "X_MAX",
+					"type": "int",
+					"description": "grid width",
+					"suggested-values": [10,15,20]
+				},
+				{
+					"name": "Y_MAX",
+					"type": "int",
+					"description": "grish height",
+					"suggested-values": [10,15,20]
+				}
+			],
+			"www": "",
+			"notes": ""
+		},
+		
+		{
+			"name": "hallway",
+			"full-name": "Hallway-Human game",
+			"reference": "CKWW20",
+			"model-type": "SMG",
+			"params": [
+				{
+					"name": "X_MAX",
+					"type": "int",
+					"description": "grid width",
+					"suggested-values": [5,8,10]
+				},
+				{
+					"name": "Y_MAX",
+					"type": "int",
+					"description": "grish height",
+					"suggested-values": [5,8,10]
+				}
+			],
+			"www": "",
+			"notes": ""
+		}
+		
+	]
+}

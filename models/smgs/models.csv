@@ -1,0 +1,7 @@
+model_file,model_consts,model_type,states,time_constr
+"avoid.prism","X_MAX=10,Y_MAX=10",SMG,106524,1.819
+"avoid.prism","X_MAX=15,Y_MAX=15",SMG,480464,6.116
+"avoid.prism","X_MAX=20,Y_MAX=20",SMG,,
+"hallway.prism","X_MAX=10,Y_MAX=10",SMG,400000,5.809
+"hallway.prism","X_MAX=5,Y_MAX=5",SMG,25000,0.832
+"hallway.prism","X_MAX=8,Y_MAX=8",SMG,163840,2.75

@@ -1,0 +1,106 @@
+// Avoid-The-Observer
+// Game between an intruder and an observer in a gridworld
+
+// From: Stochastic games with lexicographic reachability-safety objectives
+// Krishnendu Chatterjee, Joost-Pieter Katoen, Maximilian Weininger, Tobias Winkler
+// Proc. 32nd Int. Conf. Computer Aided Verification (CAV 2020), pp. 398–420
+
+// model type is stochastic multiplayer game
+smg 
+
+// set up players
+
+player p1
+	[check_i], [east_i], [west_i], [north_i], [south_i], [search_i], [done_i]
+endplayer
+
+player p2
+	[check_o], [east_o], [west_o], [north_o], [south_o], [nothing_o], [move_o]
+endplayer
+
+// set up globals
+
+// which player's turn is it?
+global turn : [1..2] init 1;
+// has intruder been caught?
+global caught : bool init false;
+// has item been found?
+global found_item : bool init false;
+
+// set up constants
+
+// dimensions of grid
+const int X_MAX;
+const int Y_MAX;
+
+// distance for "close" (squared)
+const int RANGE_SQRD = 8;
+
+// formulas
+
+formula same_pos = x=a & y=b;
+formula intruder_at_exit = x=X_MAX-1 & y=Y_MAX-1;
+formula are_close = pow(x-a, 2) + pow(y-b, 2) <= RANGE_SQRD;
+
+module intruder
+
+	// position on grid
+	x : [0..X_MAX] init 0;
+	y : [0..Y_MAX] init 0;
+
+	// local state (0: check if caught, 1: move)
+	s1: [0..1] init 0;
+	
+	// check if caught
+	[check_i] turn=1 & s1=0 & same_pos & !intruder_at_exit -> (caught'=true); // caught
+	[check_i] turn=1 & s1=0 & same_pos & intruder_at_exit -> (s1'=1); // not caught
+	[check_i] turn=1 & s1=0 & !same_pos -> (s1'=1); // also not caught
+
+	// movements - up to four directions possible
+	[east_i] turn=1 & s1=1 & x<X_MAX-1 & !caught -> (x'=x+1) & (turn'=2) & (s1'=0);
+	[west_i] turn=1 & s1=1 & x>0 &!caught -> (x'=x-1) & (turn'=2) & (s1'=0);
+	[north_i] turn=1 & s1=1 & y<Y_MAX &!caught -> (y'=y+1) & (turn'=2) & (s1'=0);
+	[south_i] turn=1 & s1=1 & y>0 &!caught -> (y'=y-1) & (turn'=2) & (s1'=0);
+	[search_i] turn=1 & s1=1 & !caught & !intruder_at_exit ->
+	   0.9 : (turn'=2) & (s1'=0)
+	 + 0.1 : (turn'=2) & (s1'=0) & (found_item'=true);
+
+	// done
+	[done_i] turn=1 & s1=1 & !caught -> (turn'=2) & (s1'=0);
+
+endmodule
+
+module observer
+	
+	// position on grid
+	a : [0..X_MAX-1] init X_MAX-1;
+	b : [0..Y_MAX-1] init Y_MAX-1;
+
+	// local state (0: check if detected, 1: move)
+	s2 : [0..1] init 0; 
+	detected : bool init false;
+
+	// check if detected
+	[check_o] turn=2 & s2=0 & are_close -> (detected'=true) & (s2'=1);
+	[check_o] turn=2 & s2=0 & !are_close -> (detected'=false) & (s2'=1);
+
+	// if detected: observer has control over moves
+	[east_o] turn=2 & s2=1 & detected & a<X_MAX-1-> (a'=a+1) & (turn'=1) & (s2'=0);
+	[west_o] turn=2 & s2=1 & detected & a>0 -> (a'=a-1) & (turn'=1) & (s2'=0);
+	[north_o] turn=2 & s2=1 & detected & b<Y_MAX-1 -> (b'=b+1) & (turn'=1) & (s2'=0);
+	[south_o] turn=2 & s2=1 & detected & b>0 -> (b'=b-1) & (turn'=1) & (s2'=0);
+	[nothing_o] turn=2 & s2=1 & detected -> (turn'=1) & (s2'=0);
+
+	// move randomly if not detected
+	[move_o] turn=2 & s2=1 & !detected ->
+		  0.25: (a'=min(a+1,X_MAX-1)) & (turn'=1) & (s2'=0) // east
+		+ 0.25: (a'=max(a-1,0)) & (turn'=1) & (s2'=0) // west
+		+ 0.25: (b'=min(b+1,X_MAX-1)) & (turn'=1) & (s2'=0) // north
+		+ 0.25: (b'=max(b-1,0)) & (turn'=1) & (s2'=0); // south
+
+endmodule
+
+label "at_exit" = intruder_at_exit;
+label "caught" = caught=true;
+label "found_item" = found_item=true;
+label "detected" = detected;

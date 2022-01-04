@@ -1,0 +1,3 @@
+avoid.prism -const X_MAX=10,Y_MAX=10
+avoid.prism -const X_MAX=15,Y_MAX=15
+# avoid.prism -const X_MAX=20,Y_MAX=20

@@ -1,0 +1,2 @@
+// Maximise the probability of the intruder exiting
+"exit": <<p1>> Pmax=? [ F "at_exit" ];

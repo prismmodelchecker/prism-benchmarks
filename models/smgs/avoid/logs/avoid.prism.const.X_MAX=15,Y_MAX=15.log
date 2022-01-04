@@ -1,0 +1,34 @@
+PRISM-games
+===========
+
+Version: 3.1.dev (based on PRISM 4.7.dev)
+Date: Tue Jan 04 09:17:14 GMT 2022
+Hostname: eliot
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism-games smgs/avoid/avoid.prism -const 'X_MAX=15,Y_MAX=15' -mainlog 'smgs/avoid/logs/avoid.prism.const.X_MAX=15,Y_MAX=15.log'
+
+Parsing model file "smgs/avoid/avoid.prism"...
+
+Type:        SMG
+Modules:     intruder observer 
+Variables:   turn caught found_item x y s1 a b s2 detected 
+
+Switching to explicit engine, which supports SMGs...
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: X_MAX=15,Y_MAX=15
+
+Computing reachable states... 269952 480464 states
+Reachable states exploration and model construction done in 5.17 secs.
+Sorting reachable states list...
+
+Time for model construction: 6.116 seconds.
+
+Type:        SMG
+States:      480464 (1 initial)
+Transitions: 1440458
+Choices:     1087890
+Max/avg:     6/2.26
+
