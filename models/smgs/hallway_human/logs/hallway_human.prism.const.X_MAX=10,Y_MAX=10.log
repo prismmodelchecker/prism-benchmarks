@@ -2,12 +2,12 @@ PRISM-games
 ===========
 
 Version: 3.1.dev (based on PRISM 4.7.dev)
-Date: Tue Jan 04 10:01:30 GMT 2022
+Date: Tue Jan 04 10:08:04 GMT 2022
 Hostname: eliot
 Memory limits: cudd=1g, java(heap)=1g
-Command line: prism-games smgs/hallway_human/hallway.prism -const 'X_MAX=10,Y_MAX=10' -mainlog 'smgs/hallway_human/logs/hallway.prism.const.X_MAX=10,Y_MAX=10.log'
+Command line: prism-games smgs/hallway_human/hallway_human.prism -const 'X_MAX=10,Y_MAX=10' -mainlog 'smgs/hallway_human/logs/hallway_human.prism.const.X_MAX=10,Y_MAX=10.log'
 
-Parsing model file "smgs/hallway_human/hallway.prism"...
+Parsing model file "smgs/hallway_human/hallway_human.prism"...
 
 Type:        SMG
 Modules:     robot human 
@@ -20,11 +20,11 @@ Switching to explicit engine, which supports SMGs...
 Building model...
 Model constants: X_MAX=10,Y_MAX=10
 
-Computing reachable states... 238649 400000 states
-Reachable states exploration and model construction done in 4.863 secs.
+Computing reachable states... 226367 400000 states
+Reachable states exploration and model construction done in 5.158 secs.
 Sorting reachable states list...
 
-Time for model construction: 5.693 seconds.
+Time for model construction: 6.024 seconds.
 
 Type:        SMG
 States:      400000 (1 initial)
