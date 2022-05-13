@@ -2,8 +2,8 @@ PRISM-games
 ===========
 
 Version: 3.1.dev (based on PRISM 4.7.dev)
-Date: Tue Jan 04 10:01:41 GMT 2022
-Hostname: eliot
+Date: Fri May 13 14:03:16 BST 2022
+Hostname: bokonon
 Memory limits: cudd=1g, java(heap)=1g
 Command line: prism-games smgs/avoid/avoid.prism -const 'X_MAX=15,Y_MAX=15' -mainlog 'smgs/avoid/logs/avoid.prism.const.X_MAX=15,Y_MAX=15.log'
 
@@ -20,11 +20,11 @@ Switching to explicit engine, which supports SMGs...
 Building model...
 Model constants: X_MAX=15,Y_MAX=15
 
-Computing reachable states... 271148 480464 states
-Reachable states exploration and model construction done in 5.003 secs.
+Computing reachable states... 453903 480464 states
+Reachable states exploration and model construction done in 3.161 secs.
 Sorting reachable states list...
 
-Time for model construction: 5.945 seconds.
+Time for model construction: 3.679 seconds.
 
 Type:        SMG
 States:      480464 (1 initial)

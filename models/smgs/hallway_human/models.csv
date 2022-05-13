@@ -1,4 +1,4 @@
 model_file,model_consts,model_type,states,time_constr
-"hallway_human.prism","X_MAX=10,Y_MAX=10",SMG,400000,6.024
-"hallway_human.prism","X_MAX=5,Y_MAX=5",SMG,25000,1.084
-"hallway_human.prism","X_MAX=8,Y_MAX=8",SMG,163840,2.68
+"hallway_human.prism","X_MAX=10,Y_MAX=10",SMG,400000,3.408
+"hallway_human.prism","X_MAX=5,Y_MAX=5",SMG,25000,0.391
+"hallway_human.prism","X_MAX=8,Y_MAX=8",SMG,163840,1.514

@@ -2,8 +2,8 @@ PRISM-games
 ===========
 
 Version: 3.1.dev (based on PRISM 4.7.dev)
-Date: Tue Jan 04 11:35:05 GMT 2022
-Hostname: eliot
+Date: Fri May 13 14:03:20 BST 2022
+Hostname: bokonon
 Memory limits: cudd=1g, java(heap)=1g
 Command line: prism-games smgs/dice/dice.prism -const N=10 -mainlog smgs/dice/logs/dice.prism.const.N=10.log
 
@@ -21,10 +21,10 @@ Building model...
 Model constants: N=10
 
 Computing reachable states... 5755 states
-Reachable states exploration and model construction done in 0.241 secs.
+Reachable states exploration and model construction done in 0.065 secs.
 Sorting reachable states list...
 
-Time for model construction: 0.295 seconds.
+Time for model construction: 0.083 seconds.
 
 Type:        SMG
 States:      5755 (1 initial)

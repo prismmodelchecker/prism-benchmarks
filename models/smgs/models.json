@@ -62,6 +62,29 @@
 			],
 			"www": "",
 			"notes": ""
+		},
+		
+		{
+			"name": "investor",
+			"full-name": "Futures market investor",
+			"reference": "CFK+13b",
+			"model-type": "SMG",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of investors",
+					"suggested-values": [2,3]
+				},
+				{
+					"name": "vmax",
+					"type": "int",
+					"description": "maximum share value",
+					"suggested-values": [10,20,50]
+				}
+			],
+			"www": "",
+			"notes": "Based on a model originally from [MM07]."
 		}
 		
 	]

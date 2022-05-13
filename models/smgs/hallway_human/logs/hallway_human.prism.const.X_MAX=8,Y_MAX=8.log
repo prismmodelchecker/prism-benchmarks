@@ -2,8 +2,8 @@ PRISM-games
 ===========
 
 Version: 3.1.dev (based on PRISM 4.7.dev)
-Date: Tue Jan 04 10:08:00 GMT 2022
-Hostname: eliot
+Date: Fri May 13 14:03:07 BST 2022
+Hostname: bokonon
 Memory limits: cudd=1g, java(heap)=1g
 Command line: prism-games smgs/hallway_human/hallway_human.prism -const 'X_MAX=8,Y_MAX=8' -mainlog 'smgs/hallway_human/logs/hallway_human.prism.const.X_MAX=8,Y_MAX=8.log'
 
@@ -21,10 +21,10 @@ Building model...
 Model constants: X_MAX=8,Y_MAX=8
 
 Computing reachable states... 163840 states
-Reachable states exploration and model construction done in 2.275 secs.
+Reachable states exploration and model construction done in 1.304 secs.
 Sorting reachable states list...
 
-Time for model construction: 2.68 seconds.
+Time for model construction: 1.514 seconds.
 
 Type:        SMG
 States:      163840 (1 initial)
