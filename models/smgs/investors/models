@@ -1,0 +1,6 @@
+investors2.prism -const vmax=10
+investors2.prism -const vmax=20
+# investors2.prism -const vmax=40
+# investors3.prism -const vmax=10
+# investors3.prism -const vmax=20
+# investors3.prism -const vmax=40

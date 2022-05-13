@@ -1,0 +1,3 @@
+// Maximum probability with which investor 1
+// can guarantee a share value greater than 5
+"greater": <<investor1>> Pmax=? [ F ("done1"&v>5) ];
