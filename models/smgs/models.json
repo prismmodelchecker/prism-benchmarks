@@ -65,7 +65,7 @@
 		},
 		
 		{
-			"name": "investor",
+			"name": "investors",
 			"full-name": "Futures market investor",
 			"reference": "CFK+13b",
 			"model-type": "SMG",
