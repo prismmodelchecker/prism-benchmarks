@@ -103,11 +103,11 @@
 					"name": "feat",
 					"type": "int",
 					"description": "feature configuration",
-					"suggested-values": [A,B,C,D]
+					"suggested-values": ["A","B","C","D"]
 				}
 			],
-			"www": "",
-			"notes": "Auto-generated model files; see https://github.com/moves-rwth/human_factor_models."
+			"www": "https://github.com/moves-rwth/human_factor_models",
+			"notes": "Auto-generated model files."
 		},
 		
 		{
