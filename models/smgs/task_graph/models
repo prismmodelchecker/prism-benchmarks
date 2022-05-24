@@ -1,0 +1,6 @@
+task_graph6.prism -const k1=10,k2=10
+task_graph6.prism -const k1=15,k2=15
+task_graph6.prism -const k1=20,k2=20
+task_graph9.prism -const k1=10,k2=10
+task_graph9.prism -const k1=15,k2=15
+task_graph9.prism -const k1=20,k2=20

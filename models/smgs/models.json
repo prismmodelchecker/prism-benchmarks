@@ -85,6 +85,58 @@
 			],
 			"www": "",
 			"notes": "Based on a model originally from [MM07]."
+		},
+		
+		{
+			"name": "safe_nav",
+			"full-name": "Safe human-robot navigation",
+			"reference": "JJK+18",
+			"model-type": "SMG",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "grid size",
+					"suggested-values": [8]
+				},
+				{
+					"name": "feat",
+					"type": "int",
+					"description": "feature configuration",
+					"suggested-values": [A,B,C,D]
+				}
+			],
+			"www": "",
+			"notes": "Auto-generated model files; see https://github.com/moves-rwth/human_factor_models."
+		},
+		
+		{
+			"name": "task_graph",
+			"full-name": "Task-graph scheduling with faults",
+			"reference": "KNP19",
+			"model-type": "SMG",
+			"params": [
+				{
+					"name": "N",
+					"type": "int",
+					"description": "number of tasks",
+					"suggested-values": [6,9]
+				},
+				{
+					"name": "k1",
+					"type": "int",
+					"description": "max number of faults for processor 1",
+					"suggested-values": [5,10,15]
+				},
+				{
+					"name": "k2",
+					"type": "int",
+					"description": "max number of faults for processor 2",
+					"suggested-values": [5,10,15]
+				}
+			],
+			"www": "http://www.prismmodelchecker.org/casestudies/task_graph.php",
+			"notes": "Generated from TPTG model (task_graph9_tptg.prism) via digital clocks translation. Extends a TA model from [BFLM11]."
 		}
 		
 	]

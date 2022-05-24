@@ -3,7 +3,7 @@
 
 find dtmcs ctmcs mdps -type d -exec prism-auto -p prism -n -b {} -l {}/logs \;
 find ptas -type d -exec prism-auto -p prism -n -b -x '-pf true' {} -l {}/logs \;
-find smgs -type d -exec prism-auto -p prism-games -n -b {} -l {}/logs \;
+find smgs -type d -exec prism-auto -p prism-games -x "-javamaxmem 16g" -n -b {} -l {}/logs \;
 
 # find dtmcs ctmcs mdps -type d -exec sh -c 'prism-auto -p prism -n -b $0 -l $0/logs' {} \;
 

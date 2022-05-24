@@ -235,3 +235,10 @@ model_file,model_consts,model_type,states,time_constr
 "hallway_human.prism","X_MAX=8,Y_MAX=8",SMG,163840,1.514
 "investors2.prism","vmax=10",SMG,172240,1.119
 "investors2.prism","vmax=20",SMG,568790,3.605
+"safe_nav8x8_D.prism","",SMG,,
+"safe_nav8x8_D.prism","",SMG,,
+"safe_nav8x8_D.prism","",SMG,,
+"task_graph6.prism","k1=10,k2=10",SMG,467638,3.965
+"task_graph6.prism","k1=15,k2=15",SMG,1010318,9.188
+"task_graph6.prism","k1=20,k2=20",SMG,1759348,17.325
+"task_graph9.prism","k1=10,k2=10",SMG,2567638,34.956

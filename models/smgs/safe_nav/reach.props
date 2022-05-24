@@ -1,0 +1,2 @@
+// Probability of reaching the other side without crashing
+"reach": <<1>> Pmax=? [ !"crash" U ("robot_goal" | "human_goal" | dl) ];

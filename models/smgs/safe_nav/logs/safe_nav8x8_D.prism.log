@@ -1,0 +1,22 @@
+PRISM-games
+===========
+
+Version: 3.1.dev (based on PRISM 4.7.dev)
+Date: Fri May 13 16:47:23 BST 2022
+Hostname: bokonon
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism-games smgs/safe_nav/safe_nav8x8_D.prism -mainlog smgs/safe_nav/logs/safe_nav8x8_D.prism.log
+
+Parsing model file "smgs/safe_nav/safe_nav8x8_D.prism"...
+
+Type:        SMG
+Modules:     robot hb 
+Variables:   o1 l1 w1 w2 hm xR yR d dl x y z 
+
+Switching to explicit engine, which supports SMGs...
+
+---------------------------------------------------------------------
+
+Building model...
+
+Computing reachable states... 4255 13843 22392 31495 41387 50075 59840 69611 79411 89180 98888 106786 116122 125761 135472 145068 154340 163506 172908 180778 189691 198420 207531 216591 225699 234138 243208 252807 262127 271405 280816 290383 299749 309096
