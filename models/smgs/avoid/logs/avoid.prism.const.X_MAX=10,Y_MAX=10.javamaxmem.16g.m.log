@@ -1,0 +1,33 @@
+PRISM-games
+===========
+
+Version: 3.1.dev (based on PRISM 4.7.dev)
+Date: Tue May 24 14:32:44 BST 2022
+Hostname: lovelace
+Memory limits: cudd=1g, java(heap)=16g
+Command line: prism-games smgs/avoid/avoid.prism -const 'X_MAX=10,Y_MAX=10' -javamaxmem 16g -m -mainlog 'smgs/avoid/logs/avoid.prism.const.X_MAX=10,Y_MAX=10.javamaxmem.16g.m.log'
+
+Parsing model file "smgs/avoid/avoid.prism"...
+
+Type:        SMG
+Modules:     intruder observer 
+Variables:   turn caught found_item x y s1 a b s2 detected 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: X_MAX=10,Y_MAX=10
+
+Computing reachable states...
+
+Reachability (BFS): 83 iterations in 0.16 seconds (average 0.001940, setup 0.00)
+
+Time for model construction: 0.16 seconds.
+
+Type:        SMG
+States:      106524 (1 initial)
+Transitions: 310978
+Choices:     244730
+
+Transition matrix: 19298 nodes (6 terminal), 310978 minterms, vars: 22r/22c/16nd
+

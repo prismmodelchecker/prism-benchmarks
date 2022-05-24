@@ -1,0 +1,33 @@
+PRISM-games
+===========
+
+Version: 3.1.dev (based on PRISM 4.7.dev)
+Date: Tue May 24 14:32:50 BST 2022
+Hostname: lovelace
+Memory limits: cudd=1g, java(heap)=16g
+Command line: prism-games smgs/hallway_human/hallway_human.prism -const 'X_MAX=5,Y_MAX=5' -javamaxmem 16g -m -mainlog 'smgs/hallway_human/logs/hallway_human.prism.const.X_MAX=5,Y_MAX=5.javamaxmem.16g.m.log'
+
+Parsing model file "smgs/hallway_human/hallway_human.prism"...
+
+Type:        SMG
+Modules:     robot human 
+Variables:   turn x y look dmg s1 a b s2 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: X_MAX=5,Y_MAX=5
+
+Computing reachable states...
+
+Reachability (BFS): 28 iterations in 0.02 seconds (average 0.000857, setup 0.00)
+
+Time for model construction: 0.029 seconds.
+
+Type:        SMG
+States:      25000 (1 initial)
+Transitions: 112200
+Choices:     65000
+
+Transition matrix: 1334 nodes (12 terminal), 112200 minterms, vars: 19r/19c/15nd
+

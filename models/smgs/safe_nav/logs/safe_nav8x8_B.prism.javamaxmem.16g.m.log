@@ -1,0 +1,32 @@
+PRISM-games
+===========
+
+Version: 3.1.dev (based on PRISM 4.7.dev)
+Date: Tue May 24 14:33:20 BST 2022
+Hostname: lovelace
+Memory limits: cudd=1g, java(heap)=16g
+Command line: prism-games smgs/safe_nav/safe_nav8x8_B.prism -javamaxmem 16g -m -mainlog smgs/safe_nav/logs/safe_nav8x8_B.prism.javamaxmem.16g.m.log
+
+Parsing model file "smgs/safe_nav/safe_nav8x8_B.prism"...
+
+Type:        SMG
+Modules:     robot hb 
+Variables:   o1 o2 l1 l2 w1 w2 hm xR yR d dl x y z 
+
+---------------------------------------------------------------------
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 70 iterations in 1.06 seconds (average 0.015171, setup 0.00)
+
+Time for model construction: 3.096 seconds.
+
+Type:        SMG
+States:      8732493 (2 initial)
+Transitions: 23213848
+Choices:     17280180
+
+Transition matrix: 67735 nodes (3359 terminal), 23213848 minterms, vars: 25r/25c/6nd
+

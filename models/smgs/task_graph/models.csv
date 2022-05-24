@@ -1,5 +1,7 @@
 model_file,model_consts,model_type,states,time_constr
-"task_graph6.prism","k1=10,k2=10",SMG,467638,3.965
-"task_graph6.prism","k1=15,k2=15",SMG,1010318,9.188
-"task_graph6.prism","k1=20,k2=20",SMG,1759348,17.325
-"task_graph9.prism","k1=10,k2=10",SMG,2567638,34.956
+"task_graph6.prism","k1=10,k2=10",SMG,467638,0.596
+"task_graph6.prism","k1=15,k2=15",SMG,1010318,0.985
+"task_graph6.prism","k1=20,k2=20",SMG,1759348,1.791
+"task_graph9.prism","k1=10,k2=10",SMG,2567638,1.5
+"task_graph9.prism","k1=15,k2=15",SMG,5533288,2.952
+"task_graph9.prism","k1=20,k2=20",SMG,9623138,4.531

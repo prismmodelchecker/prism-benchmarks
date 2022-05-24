@@ -1,0 +1,33 @@
+PRISM-games
+===========
+
+Version: 3.1.dev (based on PRISM 4.7.dev)
+Date: Tue May 24 14:33:09 BST 2022
+Hostname: lovelace
+Memory limits: cudd=1g, java(heap)=16g
+Command line: prism-games smgs/task_graph/task_graph9.prism -const 'k1=20,k2=20' -javamaxmem 16g -m -mainlog 'smgs/task_graph/logs/task_graph9.prism.const.k1=20,k2=20.javamaxmem.16g.m.log'
+
+Parsing model file "smgs/task_graph/task_graph9.prism"...
+
+Type:        SMG
+Modules:     scheduler P1 P2 
+Variables:   turn task9 task8 task7 task6 task5 task4 task3 task2 task1 y p1 fail1 x1 p2 fail2 x2 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: k1=20,k2=20
+
+Computing reachable states...
+
+Reachability (BFS): 77 iterations in 4.48 seconds (average 0.058221, setup 0.00)
+
+Time for model construction: 4.531 seconds.
+
+Type:        SMG
+States:      9623138 (1 initial)
+Transitions: 30937011
+Choices:     24873641
+
+Transition matrix: 39349 nodes (4 terminal), 30937011 minterms, vars: 41r/41c/15nd
+

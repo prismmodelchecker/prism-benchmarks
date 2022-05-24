@@ -1,4 +1,5 @@
 model_file,model_consts,model_type,states,time_constr
-"safe_nav8x8_D.prism","",SMG,,
-"safe_nav8x8_D.prism","",SMG,,
-"safe_nav8x8_D.prism","",SMG,,
+"safe_nav8x8_A.prism","",SMG,17052941,4.743
+"safe_nav8x8_B.prism","",SMG,8732493,3.096
+"safe_nav8x8_C.prism","",SMG,5078029,1.736
+"safe_nav8x8_D.prism","",SMG,2592845,0.995

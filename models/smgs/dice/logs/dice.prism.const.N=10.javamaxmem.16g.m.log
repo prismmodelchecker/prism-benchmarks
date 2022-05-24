@@ -1,0 +1,33 @@
+PRISM-games
+===========
+
+Version: 3.1.dev (based on PRISM 4.7.dev)
+Date: Tue May 24 14:32:54 BST 2022
+Hostname: lovelace
+Memory limits: cudd=1g, java(heap)=16g
+Command line: prism-games smgs/dice/dice.prism -const N=10 -javamaxmem 16g -m -mainlog smgs/dice/logs/dice.prism.const.N=10.javamaxmem.16g.m.log
+
+Parsing model file "smgs/dice/dice.prism"...
+
+Type:        SMG
+Modules:     player1 player2 
+Variables:   s1 i x s2 y j 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: N=10
+
+Computing reachable states...
+
+Reachability (BFS): 41 iterations in 0.01 seconds (average 0.000268, setup 0.00)
+
+Time for model construction: 0.02 seconds.
+
+Type:        SMG
+States:      5755 (1 initial)
+Transitions: 16104
+Choices:     7429
+
+Transition matrix: 1717 nodes (3 terminal), 16104 minterms, vars: 19r/19c/9nd
+

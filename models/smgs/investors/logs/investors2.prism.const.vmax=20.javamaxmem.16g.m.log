@@ -1,0 +1,33 @@
+PRISM-games
+===========
+
+Version: 3.1.dev (based on PRISM 4.7.dev)
+Date: Tue May 24 14:32:48 BST 2022
+Hostname: lovelace
+Memory limits: cudd=1g, java(heap)=16g
+Command line: prism-games smgs/investors/investors2.prism -const vmax=20 -javamaxmem 16g -m -mainlog smgs/investors/logs/investors2.prism.const.vmax=20.javamaxmem.16g.m.log
+
+Parsing model file "smgs/investors/investors2.prism"...
+
+Type:        SMG
+Modules:     sched investor1 investor2 market probability cap 
+Variables:   term t m1 m2 i1 i2 b1 b2 v p c 
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: vmax=20
+
+Computing reachable states...
+
+Reachability (BFS): 147 iterations in 0.07 seconds (average 0.000497, setup 0.00)
+
+Time for model construction: 0.059 seconds.
+
+Type:        SMG
+States:      568790 (1 initial)
+Transitions: 1247069
+Choices:     762067
+
+Transition matrix: 11325 nodes (26 terminal), 1247069 minterms, vars: 27r/27c/15nd
+
