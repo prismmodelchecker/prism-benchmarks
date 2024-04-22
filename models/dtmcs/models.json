@@ -47,7 +47,7 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/brp.php",
-			"notes": "[DJJL01] presents the MDP model. An earlier, non-probabilistic model can be found in [HSV+94].",
+			"notes": "[DJJL01] presents the MDP model. An earlier, non-probabilistic model can be found in [HSV94].",
 			"properties": [
 				{
 					"name": "p1",
