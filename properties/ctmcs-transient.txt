@@ -1,3 +1,5 @@
 ../models/ctmcs/cluster, operational.csl
+../models/ctmcs/erlangen, avail_tr.props
+../models/ctmcs/erlangen, thru_hi_tr.props
 ../models/ctmcs/mapk_cascade, activated_T.csl
 ../models/ctmcs/tandem, customers_T.csl

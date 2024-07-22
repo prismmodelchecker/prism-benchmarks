@@ -1,4 +1,6 @@
 ../models/ctmcs/cluster, premium.csl
+../models/ctmcs/erlangen, avail_ss.props
+../models/ctmcs/erlangen, thru_hi_ss.props
 ../models/ctmcs/fms, productivity.csl
 ../models/ctmcs/kanban, throughput.csl
 ../models/ctmcs/polling, s1.csl
