@@ -1,0 +1,4 @@
+const int T;
+
+// Probability that the mainframe is available at time T
+"avail_tr": P=? [ F=T "avail" ];

@@ -1,0 +1,4 @@
+const int T;
+
+// Expected throughout of high priority jobs at time point T
+"thru_hi_tr": R{"thru_high"}=? [ I=T ];

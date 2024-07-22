@@ -1,0 +1,227 @@
+// Multiprocessor mainframe reliability/performance model
+// From: Stochastic Process Algebras Applied to Failure Modelling
+// by Ulrich Herzog and Vassilis Mertsiotakis
+
+ctmc
+
+// -----------------------------------------------------------------
+
+// Constants (note: time unit = minutes)
+
+// Initial phase (1-3) for loads
+const int l_init = 1;
+
+// Phase change rate
+const double phi = 0.00334;
+
+// Arrival rates for programmer (low priority) jobs (1=low, 2=high)
+const double lambda1 = 0.01667;
+const double lambda2 = 0.16;
+
+// Arrival rates for user (high priority) jobs (1=low, 2=high)
+const double mu1 = 0.033;
+const double mu2 = 2;
+
+// Failure rates (1=low, 2=high)
+const double delta1 = 0.00035;
+const double delta2 = 0.0007;
+
+// Queue size for programmer (low priority) jobs
+const int size1; // 40
+// Queue size for user (high priority) jobs
+const int size2; // 10;
+
+// Job delivery rate
+const double alpha = 48;
+
+// Repair rate
+const double beta = 0.01;
+
+// Service rate for programmer (low priority) jobs
+const double xi = 0.3;
+// Service rate for user (high priority) jobs
+const double nu = 12;
+
+// -----------------------------------------------------------------
+
+// System components
+
+// Load: programmer (low priority) jobs
+
+module ProgLoad
+
+	// Phase: 1=low, 2=high, 3=idle
+	pl : [1..3] init l_init;
+	
+	// Job arrival
+	[prog_job] pl=1 -> lambda1 : (pl'=1);
+	[prog_job] pl=2 -> lambda2 : (pl'=2);
+	// Phase change
+	[c] true -> (pl'=mod(pl,3)+1);
+
+endmodule
+
+// Load: user (high priority) jobs
+
+module UserLoad
+
+	// Phase: 1=low, 2=high, 3=idle
+	ul : [1..3] init l_init;
+	
+	// Job arrival
+	[user_job] ul=1 -> mu1 : (ul'=1);
+	[user_job] ul=2 -> mu2 : (ul'=2);
+	// Phase change
+	[c] true -> (ul'=mod(ul,3)+1);
+
+endmodule
+
+// Failures "load"
+
+module FailLoad
+
+	// Phase: 1=low, 2=high, 3=idle
+	fl : [1..3] init l_init;
+	
+	// Failure occurrence
+	[fail] fl=1 -> delta1 : (fl'=1);
+	[fail] fl=2 -> delta2 : (fl'=2);
+	// Phase change
+	[c] true -> (fl'=mod(fl,3)+1);
+
+endmodule
+
+// Rate for phase change of loads
+
+module LoadPhase
+
+	[c] true -> phi : true;
+
+endmodule
+
+// Queue: programmer (low priority) jobs
+// see Q0...Ql page 13 of the paper
+
+module ProgJobQueue
+
+	// Queue size
+	pjq : [0..size1];
+	
+	// Job arrival
+	[prog_job] pjq<size1 -> (pjq'=pjq+1);
+	// Job delivery
+	[get_prog_job1] pjq>0 -> alpha : (pjq'=pjq-1);
+	[get_prog_job2] pjq>0 -> alpha : (pjq'=pjq-1);
+	[get_prog_job3] pjq>0 -> alpha : (pjq'=pjq-1);
+	[get_prog_job4] pjq>0 -> alpha : (pjq'=pjq-1);
+
+endmodule
+
+// Queue: user (high priority) jobs
+// see R0...Rl page 13 of the paper
+
+module UserJobQueue
+
+	// Queue size
+	ujq : [0..size2];
+	
+	// Job arrival
+	[user_job] ujq<size2 -> (ujq'=ujq+1);
+	// Job delivery
+	[get_user_job1] ujq>0 -> alpha : (ujq'=ujq-1);
+	[get_user_job2] ujq>0 -> alpha : (ujq'=ujq-1);
+	[get_user_job3] ujq>0 -> alpha : (ujq'=ujq-1);
+	[get_user_job4] ujq>0 -> alpha : (ujq'=ujq-1);
+	// Block lower priority jobs if queue non-empty
+	[get_prog_job1] ujq=0 -> true;
+	[get_prog_job2] ujq=0 -> true;
+	[get_prog_job3] ujq=0 -> true;
+	[get_prog_job4] ujq=0 -> true;
+	
+endmodule
+
+// Failures "queue"
+// see F0/F1 page 13 of the paper
+
+module FailQueue
+
+	// Failure occurred? (1=yes)
+	fq : [0..1];
+
+	// Failure occurrence
+	[fail] fq=0 -> (fq'=1);
+	// Repair
+	[repair] fq=1 -> beta : (fq'=0);
+	// Block job arrival/delivery in case of failure
+	[prog_job] fq=0 -> true;
+	[user_job] fq=0 -> true;
+	[get_prog_job1] fq=0 -> true;
+	[get_prog_job2] fq=0 -> true;
+	[get_prog_job3] fq=0 -> true;
+	[get_prog_job4] fq=0 -> true;
+	[get_user_job1] fq=0 -> true;
+	[get_user_job2] fq=0 -> true;
+	[get_user_job3] fq=0 -> true;
+	[get_user_job4] fq=0 -> true;
+
+endmodule
+
+// Processor 1
+// see P/PW_0/PW_1/P_f page 13 of the paper
+
+module Processor1
+
+	// Processor state: 0=idle (P), 1=userjob (PW_0), 2=progjob (PW_1), 3=failed (P_f)
+	p1 : [0..3];
+	
+	// Job delivery
+	[get_user_job1] p1=0 -> (p1'=1);
+	[get_prog_job1] p1=0 -> (p1'=2);
+	// Job processing
+	[user_job_ready1] p1=1 -> nu : (p1'=0);
+	[prog_job_ready1] p1=2 -> xi : (p1'=0);
+	// Failure/repair	
+	[fail] p1!=3 -> (p1'=3);
+	[repair] p1=3 -> (p1'=0);
+
+endmodule
+
+// Processors 2-4 (renamed)
+
+module Processor2 = Processor1 [ p1=p2,
+                                 get_user_job1=get_user_job2, get_prog_job1=get_prog_job2,
+                                 user_job_ready1=user_job_ready2, prog_job_ready1=prog_job_ready2 ]
+endmodule
+
+module Processor3 = Processor1 [ p1=p3,
+                                 get_user_job1=get_user_job3, get_prog_job1=get_prog_job3,
+                                 user_job_ready1=user_job_ready3, prog_job_ready1=prog_job_ready3 ]
+endmodule
+
+module Processor4 = Processor1 [ p1=p4,
+                                 get_user_job1=get_user_job4, get_prog_job1=get_prog_job4,
+                                 user_job_ready1=user_job_ready4, prog_job_ready1=prog_job_ready4 ]
+endmodule
+
+// -----------------------------------------------------------------
+
+// Mainframe is available (not failed)
+label "avail" = fq=0;
+
+// Elapsed time
+rewards "time"
+	true : 1;
+endrewards
+
+// Availability (not failed)
+rewards "availability"
+	fq=0 : 1;
+endrewards
+
+// Throughput of high priority jobs (rate of user_job_ready* actions)
+rewards "thru_high"
+	p1=1 : nu;
+	p2=1 : nu;
+	p3=1 : nu;
+	p4=1 : nu;
+endrewards

@@ -1,0 +1,4 @@
+mainframe.prism -const size1=10,size2=4
+mainframe.prism -const size1=20,size2=5
+mainframe.prism -const size1=30,size2=8
+mainframe.prism -const size1=40,size2=10

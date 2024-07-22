@@ -35,6 +35,28 @@
 		},
 		
 		{
+			"name": "erlangen",
+			"full-name": "Erlangen mainframe",
+			"reference": "TBC",
+			"model-type": "CTMC",
+			"params": [
+				{
+					"name": "size1",
+					"type": "int",
+					"description": "Low priority job queue size",
+					"suggested-values": [10,20,30,40]
+				},
+				{
+					"name": "size2",
+					"type": "int",
+					"description": "High priority job queue size",
+					"suggested-values": [4,5,8,10]
+				}
+			],
+			"notes": "The original (TIPP) model appears in [HM94], [HHM95]."
+		},
+		
+		{
 			"name": "fms",
 			"full-name": "Flexible manufacturing system",
 			"reference": "CT93",
