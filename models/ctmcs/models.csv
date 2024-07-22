@@ -15,6 +15,10 @@ model_file,model_consts,model_type,states,time_constr
 "embedded.sm","MAX_COUNT=6",CTMC,6858,0.036
 "embedded.sm","MAX_COUNT=7",CTMC,7703,0.067
 "embedded.sm","MAX_COUNT=8",CTMC,8548,0.043
+"erlangen.prism","size1=10,size2=4",CTMC,13530,0.023
+"erlangen.prism","size1=20,size2=5",CTMC,30996,0.018
+"erlangen.prism","size1=30,size2=8",CTMC,68634,0.029
+"erlangen.prism","size1=40,size2=10",CTMC,110946,0.023
 "mainframe.prism","size1=10,size2=4",CTMC,13530,0.026
 "mainframe.prism","size1=20,size2=5",CTMC,30996,0.029
 "mainframe.prism","size1=30,size2=8",CTMC,68634,0.033

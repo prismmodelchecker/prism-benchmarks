@@ -1,0 +1,32 @@
+PRISM
+=====
+
+Version: 4.8.1.dev
+Date: Mon Jul 22 20:22:48 BST 2024
+Hostname: bokonon.local
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism ctmcs/erlangen/erlangen.prism -const 'size1=40,size2=10' -mainlog 'ctmcs/erlangen/logs/erlangen.prism.const.size1=40,size2=10.log'
+
+Parsing model file "ctmcs/erlangen/erlangen.prism"...
+
+Type:        CTMC
+Modules:     ProgLoad UserLoad FailLoad LoadPhase ProgJobQueue UserJobQueue FailQueue Processor1 Processor2 Processor3 Processor4
+Variables:   pl ul fl pjq ujq fq p1 p2 p3 p4
+
+---------------------------------------------------------------------
+
+Building model...
+Model constants: size1=40,size2=10
+
+Computing reachable states...
+
+Reachability (BFS): 61 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.023 seconds.
+
+Type:        CTMC
+States:      110946 (1 initial)
+Transitions: 761109
+
+Rate matrix: 715 nodes (12 terminal), 761109 minterms, vars: 25r/25c
+
