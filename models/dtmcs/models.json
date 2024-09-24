@@ -151,7 +151,7 @@
 		},
 		
 		{
-			"name": "hermans",
+			"name": "herman",
 			"full-name": "Self-stabilisation protocol of Herman",
 			"reference": "KNP12a",
 			"model-type": "DTMC",
