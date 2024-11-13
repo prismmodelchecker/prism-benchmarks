@@ -37,7 +37,7 @@
 		{
 			"name": "erlangen",
 			"full-name": "Erlangen mainframe",
-			"reference": "TBC",
+			"reference": "GHP24",
 			"model-type": "CTMC",
 			"params": [
 				{
