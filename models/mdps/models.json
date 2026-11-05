@@ -21,7 +21,44 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/consensus_prism.php",
-			"notes": "The protocol is from [AH90]."
+			"notes": "The protocol is from [AH90].",
+			"properties": [
+				{
+					"name": "c2",
+					"prism": "Pmin=? [ F \"finished\"&\"all_coins_equal_1\" ]",
+					"description": "Minimum probability that the protocol finishes with all coins equal to v=1",
+					"category": "quant-prob-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "disagree",
+					"prism": "Pmax=? [ F \"finished\"&!\"agree\" ]",
+					"description": "Maximum probability of finishing protocol with coins not all equal",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "c1",
+					"prism": "P>=1 [ F \"finished\" ]",
+					"description": "With probability 1, all processes finish the protocol",
+					"category": "qual-prob-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "steps_max",
+					"prism": "R{\"steps\"}max=? [ F \"finished\" ]",
+					"description": "Maximum expected steps to finish",
+					"category": "quant-exp-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "steps_min",
+					"prism": "R{\"steps\"}min=? [ F \"finished\" ]",
+					"description": "Minimum expected steps to finish",
+					"category": "quant-exp-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -44,7 +81,44 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/csma.php",
-			"notes": "PTA model"
+			"notes": "PTA model",
+			"properties": [
+				{
+					"name": "all_before_max",
+					"prism": "Pmax=? [ !\"collision_max_backoff\" U \"all_delivered\" ]",
+					"description": "Maximum probability all stations send successfully before a collision with max backoff",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "all_before_min",
+					"prism": "Pmin=? [ !\"collision_max_backoff\" U \"all_delivered\" ]",
+					"description": "Minimum probability all stations send successfully before a collision with max backoff",
+					"category": "quant-prob-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "some_before",
+					"prism": "Pmin=? [ F min_backoff_after_success<K ]",
+					"description": "Minimum probability that some station eventually delivers with less than K backoffs",
+					"category": "quant-prob-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "time_max",
+					"prism": "R{\"time\"}max=?[ F \"all_delivered\" ]",
+					"description": "Maximum expected time for all messages to be sent",
+					"category": "quant-exp-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "time_min",
+					"prism": "R{\"time\"}min=?[ F \"all_delivered\" ]",
+					"description": "Minimum expected time for all messages to be sent",
+					"category": "quant-exp-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -61,7 +135,37 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
-			"notes": "PTA model from [KNS03b] based on TA model from [SS01]."
+			"notes": "PTA model from [KNS03b] based on TA model from [SS01].",
+			"properties": [
+				{
+					"name": "elected",
+					"prism": "P>=1 [ F \"done\" ]",
+					"description": "A leader is always eventually elected with probability 1",
+					"category": "qual-prob-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "time_max",
+					"prism": "R{\"time\"}max=? [ F \"done\" ]",
+					"description": "Maximum expected time to elect a leader",
+					"category": "quant-exp-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "time_min",
+					"prism": "R{\"time\"}min=? [ F \"done\" ]",
+					"description": "Minimum expected time to elect a leader",
+					"category": "quant-exp-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "time_sending",
+					"prism": "R{\"time_sending\"}max=? [ F \"done\" ]",
+					"description": "Maximum expected time spent sending before electing a leader",
+					"category": "quant-exp-reach",
+					"min-max": "max"
+				}
+			]
 		},
 		
 		{
@@ -78,7 +182,37 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
-			"notes": "PTA model from [KNS03b] based on manual abstraction from [SV99]."
+			"notes": "PTA model from [KNS03b] based on manual abstraction from [SV99].",
+			"properties": [
+				{
+					"name": "elected",
+					"prism": "P>=1 [ F \"done\" ]",
+					"description": "A leader is always eventually elected with probability 1",
+					"category": "qual-prob-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "rounds",
+					"prism": "R{\"rounds\"}min=? [ F \"done\" ]",
+					"description": "Minimum expected rounds to elect a leader",
+					"category": "quant-exp-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "time_max",
+					"prism": "R{\"time\"}max=? [F \"done\" ]",
+					"description": "Maximum expected time to elect a leader",
+					"category": "quant-exp-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "time_min",
+					"prism": "R{\"time\"}min=? [F \"done\" ]",
+					"description": "Minimum expected time to elect a leader",
+					"category": "quant-exp-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -101,7 +235,16 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
-			"notes": "Extension of firewire_abst model above."
+			"notes": "Extension of firewire_abst model above.",
+			"properties": [
+				{
+					"name": "deadline",
+					"prism": "Pmin=? [ F s=9 ]",
+					"description": "Minimum probability of completing protocol within deadline",
+					"category": "quant-prob-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -124,7 +267,16 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
-			"notes": "Extension of firewire model above."
+			"notes": "Extension of firewire model above.",
+			"properties": [
+				{
+					"name": "deadline",
+					"prism": "Pmin=? [ F ((s1=8) & (s2=7)) | ((s1=7) & (s2=8)) ]",
+					"description": "Minimum probability of completing protocol within deadline",
+					"category": "quant-prob-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -147,7 +299,58 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/wlan.php",
-			"notes": "PTA model"
+			"notes": "PTA model",
+			"properties": [
+				{
+					"name": "collisions",
+					"prism": "Pmax=? [ F col=COL ]",
+					"description": "Maximum probability of COL collisions",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "sent",
+					"prism": "P>=1 [ F s1=12 & s2=12 ]",
+					"description": "With probability 1, eventually both stations have sent their packet correctly",
+					"category": "qual-prob-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "cost_max",
+					"prism": "R{\"cost\"}max=? [ F s1=12 & s2=12 ]",
+					"description": "Maximum expected cost for both stations to send correctly",
+					"category": "quant-exp-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "cost_min",
+					"prism": "R{\"cost\"}min=? [ F s1=12 & s2=12 ]",
+					"description": "Minimum expected cost for both stations to send correctly",
+					"category": "quant-exp-reach",
+					"min-max": "min"
+				},
+				{
+					"name": "num_collisions",
+					"prism": "R{\"collisions\"}max=? [ F s1=12 & s2=12 ]",
+					"description": "Maximum expected collisions before both stations to send correctly",
+					"category": "quant-exp-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "time_max",
+					"prism": "R{\"time\"}max=? [ F s1=12 & s2=12 ]",
+					"description": "Maximum expected time for both stations to send correctly",
+					"category": "quant-exp-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "time_min",
+					"prism": "R{\"time\"}min=? [ F s1=12 & s2=12 ]",
+					"description": "Minimum expected time for both stations to send correctly",
+					"category": "quant-exp-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -170,7 +373,16 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/wlan.php",
-			"notes": "Extension of wlan model above."
+			"notes": "Extension of wlan model above.",
+			"properties": [
+				{
+					"name": "deadline",
+					"prism": "Pmin=? [ F s1=12 & s2=12 ]",
+					"description": "Minimum probability of both stations sending correctly within deadline",
+					"category": "quant-prob-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -199,7 +411,23 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/zeroconf.php",
-			"notes": "PTA model. The protocol is from [CAG02]."
+			"notes": "PTA model. The protocol is from [CAG02].",
+			"properties": [
+				{
+					"name": "correct_max",
+					"prism": "Pmax=? [ F (l=4 & ip=1) ]",
+					"description": "Maximum probability of configuring correctly",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "correct_min",
+					"prism": "Pmin=? [ F (l=4 & ip=1) ]",
+					"description": "Minimum probability of configuring correctly",
+					"category": "quant-prob-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -234,7 +462,23 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/xxx.php",
-			"notes": "Extension of zeroconf model above. The protocol is from [CAG02]."
+			"notes": "Extension of zeroconf model above. The protocol is from [CAG02].",
+			"properties": [
+				{
+					"name": "deadline_max",
+					"prism": "Pmax=? [ !(l=4 & ip=2) U t>=deadline ]",
+					"description": "Maximum probability of not using fresh IP address within deadline",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "deadline_min",
+					"prism": "Pmin=? [ !(l=4 & ip=2) U t>=deadline ]",
+					"description": "Minimum probability of not using fresh IP address within deadline",
+					"category": "quant-prob-reach",
+					"min-max": "min"
+				}
+			]
 		}
 		
 	]

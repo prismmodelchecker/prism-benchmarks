@@ -21,7 +21,23 @@
 				}
 			],
 			"www": "",
-			"notes": ""
+			"notes": "",
+			"properties": [
+				{
+					"name": "exit",
+					"prism": "<<p1>> Pmax=? [ F \"at_exit\" ]",
+					"description": "Maximise the probability of the intruder exiting",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				},
+				{
+					"name": "find",
+					"prism": "<<p1>> Pmax=? [ F \"found_item\" ]",
+					"description": "Maximise the probability of the intruder finding the item",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				}
+			]
 		},
 		
 		{
@@ -38,7 +54,16 @@
 				}
 			],
 			"www": "",
-			"notes": "Example distributed with PRISM-games."
+			"notes": "Example distributed with PRISM-games.",
+			"properties": [
+				{
+					"name": "p1wins",
+					"prism": "<<P1>> Pmax=? [ F \"p1win\" ]",
+					"description": "Maximise the probability of player 1 winning",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				}
+			]
 		},
 		
 		{
@@ -61,7 +86,16 @@
 				}
 			],
 			"www": "",
-			"notes": ""
+			"notes": "",
+			"properties": [
+				{
+					"name": "save",
+					"prism": "<<p1>> P>=1 [ F \"saved\" ]",
+					"description": "Maximum probability of the agent saving the human is 1",
+					"category": "qual-prob-reach",
+					"min-max": "max"
+				}
+			]
 		},
 		
 		{
@@ -84,7 +118,16 @@
 				}
 			],
 			"www": "",
-			"notes": "Based on a model originally from [MM07]."
+			"notes": "Based on a model originally from [MM07].",
+			"properties": [
+				{
+					"name": "greater",
+					"prism": "<<investor1>> Pmax=? [ F (\"done1\"&v>5) ]",
+					"description": "Maximum probability with which investor 1 can guarantee a share value greater than 5",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				}
+			]
 		},
 		
 		{
@@ -107,7 +150,16 @@
 				}
 			],
 			"www": "https://github.com/moves-rwth/human_factor_models",
-			"notes": "Auto-generated model files."
+			"notes": "Auto-generated model files.",
+			"properties": [
+				{
+					"name": "reach",
+					"prism": "<<1>> Pmax=? [ !\"crash\" U (\"robot_goal\" | \"human_goal\" | dl) ]",
+					"description": "Maximum probability of reaching the other side without crashing",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				}
+			]
 		},
 		
 		{
@@ -136,7 +188,16 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/task_graph.php",
-			"notes": "Generated from TPTG model (task_graph9_tptg.prism) via digital clocks translation. Extends a TA model from [BFLM11]."
+			"notes": "Generated from TPTG model (task_graph9_tptg.prism) via digital clocks translation. Extends a TA model from [BFLM11].",
+			"properties": [
+				{
+					"name": "time",
+					"prism": "<<sched>> R{\"time\"}min=?[ F \"tasks_complete\" ]",
+					"description": "Minimum expected time to complete all tasks",
+					"category": "quant-exp-reach",
+					"min-max": "min"
+				}
+			]
 		}
 		
 	]

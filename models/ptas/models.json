@@ -21,7 +21,16 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/csma.php",
-			"notes": "Number of stations is fixed at N=2."
+			"notes": "Number of stations is fixed at N=2.",
+			"properties": [
+				{
+					"name": "collisions",
+					"prism": "Pmax=? [ F \"cmax\" ]",
+					"description": "Maximum probability that transmissions from stations collide COL times",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				}
+			]
 		},
 		
 		{
@@ -38,7 +47,46 @@
 				}
 			],
 			"www": "",
-			"notes": "Number of stations is fixed at N=2."
+			"notes": "Number of stations is fixed at N=2.",
+			"properties": [
+				{
+					"name": "deadline_max",
+					"prism": "Pmax=? [ F<=T \"done\" ]",
+					"description": "Maximum probability that both stations have sent their packets within time T",
+					"category": "time-bounded-reach",
+					"min-max": "max",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time bound",
+							"suggested-values": [1000,1750,1800]
+						}
+					]
+				},
+				{
+					"name": "deadline_min",
+					"prism": "Pmin=? [ F<=T \"done\" ]",
+					"description": "Minimum probability that both stations have sent their packets within time T",
+					"category": "time-bounded-reach",
+					"min-max": "min",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time bound",
+							"suggested-values": [1000,1750,1800]
+						}
+					]
+				},
+				{
+					"name": "eventually",
+					"prism": "Pmin=? [ F \"done\" ]",
+					"description": "Minimum probability that both stations eventually send their packets",
+					"category": "qual-prob-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -55,7 +103,31 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
-			"notes": "PTA model from [KNS03b] based on TA model from [SS01]."
+			"notes": "PTA model from [KNS03b] based on TA model from [SS01].",
+			"properties": [
+				{
+					"name": "deadline",
+					"prism": "Pmin=? [ F<=T \"done\" ]",
+					"description": "Minimum probability that a leader has been elected by time T",
+					"category": "time-bounded-reach",
+					"min-max": "min",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time bound",
+							"suggested-values": [2500,5000]
+						}
+					]
+				},
+				{
+					"name": "eventually",
+					"prism": "Pmin=? [ F \"done\" ]",
+					"description": "Minimum probability that a leader is eventually elected",
+					"category": "qual-prob-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -72,7 +144,46 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
-			"notes": "PTA model from [KNS03b] based on manual abstraction from [SV99]."
+			"notes": "PTA model from [KNS03b] based on manual abstraction from [SV99].",
+			"properties": [
+				{
+					"name": "deadline_max",
+					"prism": "Pmax=? [ F<=T \"done\" ]",
+					"description": "Maximum probability that a leader has been elected by time T",
+					"category": "time-bounded-reach",
+					"min-max": "max",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time bound",
+							"suggested-values": [50,500,5000]
+						}
+					]
+				},
+				{
+					"name": "deadline_min",
+					"prism": "Pmin=? [ F<=T \"done\" ]",
+					"description": "Minimum probability that a leader has been elected by time T",
+					"category": "time-bounded-reach",
+					"min-max": "min",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time bound",
+							"suggested-values": [5000,10000,15000]
+						}
+					]
+				},
+				{
+					"name": "eventually",
+					"prism": "Pmin=? [ F \"done\" ]",
+					"description": "Minimum probability that a leader is eventually elected",
+					"category": "qual-prob-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -83,7 +194,31 @@
 			"params": [
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/nonrepudiation.php",
-			"notes": "The protocol is due to Markowitch &amp; Roggeman [MR99]."
+			"notes": "The protocol is due to Markowitch &amp; Roggeman [MR99].",
+			"properties": [
+				{
+					"name": "deadline",
+					"prism": "Pmin=? [ F<T \"terminated_successfully\" ]",
+					"description": "Minimum probability that the protocol terminates successfully before time T",
+					"category": "time-bounded-reach",
+					"min-max": "min",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time bound",
+							"suggested-values": [40,80,100]
+						}
+					]
+				},
+				{
+					"name": "eventually",
+					"prism": "Pmin=? [ F \"terminated_successfully\" ]",
+					"description": "Minimum probability that the protocol eventually terminates successfully",
+					"category": "qual-prob-reach",
+					"min-max": "min"
+				}
+			]
 		},
 		
 		{
@@ -94,7 +229,31 @@
 			"params": [
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/nonrepudiation.php",
-			"notes": "The protocol is due to Markowitch &amp; Roggeman [MR99]."
+			"notes": "The protocol is due to Markowitch &amp; Roggeman [MR99].",
+			"properties": [
+				{
+					"name": "deadline",
+					"prism": "Pmax=? [ F<T \"gains_information\" ]",
+					"description": "Maximum probability that the malicious recipient gains information before time T",
+					"category": "time-bounded-reach",
+					"min-max": "max",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time bound",
+							"suggested-values": [5,10,20]
+						}
+					]
+				},
+				{
+					"name": "eventually",
+					"prism": "Pmax=? [ F \"gains_information\" ]",
+					"description": "Maximum probability that the malicious recipient eventually gains information",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				}
+			]
 		},
 		
 		{
@@ -105,7 +264,31 @@
 			"params": [
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/zeroconf.php",
-			"notes": "The protocol is from [CAG02]."
+			"notes": "The protocol is from [CAG02].",
+			"properties": [
+				{
+					"name": "deadline",
+					"prism": "Pmax=? [ F<=T s=2 & ip=2 ]",
+					"description": "Maximum probability of configuring IP address incorrectly by time T",
+					"category": "time-bounded-reach",
+					"min-max": "max",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time bound",
+							"suggested-values": [100,150,200]
+						}
+					]
+				},
+				{
+					"name": "incorrect",
+					"prism": "Pmax=? [ F s=2 & ip=2 ]",
+					"description": "Maximum probability of configuring IP address incorrectly",
+					"category": "quant-prob-reach",
+					"min-max": "max"
+				}
+			]
 		}
 		
 	]

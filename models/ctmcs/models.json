@@ -14,7 +14,106 @@
 					"suggested-values": [2,4,8]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/cluster.php"
+			"www": "http://www.prismmodelchecker.org/casestudies/cluster.php",
+			"properties": [
+				{
+					"name": "premium_steady",
+					"prism": "S=? [ \"premium\" ]",
+					"description": "Long-run probability that premium QoS will be delivered.",
+					"category": "steady-state"
+				},
+				{
+					"name": "qos1",
+					"prism": "P=? [ F<=T !\"minimum\" ]",
+					"description": "Probability the QoS drops below minimum quality within T time units",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "qos2",
+					"prism": "P=? [ F[T,T] !\"minimum\" ]",
+					"description": "Probability of facing insufficient QoS after T time units",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "qos3",
+					"prism": "P=? [ \"minimum\" U<=T \"premium\" ]",
+					"description": "Probability of going from minimum QoS to premium QoS within T time units without violating the minimum QoS constraint along the way",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "qos4",
+					"prism": "P=? [ !\"minimum\" U>=T \"minimum\" ]",
+					"description": "Probability that it takes more than T time units to recover from insufficient QoS",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "operational",
+					"prism": "R{\"percent_op\"}=? [ I=T ]",
+					"description": "Percentage of operational workstations at time T",
+					"category": "transient",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time instant"
+						}
+					]
+				},
+				{
+					"name": "below_min",
+					"prism": "R{\"time_not_min\"}=? [ C<=T ]",
+					"description": "Expected time the system spends below minimum QoS until time T",
+					"category": "cumul-reward",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "repairs",
+					"prism": "R{\"num_repairs\"}=? [ C<=T ]",
+					"description": "Expected number of repairs by time T",
+					"category": "cumul-reward",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				}
+			]
 		},
 		
 		{
@@ -31,7 +130,149 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/embedded.php",
-			"notes": "[MCT94] is a stochastic Petri net model. The PRISM model appears in [KNP04c], [KNP07b]."
+			"notes": "[MCT94] is a stochastic Petri net model. The PRISM model appears in [KNP04c], [KNP07b].",
+			"properties": [
+				{
+					"name": "actuators",
+					"prism": "P=? [ !\"down\" U \"fail_actuators\" ]",
+					"description": "Probability of actuator failure occurring first",
+					"category": "quant-prob-reach"
+				},
+				{
+					"name": "io",
+					"prism": "P=? [ !\"down\" U \"fail_io\" ]",
+					"description": "Probability of I/O failure occurring first",
+					"category": "quant-prob-reach"
+				},
+				{
+					"name": "main",
+					"prism": "P=? [ !\"down\" U \"fail_main\" ]",
+					"description": "Probability of main processor failure occurring first",
+					"category": "quant-prob-reach"
+				},
+				{
+					"name": "sensors",
+					"prism": "P=? [ !\"down\" U \"fail_sensors\" ]",
+					"description": "Probability of sensor failure occurring first",
+					"category": "quant-prob-reach"
+				},
+				{
+					"name": "danger_time",
+					"prism": "R{\"danger\"}=? [ F \"down\" ]",
+					"description": "Expected time spent in \"danger\" before \"down\"",
+					"category": "quant-exp-reach"
+				},
+				{
+					"name": "up_time",
+					"prism": "R{\"up\"}=? [ F \"down\" ]",
+					"description": "Expected time spent in \"up\" before \"down\"",
+					"category": "quant-exp-reach"
+				},
+				{
+					"name": "failure_T",
+					"prism": "P=? [ F<=(T*3600) \"down\" ]",
+					"description": "Probability of any failure occurring within T hours",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "actuators_T",
+					"prism": "P=? [ !\"down\" U<=(T*3600) \"fail_actuators\" ]",
+					"description": "Probability of actuator failure occurring first (within T hours)",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "io_T",
+					"prism": "P=? [ !\"down\" U<=(T*3600) \"fail_io\" ]",
+					"description": "Probability of I/O failure occurring first (within T hours)",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "main_T",
+					"prism": "P=? [ !\"down\" U<=(T*3600) \"fail_main\" ]",
+					"description": "Probability of main processor failure occurring first within (T hours)",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "sensors_T",
+					"prism": "P=? [ !\"down\" U<=(T*3600) \"fail_sensors\" ]",
+					"description": "Probability of sensor failure occurring first within (T hours)",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "danger_T",
+					"prism": "R{\"danger\"}=? [ C<=(T*3600) ]",
+					"description": "Expected time spent in \"danger\" by time T (hours)",
+					"category": "cumul-reward",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "down_T",
+					"prism": "R{\"down\"}=? [ C<=(T*3600) ]",
+					"description": "Expected time spent in \"down\" by time T (hours)",
+					"category": "cumul-reward",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "up_T",
+					"prism": "R{\"up\"}=? [ C<=(T*3600) ]",
+					"description": "Expected time spent in \"up\" by time T (hours)",
+					"category": "cumul-reward",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				}
+			]
 		},
 		
 		{
@@ -53,7 +294,47 @@
 					"suggested-values": [4,5,8,10]
 				}
 			],
-			"notes": "The original (TIPP) model appears in [HM94], [HHM95]."
+			"notes": "The original (TIPP) model appears in [HM94], [HHM95].",
+			"properties": [
+				{
+					"name": "avail_ss",
+					"prism": "S=? [ \"avail\" ]",
+					"description": "Long-run probability that the mainframe is available.",
+					"category": "steady-state"
+				},
+				{
+					"name": "thru_hi_ss",
+					"prism": "R{\"thru_high\"}=? [ S ]",
+					"description": "Long-run expected throughout of high priority jobs.",
+					"category": "steady-state"
+				},
+				{
+					"name": "avail_tr",
+					"prism": "P=? [ F=T \"avail\" ]",
+					"description": "Probability that the mainframe is available at time T",
+					"category": "transient",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time instant"
+						}
+					]
+				},
+				{
+					"name": "thru_hi_tr",
+					"prism": "R{\"thru_high\"}=? [ I=T ]",
+					"description": "Expected throughout of high priority jobs at time point T",
+					"category": "transient",
+					"params": [
+						{
+							"name": "T",
+							"type": "int",
+							"description": "time instant"
+						}
+					]
+				}
+			]
 		},
 		
 		{
@@ -69,7 +350,15 @@
 					"suggested-values": [1,2,3]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/fms.php"
+			"www": "http://www.prismmodelchecker.org/casestudies/fms.php",
+			"properties": [
+				{
+					"name": "productivity",
+					"prism": "R{\"productivity\"}=? [ S ]",
+					"description": "Expected productivity of the system",
+					"category": "steady-state"
+				}
+			]
 		},
 		
 		{
@@ -85,7 +374,15 @@
 					"suggested-values": [1,2,3]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/kanban.php"
+			"www": "http://www.prismmodelchecker.org/casestudies/kanban.php",
+			"properties": [
+				{
+					"name": "throughput",
+					"prism": "R{\"throughput\"}=? [ S ]",
+					"description": "Expected throughput of the system",
+					"category": "steady-state"
+				}
+			]
 		},
 		
 		{
@@ -102,7 +399,41 @@
 				}
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/mapk_cascade.php",
-			"notes": "A PRISM model appears in [KNP08a]."
+			"notes": "A PRISM model appears in [KNP08a].",
+			"properties": [
+				{
+					"name": "activated_time",
+					"prism": "R{\"time\"}=?[F kpp=N ]",
+					"description": "Expected time until all MAPK are activated at the same time instant",
+					"category": "quant-exp-reach"
+				},
+				{
+					"name": "activated_T",
+					"prism": "R{\"activated\"}=?[ I=T ]",
+					"description": "Expected amount of activated MAPK at time T",
+					"category": "transient",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time instant"
+						}
+					]
+				},
+				{
+					"name": "reactions",
+					"prism": "R{\"reactions\"}=? [ C<=T ]",
+					"description": "Expected number of reactions between MAPK and MAPKK by time T",
+					"category": "cumul-reward",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				}
+			]
 		},
 		
 		{
@@ -118,13 +449,66 @@
 					"suggested-values": [4,5,6]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/polling.php"
+			"www": "http://www.prismmodelchecker.org/casestudies/polling.php",
+			"properties": [
+				{
+					"name": "s1",
+					"prism": "S=? [ s1=1 & !(s=1 & a=1) ]",
+					"description": "Probability that in the long run station 1 is awaiting service",
+					"category": "steady-state"
+				},
+				{
+					"name": "s1_before_s2",
+					"prism": "P=? [ !(s=2 & a=1) U (s=1 & a=1) ]",
+					"description": "Probability that station 1 is served before station 2",
+					"category": "quant-prob-reach"
+				},
+				{
+					"name": "station1_polled",
+					"prism": "P=?[ F<=T (s=1 & a=0) ]",
+					"description": "Probability that station 1 will be polled within T time units",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "waiting",
+					"prism": "R{\"waiting\"}=?[C<=T]",
+					"description": "Expected time station 1 is waiting to be served by time T",
+					"category": "cumul-reward",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "served",
+					"prism": "R{\"served\"}=?[C<=T]",
+					"description": "Expected number of times station1 is served by time T",
+					"category": "cumul-reward",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				}
+			]
 		},
 		
 		{
 			"name": "tandem",
 			"full-name": "Tandem queueing network",
-			"reference": "HKMKS99",
+			"reference": "HMKS99",
 			"model-type": "CTMC",
 			"params": [
 				{
@@ -134,7 +518,67 @@
 					"suggested-values": [5,7,15,31]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/tandem.php"
+			"www": "http://www.prismmodelchecker.org/casestudies/tandem.php",
+			"properties": [
+				{
+					"name": "customers",
+					"prism": "R{\"customers\"}=? [ S ]",
+					"description": "Long run expected customers in the network",
+					"category": "steady-state"
+				},
+				{
+					"name": "network",
+					"prism": "P=? [ F<=T sc=c & sm=c & ph=2 ]",
+					"description": "Probability network becomes full in T time units",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "first_queue",
+					"prism": "P=? [ F<=T sc=c ]",
+					"description": "Probability first queue becomes full in T time units",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "second_queue",
+					"prism": "P=? [ sm=c U<=T sm<c ]",
+					"description": "Probability of leaving a situation where the second queue is entirely populated within T time units",
+					"category": "time-bounded-reach",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time bound"
+						}
+					]
+				},
+				{
+					"name": "customers_T",
+					"prism": "R=? [ I=T ]",
+					"description": "Expected number of customers in the network at time T",
+					"category": "transient",
+					"params": [
+						{
+							"name": "T",
+							"type": "double",
+							"description": "time instant"
+						}
+					]
+				}
+			]
 		}
 		
 	]
