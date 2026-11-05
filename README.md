@@ -21,4 +21,4 @@ You are free to copy, edit and redistribute it, but please give appropriate cred
 
 If you have questions or comments, please contact:
 
-* Dave Parker (d.a.parker@cs.bham.ac.uk)
+* Dave Parker (david.parker@cs.ox.ac.uk)
