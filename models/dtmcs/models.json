@@ -195,7 +195,7 @@
 					"suggested-values": [1,2,3]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/self-nand.php",
+			"www": "http://www.prismmodelchecker.org/casestudies/nand.php",
 			"notes": "NAND multiplexing is from [vN56].",
 			"properties": [
 				{
