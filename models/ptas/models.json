@@ -194,7 +194,7 @@
 			"params": [
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/nonrepudiation.php",
-			"notes": "The protocol is due to Markowitch &amp; Roggeman [MR99].",
+			"notes": "The protocol is due to Markowitch & Roggeman [MR99].",
 			"properties": [
 				{
 					"name": "deadline",
@@ -229,7 +229,7 @@
 			"params": [
 			],
 			"www": "http://www.prismmodelchecker.org/casestudies/nonrepudiation.php",
-			"notes": "The protocol is due to Markowitch &amp; Roggeman [MR99].",
+			"notes": "The protocol is due to Markowitch & Roggeman [MR99].",
 			"properties": [
 				{
 					"name": "deadline",
