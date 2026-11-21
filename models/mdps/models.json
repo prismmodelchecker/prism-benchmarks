@@ -20,7 +20,7 @@
 					"suggested-values": "any value > 1"
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/consensus_prism.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/consensus_prism/",
 			"notes": "The protocol is from [AH90].",
 			"properties": [
 				{
@@ -80,7 +80,7 @@
 					"suggested-values": [2,4,6]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/csma.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/csma/",
 			"notes": "PTA model",
 			"properties": [
 				{
@@ -134,7 +134,7 @@
 					"suggested-values": "3 or 36"
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/firewire/",
 			"notes": "PTA model from [KNS03b] based on TA model from [SS01].",
 			"properties": [
 				{
@@ -181,7 +181,7 @@
 					"suggested-values": "3 or 36"
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/firewire/",
 			"notes": "PTA model from [KNS03b] based on manual abstraction from [SV99].",
 			"properties": [
 				{
@@ -234,7 +234,7 @@
 					"suggested-values": [200,400,600]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/firewire/",
 			"notes": "Extension of firewire_abst model above.",
 			"properties": [
 				{
@@ -266,7 +266,7 @@
 					"suggested-values": [200,400,600]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/firewire/",
 			"notes": "Extension of firewire model above.",
 			"properties": [
 				{
@@ -298,7 +298,7 @@
 					"suggested-values": "only >0 if needed for property"
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/wlan.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/wlan/",
 			"notes": "PTA model",
 			"properties": [
 				{
@@ -372,7 +372,7 @@
 					"suggested-values": [40,60,80]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/wlan.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/wlan/",
 			"notes": "Extension of wlan model above.",
 			"properties": [
 				{
@@ -410,7 +410,7 @@
 					"suggested-values": [true,false]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/zeroconf.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/zeroconf/",
 			"notes": "PTA model. The protocol is from [CAG02].",
 			"properties": [
 				{
@@ -461,7 +461,7 @@
 					"suggested-values": [20,40,60]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/zeroconf.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/zeroconf/",
 			"notes": "Extension of zeroconf model above. The protocol is from [CAG02].",
 			"properties": [
 				{

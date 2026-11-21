@@ -20,7 +20,7 @@
 					"suggested-values": "4,8"
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/csma.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/csma/",
 			"notes": "Number of stations is fixed at N=2.",
 			"properties": [
 				{
@@ -102,7 +102,7 @@
 					"suggested-values": "3 or 36"
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/firewire/",
 			"notes": "PTA model from [KNS03b] based on TA model from [SS01].",
 			"properties": [
 				{
@@ -143,7 +143,7 @@
 					"suggested-values": "3 or 36"
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/firewire.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/firewire/",
 			"notes": "PTA model from [KNS03b] based on manual abstraction from [SV99].",
 			"properties": [
 				{
@@ -193,7 +193,7 @@
 			"model-type": "PTA",
 			"params": [
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/nonrepudiation.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/nonrepudiation/",
 			"notes": "The protocol is due to Markowitch & Roggeman [MR99].",
 			"properties": [
 				{
@@ -228,7 +228,7 @@
 			"model-type": "PTA",
 			"params": [
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/nonrepudiation.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/nonrepudiation/",
 			"notes": "The protocol is due to Markowitch & Roggeman [MR99].",
 			"properties": [
 				{
@@ -263,7 +263,7 @@
 			"model-type": "PTA",
 			"params": [
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/zeroconf.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/zeroconf/",
 			"notes": "The protocol is from [CAG02].",
 			"properties": [
 				{

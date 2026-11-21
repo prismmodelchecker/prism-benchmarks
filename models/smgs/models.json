@@ -187,7 +187,7 @@
 					"suggested-values": [5,10,15]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/task_graph.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/task_graph/",
 			"notes": "Generated from TPTG model (task_graph9_tptg.prism) via digital clocks translation. Extends a TA model from [BFLM11].",
 			"properties": [
 				{

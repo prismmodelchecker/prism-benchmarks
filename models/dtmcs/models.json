@@ -14,7 +14,7 @@
 					"suggested-values": [1,2]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/bluetooth.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/bluetooth/",
 			"notes": "",
 			"properties": [
 				{
@@ -46,7 +46,7 @@
 					"suggested-values": [2,3,4,5]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/brp.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/brp/",
 			"notes": "[DJJL01] presents the MDP model. An earlier, non-probabilistic model can be found in [HSV94].",
 			"properties": [
 				{
@@ -89,7 +89,7 @@
 					"suggested-values": [3,4,5,6]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/crowds.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/crowds/",
 			"notes": "The protocol is from [RR98].",
 			"properties": [
 				{
@@ -120,7 +120,7 @@
 					"suggested-values": [2,4,6]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/contract_egl.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/contract_egl/",
 			"notes": "The protocol is from [EGL85].",
 			"properties": [
 				{
@@ -163,7 +163,7 @@
 					"suggested-values": [3,5,7,9]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/self-stabilisation.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/self-stabilisation/",
 			"notes": "The protocol is from [Her90].",
 			"properties": [
 				{
@@ -195,7 +195,7 @@
 					"suggested-values": [1,2,3]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/nand.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/nand/",
 			"notes": "NAND multiplexing is from [vN56].",
 			"properties": [
 				{
@@ -226,7 +226,7 @@
 					"suggested-values": [2,3,4,5]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/synchronous_leader.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/synchronous_leader/",
 			"notes": "The protocol is from [IR90].",
 			"properties": [
 				{

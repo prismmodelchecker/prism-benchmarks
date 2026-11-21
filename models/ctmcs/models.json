@@ -14,7 +14,7 @@
 					"suggested-values": [2,4,8]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/cluster.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/cluster/",
 			"properties": [
 				{
 					"name": "premium_steady",
@@ -129,7 +129,7 @@
 					"suggested-values": [2,3,4]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/embedded.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/embedded/",
 			"notes": "[MCT94] is a stochastic Petri net model. The PRISM model appears in [KNP04c], [KNP07b].",
 			"properties": [
 				{
@@ -350,7 +350,7 @@
 					"suggested-values": [1,2,3]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/fms.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/fms/",
 			"properties": [
 				{
 					"name": "productivity",
@@ -374,7 +374,7 @@
 					"suggested-values": [1,2,3]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/kanban.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/kanban/",
 			"properties": [
 				{
 					"name": "throughput",
@@ -398,7 +398,7 @@
 					"suggested-values": [1,2,3]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/mapk_cascade.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/mapk_cascade/",
 			"notes": "A PRISM model appears in [KNP08a].",
 			"properties": [
 				{
@@ -449,7 +449,7 @@
 					"suggested-values": [4,5,6]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/polling.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/polling/",
 			"properties": [
 				{
 					"name": "s1",
@@ -518,7 +518,7 @@
 					"suggested-values": [5,7,15,31]
 				}
 			],
-			"www": "http://www.prismmodelchecker.org/casestudies/tandem.php",
+			"www": "https://www.prismmodelchecker.org/casestudies/tandem/",
 			"properties": [
 				{
 					"name": "customers",
